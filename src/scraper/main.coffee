@@ -1,5 +1,6 @@
 page = require('webpage').create()
 webserver = require('webserver').create()
+env = require './env.phantom'
 
 webserver.listen 3002, (request, response) ->
 	queryString = request.url.match(/^\/[^?]*(?:\?(.*))?$/)[1]
@@ -23,6 +24,6 @@ page.onConsoleMessage = (msg) ->
 	console.log msg
 
 
-page.open 'file:///Users/jonny/Desktop/agora-dev/Agora-chrome/scraper/scraper.html', (status) ->
+page.open env.page, (status) ->
 	console.log status
 
