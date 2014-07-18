@@ -1,0 +1,483 @@
+.-agora .jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+.-agora .jspPane {
+  position: absolute;
+}
+.-agora .jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 100%;
+  background: #f00;
+}
+.-agora .jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background: #f00;
+}
+.-agora .jspCap {
+  display: none;
+}
+.-agora .jspHorizontalBar .jspCap {
+  float: left;
+}
+.-agora .jspTrack {
+  background: #dde;
+  position: relative;
+}
+.-agora .jspDrag {
+  background: #bbd;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.-agora .jspHorizontalBar .jspTrack,
+.-agora .jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%;
+}
+.-agora .jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.-agora .jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d;
+}
+.-agora .jspVerticalBar .jspArrow {
+  height: 16px;
+}
+.-agora .jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+.-agora .jspVerticalBar .jspArrow:focus {
+  outline: none;
+}
+.-agora .jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+.-agora .jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+}
+.-agora .jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+}
+.-agora .jspVerticalBar *,
+.-agora .jspHorizontalBar * {
+  margin: 0;
+  padding: 0;
+}
+.-agora .jspDrag {
+  background: #666;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.-agora .lb-v-dummy {
+  width: 100%;
+  display: block;
+  height: 1px;
+}
+.-agora .lb-h-dummy {
+  height: 100%;
+  display: block;
+  width: 1px;
+}
+.-agora .lb-clear {
+  clear: both;
+}
+.-agora .lb-wrap {
+  z-index: 0;
+  overflow: auto;
+  position: relative;
+}
+.-agora .lb-v-scrollbar {
+  z-index: 1;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 7px;
+  height: 100%;
+  background: #cfcfcf;
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+}
+.-agora .lb-h-scrollbar {
+  z-index: 1;
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  width: 100%;
+  height: 7px;
+  background: #cfcfcf;
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+}
+.-agora .lb-v-scrollbar-slider {
+  position: absolute;
+  width: 7px;
+  height: 50px;
+  left: 0;
+  top: 0;
+  background: #000;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+}
+.-agora .lb-h-scrollbar-slider {
+  position: absolute;
+  height: 7px;
+  width: 50px;
+  left: 0;
+  top: 0;
+  background: #000;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+}
+.-agora .scroll-wrapper {
+  overflow: hidden;
+  z-index: 0;
+}
+.-agora .scroll-area {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+.-agora .scroll-area::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+  display: none;
+  opacity: 0;
+}
+.-agora .lionbars .scrollbar {
+  opacity: 0;
+  -webkit-transition-property: opacity, width, height;
+  -webkit-transition-duration: 200ms, 0ms, 0ms;
+  -webkit-transition-delay: 1000ms, 1200ms, 1200ms;
+  -moz-transition-property: opacity, width, height;
+  -moz-transition-duration: 200ms, 0ms, 0ms;
+  -moz-transition-delay: 1000ms, 1200ms, 1200ms;
+  -o-transition-property: opacity, width, height;
+  -o-transition-duration: 200ms, 0ms, 0ms;
+  -o-transition-delay: 1000ms, 1200ms, 1200ms;
+  transition-property: opacity, width, height;
+  transition-duration: 200ms, 0ms, 0ms;
+  transition-delay: 1000ms, 1200ms, 1200ms;
+}
+.-agora .lionbars .scrollbar-thumb {
+  border-radius: 14px;
+}
+.-agora .lionbars.clicked-vertically .scrollbar.vertical .scrollbar-track,
+.-agora .lionbars .scrollbar.vertical:hover .scrollbar-track {
+  background: rgba(255,255,255,0.8);
+  box-shadow: 2px 0 1px -1px rgba(0,0,0,0.3) inset, 20px 0 20px -20px rgba(0,0,0,0.2) inset;
+  -webkit-transition-property: box-shadow, background-color;
+  -webkit-transition-duration: 0ms, 0ms;
+  -webkit-transition-delay: 0ms, 0ms;
+  -moz-transition-property: box-shadow, background-color;
+  -moz-transition-duration: 0ms, 0ms;
+  -moz-transition-delay: 0ms, 0ms;
+  -o-transition-property: box-shadow, background-color;
+  -o-transition-duration: 0ms, 0ms;
+  -o-transition-delay: 0ms, 0ms;
+  transition-property: box-shadow, background-color;
+  transition-duration: 0ms, 0ms;
+  transition-delay: 0ms, 0ms;
+}
+.-agora .lionbars.clicked-horizontally .scrollbar.horizontal .scrollbar-track,
+.-agora .lionbars .scrollbar.horizontal:hover .scrollbar-track {
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,0.3) inset, 0 20px 20px -20px rgba(0,0,0,0.2) inset;
+  -webkit-transition-property: box-shadow, background-color;
+  -webkit-transition-duration: 0ms, 0ms;
+  -webkit-transition-delay: 0ms, 0ms;
+  -moz-transition-property: box-shadow, background-color;
+  -moz-transition-duration: 0ms, 0ms;
+  -moz-transition-delay: 0ms, 0ms;
+  -o-transition-property: box-shadow, background-color;
+  -o-transition-duration: 0ms, 0ms;
+  -o-transition-delay: 0ms, 0ms;
+  transition-property: box-shadow, background-color;
+  transition-duration: 0ms, 0ms;
+  transition-delay: 0ms, 0ms;
+}
+.-agora .lionbars.clicked-vertically .scrollbar.vertical,
+.-agora .lionbars .scrollbar.vertical:hover {
+  width: 14px;
+  opacity: 0.8;
+  -webkit-transition-property: opacity, width, height;
+  -webkit-transition-duration: 0ms, 0ms, 0ms;
+  -webkit-transition-delay: 0ms, 0ms, 0ms;
+  -moz-transition-property: opacity, width, height;
+  -moz-transition-duration: 0ms, 0ms, 0ms;
+  -moz-transition-delay: 0ms, 0ms, 0ms;
+  -o-transition-property: opacity, width, height;
+  -o-transition-duration: 0ms, 0ms, 0ms;
+  -o-transition-delay: 0ms, 0ms, 0ms;
+  transition-property: opacity, width, height;
+  transition-duration: 0ms, 0ms, 0ms;
+  transition-delay: 0ms, 0ms, 0ms;
+}
+.-agora .lionbars.clicked-horizontally .scrollbar.horizontal,
+.-agora .lionbars .scrollbar.horizontal:hover {
+  height: 14px;
+  opacity: 0.8;
+  -webkit-transition-property: opacity, width, height;
+  -webkit-transition-duration: 0ms, 0ms, 0ms;
+  -webkit-transition-delay: 0ms, 0ms, 0ms;
+  -moz-transition-property: opacity, width, height;
+  -moz-transition-duration: 0ms, 0ms, 0ms;
+  -moz-transition-delay: 0ms, 0ms, 0ms;
+  -o-transition-property: opacity, width, height;
+  -o-transition-duration: 0ms, 0ms, 0ms;
+  -o-transition-delay: 0ms, 0ms, 0ms;
+  transition-property: opacity, width, height;
+  transition-duration: 0ms, 0ms, 0ms;
+  transition-delay: 0ms, 0ms, 0ms;
+}
+.-agora .lionbars.scrolling-vertically .scrollbar.vertical,
+.-agora .lionbars.scrolling-horizontally .scrollbar.horizontal {
+  opacity: 0.8;
+  -webkit-transition-property: opacity, width, height;
+  -webkit-transition-duration: 0ms, 0ms, 0ms;
+  -webkit-transition-delay: 0ms, 0ms, 0ms;
+  -moz-transition-property: opacity, width, height;
+  -moz-transition-duration: 0ms, 0ms, 0ms;
+  -moz-transition-delay: 0ms, 0ms, 0ms;
+  -o-transition-property: opacity, width, height;
+  -o-transition-duration: 0ms, 0ms, 0ms;
+  -o-transition-delay: 0ms, 0ms, 0ms;
+  transition-property: opacity, width, height;
+  transition-duration: 0ms, 0ms, 0ms;
+  transition-delay: 0ms, 0ms, 0ms;
+}
+.-agora .lionbars .scrollbar-track {
+  -webkit-transition-property: box-shadow, background-color;
+  -webkit-transition-duration: 0ms, 0ms;
+  -webkit-transition-delay: 1200ms, 1200ms;
+  -moz-transition-property: box-shadow, background-color;
+  -moz-transition-duration: 0ms, 0ms;
+  -moz-transition-delay: 1200ms, 1200ms;
+  -o-transition-property: box-shadow, background-color;
+  -o-transition-duration: 0ms, 0ms;
+  -o-transition-delay: 1200ms, 1200ms;
+  transition-property: box-shadow, background-color;
+  transition-duration: 0ms, 0ms;
+  transition-delay: 1200ms, 1200ms;
+}
+.-agora .lionbars .scrollbar.vertical {
+  width: 11px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: auto;
+}
+.-agora .lionbars .scrollbar.vertical .scrollbar-button {
+  left: 0;
+  right: 0;
+}
+.-agora .lionbars .scrollbar .scrollbar-button {
+  background: none;
+  position: absolute;
+}
+.-agora .lionbars .scrollbar.vertical .scrollbar-button.start.decrement,
+.-agora .lionbars .scrollbar-button.end.increment {
+  display: none;
+  height: 14px;
+  z-index: 1;
+}
+.-agora .lionbars .scrollbar.vertical .scrollbar-button.start.increment,
+.-agora .lionbars .scrollbar-button.end.decrement {
+  display: none;
+}
+.-agora .lionbars .scrollbar.vertical .scrollbar-button.decrement.start {
+  top: 0;
+}
+.-agora .lionbars .scrollbar.vertical .scrollbar-button.increment.end {
+  bottom: 0;
+}
+.-agora .lionbars .scrollbar.vertical .scrollbar-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+}
+.-agora .lionbars .scrollbar.vertical .scrollbar-track-piece.start {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.-agora .lionbars .scrollbar.vertical .scrollbar-track-piece.end {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.-agora .lionbars .scrollbar.vertical .scrollbar-track-piece {
+  z-index: 0;
+}
+.-agora .lionbars .scrollbar.vertical .scrollbar-thumb {
+  height: 50px;
+  background: rgba(0,0,0,0.8);
+  position: absolute;
+  top: 0;
+  left: 3px;
+  right: 2px;
+  z-index: 1;
+}
+.-agora .lionbars .scrollbar.horizontal {
+  height: 11px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.-agora .lionbars .scrollbar.horizontal .scrollbar-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.-agora .lionbars .scrollbar.horizontal .scrollbar-button.start.decrement,
+.-agora .lionbars .scrollbar-button.end.increment {
+  display: none;
+  width: 14px;
+  z-index: 1;
+}
+.-agora .lionbars .scrollbar.horizontal .scrollbar-button.start.increment,
+.-agora .lionbars .scrollbar-button.end.decrement {
+  display: none;
+}
+.-agora .lionbars .scrollbar.horizontal .scrollbar-button.decrement.start {
+  left: 0;
+}
+.-agora .lionbars .scrollbar.horizontal .scrollbar-button.increment.end {
+  right: 0;
+}
+.-agora .lionbars .scrollbar.horizontal .scrollbar-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+}
+.-agora .lionbars.scrollbar-vertical .scrollbar.horizontal .scrollbar-track {
+  right: 14px;
+}
+.-agora .lionbars.scrollbar-horizontal .scrollbar.vertical .scrollbar-track {
+  bottom: 14px;
+}
+.-agora .lionbars .scrollbar.horizontal .scrollbar-track-piece.start {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.-agora .lionbars .scrollbar.horizontal .scrollbar-track-piece.end {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.-agora .lionbars .scrollbar.horizontal .scrollbar-track-piece {
+  z-index: 0;
+}
+.-agora .lionbars .scrollbar.horizontal .scrollbar-thumb {
+  width: 50px;
+  background-color: rgba(0,0,0,0.8);
+  position: absolute;
+  top: 3px;
+  left: 0;
+  bottom: 2px;
+  z-index: 1;
+}
+.-agora .lionbars .scrollbar-corner {
+  display: none;
+}
+.-agora .lionbars .scrollbar-resizer {
+  display: none;
+}
+.-agora .antiscroll-wrap {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.-agora .antiscroll-scrollbar {
+  background: #666;
+  background: rgba(0,0,0,0.6);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: linear 300ms opacity;
+  -moz-transition: linear 300ms opacity;
+  -o-transition: linear 300ms opacity;
+}
+.-agora .antiscroll-scrollbar-shown {
+  opacity: 1;
+}
+.-agora .antiscroll-scrollbar-horizontal {
+  height: 7px;
+  margin-left: 2px;
+  bottom: 2px;
+  left: 0;
+}
+.-agora .antiscroll-scrollbar-vertical {
+  width: 7px;
+  margin-top: 2px;
+  right: 2px;
+  top: 0;
+}
+.-agora .antiscroll-inner {
+  overflow: scroll;
+}
+.-agora .antiscroll-inner::-webkit-scrollbar,
+.-agora .antiscroll-inner::scrollbar {
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,60 @@
+.-agora .v-addData.t-dialog
+	width 350px
+
+	&.connected
+		background-color $darkGray
+		border-radius 2px
+
+		.content
+			margin 0
+
+	// height 339px
+	.content
+		margin-left 0
+		margin-right 0
+	form
+		background-color #696969
+		border-radius 2px
+		margin 0 2px 0
+		position relative
+		padding 10px
+
+		input[type="text"]
+			width 100%
+			box-sizing border-box
+			box-shadow none
+
+
+		input[type="submit"]
+			display none
+			
+		.t-select
+			box-shadow none
+			width 100%
+
+		.field + .field
+			margin-top 10px
+
+
+	&.drag
+		form
+			&:before
+				content ''
+				position absolute
+				width 10px
+				height 4px
+				bottom -4px
+				left 50%
+				margin-left -5px
+				image $base + 'views/AddData/arrow.png' 10px 4px
+
+
+	.-agora-addData-link
+		margin 10px auto 0
+
+
+.-agora-addData-link
+	image $base + 'paperClipLargeDarkGray.png' 29px 32px
+	background-repeat no-repeat
+	background-position center
+	display block

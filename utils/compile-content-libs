@@ -1,0 +1,12 @@
+cd libs/client/
+
+if [ -e merged.js ]; then
+	rm merged.js
+fi
+
+FILES=`find . -name "*.js"`
+
+for f in $FILES; do
+	echo "//FILE:$f" >> merged.js
+	cat "$f" >> merged.js
+done

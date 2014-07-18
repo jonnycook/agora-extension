@@ -1,0 +1,99 @@
+<html>
+<head>
+	<title>Agora</title>
+	<!--<script type="text/javascript" src="tutorial/bootstrap.js"></script>-->
+
+	<script type="text/javascript">
+		if (!document.getElementsByTagName('html')[0].getAttribute('agora')) {
+			function addScript(src) {
+				var script = document.createElement('script');
+				var url;
+				if (window.chrome && chrome.extension) {
+					url = chrome.extension.getURL(src);
+				}
+				else {
+					url = src;
+				}
+				script.setAttribute('src',url);
+				document.getElementsByTagName('head')[0].appendChild(script);
+			}
+
+			var env = {
+				domain: 'ext.agora.dev',
+				updaterHost: 'localhost',
+				autoUpdate:true,
+				localTest:true,
+				dontSubmitErrors:true,
+				dev:true,
+				debug:true
+			};
+
+
+			addScript('build/tracking.js');
+			addScript('build/require.config.js');
+			addScript('libs/require.js');
+			addScript('agora-built.js');
+			addScript('client.agora-built.js');
+			addScript('build/tutorial/init.js');
+		}
+	</script>
+	<link rel="stylesheet" type="text/css" href="tutorial/styles.css">
+</head>
+<body>
+	<div id="page">
+	<div id="header">
+		<h1><a href="#">Tutorial Store</a></h1>
+		<form id="search">
+			<input type="text">
+			<input type="submit">
+		</form>
+		<div id="headerMenu">
+			<a href="#" id="headerMenuCart">0</a>
+			<a href="#" id="headerMenuUser"></a>
+		</div>
+	</div>
+	<ul id="nav">
+		<li id="navAll" class="active"><a href="#">All</a></li>
+		<li id="navHome"><a href="#">Home</a></li>
+		<li id="navClothing"><a href="#">Clothing</a></li>
+		<li id="navTechnology"><a href="#">Technology</a></li>
+		<li id="navSports"><a href="#">Sports</a></li>
+	</ul>
+	<div id="content">
+		<ul id="products">
+			<li class="product" data-product="Amazon/B00DST3VK6" id="product2">
+				<a class="picture" href="#"><img src="http://ecx.images-amazon.com/images/I/81GpEcEHRiL._SX160_.jpg"></a>
+				<a class="title">Converse Chuck Taylor All Star Sneaker, Hi Top</a>
+				<span class="price">$20.50</span>
+			</li>
+
+			<li class="product" data-product="Amazon/B00E1YL6I6" id="product1">
+				<a class="picture" href="#"><img src="http://ecx.images-amazon.com/images/I/71XWworMMxL._UX160_.jpg"></a>
+				<a class="title">Polo Ralph Lauren Men's Jael Fashion Sneaker</a>
+				<span class="price">$41.71</span>
+			</li>
+			<li class="product" data-product="Amazon/B005BW8DT2">
+				<a class="picture" href="#"><img src="http://ecx.images-amazon.com/images/I/81WiyYVOY%2BL._UX160_.jpg"></a>
+				<a class="title">DC Men's Pure Action Sports Shoe</a>
+				<span class="price">$9.99</span>
+			</li>
+			<li class="product" data-product="Amazon/B000XR4OC0">
+				<a class="picture" href="#"><img src="http://ecx.images-amazon.com/images/I/61DyNSFzadL._UX160_.jpg"></a>
+				<a class="title">TOMS Women's Canvas Slip-On</a>
+				<span class="price">$31.25</span>
+			</li>
+			<li class="product" data-product="Amazon/B00H470Q5Q">
+				<a class="picture" href="#"><img src="http://ecx.images-amazon.com/images/I/71bNeZLIUqL._UX160_.jpg"></a>
+				<a class="title">Levis Men's Justin Fashion Sneaker</a>
+				<span class="price">$35.00</span>
+			</li>
+			<li class="product" data-product="Amazon/B00D86KUWG">
+				<a class="picture" href="#"><img src="http://ecx.images-amazon.com/images/I/81NRLiObYCL._UX160_.jpg"></a>
+				<a class="title">ASICS Women's GEL-Noosa Tri 9 Running Shoe</a>
+				<span class="price">$114.00</span>
+			</li>
+		</ul>
+	</div>
+	</div>
+</body>
+</html>

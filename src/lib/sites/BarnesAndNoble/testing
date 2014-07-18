@@ -1,0 +1,22 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.barnesandnoble.com/s/top-secret?keyword=top+secret&store=allproducts&view=list
+F 2014-07-08 Heath
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.barnesandnoble.com/w/media-communication-culture-james-lull/1101209448
+P 2014-07-08 Heath
+http://www.barnesandnoble.com/w/top-secret-twenty-one-janet-evanovich/1118592038?ean=9780345542922
+P 2014-07-08 Heath
+http://www.barnesandnoble.com/v/top-secret-/2949000877343
+F 2014-07-08 Heath
+http://www.barnesandnoble.com/p/home-gift-top-secret-lock-key-diary/22817784?ean=643356046331
+F 2014-07-08 Heath
+
+
+==product== //Product Page - full portal test
+http://www.barnesandnoble.com/w/top-secret-web-griffin/1118663339?ean=9780399171239&itm=2&usri=top+secret
+P 2014-07-08 Heath
+http://www.barnesandnoble.com/p/home-gift-top-secret-lock-key-diary/22817784?ean=643356046331
+F 2014-07-08 Heath
+
+//if the main product page has other products on it, then a product page url should be in the listing section

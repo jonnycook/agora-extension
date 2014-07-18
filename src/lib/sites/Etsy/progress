@@ -1,0 +1,18 @@
+==scraping==
+main 100%
+more 100%
+reviews 
+
+==injection==
+listing 99%
+page 99%
+
+==product==
+images 100%
+widgets 100%
+
+==todo==
+badges reposition on listing pages (overlayPosition: 'topLeft' not working)
+support for SOLD pages like
+https://www.etsy.com/listing/181293937/2-inch-sugar-skulls-martingale-collar?ref=favs_view_22&atr_uid=9504266
+reviews

@@ -1,0 +1,26 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+
+P 2014-07-08 Heath
+
+
+
+
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+
+P 2014-07-08 Heath
+
+
+
+
+
+==product== //Product Page - full portal test
+
+P 2014-07-08 Heath
+
+
+
+
+
+
+//if the main product page has other products on it, then a product page url should be in the listing section

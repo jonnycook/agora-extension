@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "config.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites/Forever21/config.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,CAAA;AAAA,EAAA,gBAAA,EAAkB,CAAC,QAAD,EAAW,OAAX,EAAoB,SAApB,EAA+B,QAA/B,CAAlB;AAAA,EACA,eAAA,EAAiB,KADjB;AAAA,EAEA,IAAA,EAAM,WAFN;AAAA,EAGA,KAAA,EAAO,CAAC,mBAAD,CAHP;AAAA,EAIA,QAAA,EAAU,QAJV;AAAA,EAKA,OAAA,EAAS,IALT;AAAA,EAMA,OAAA,EAAS,IANT;AAAA,EAOA,IAAA,EAAM,qCAPN;AAAA,EAQA,MAAA,EAAO,IARP;CAAA,CAAA,CAAA"
+}

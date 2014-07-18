@@ -1,0 +1,31 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.homedepot.com/
+P 2014-07-08 Heath
+http://www.homedepot.com/b/Appliances-Washers-Dryers-Washers/Special-Buys/N-5yc1vZc3ovZ1z11ao3?cm_sp=Homepage-_-7_7-_-VisNav_2-_-Washers
+P 2014-07-08 Heath
+http://www.homedepot.com/s/steel?NCNI-5
+P 2014-07-08 Heath
+http://www.homedepot.com/b/Outdoors-Garden-Center-Landscaping-Barks-Mulches/N-5yc1vZbx4a
+P 2014-07-08 Heath
+
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.homedepot.com/p/Delta-MultiChoice-Universal-Tub-and-Shower-Valve-Body-Rough-In-Kit-R10000-UNBX/100449482?MERCH=REC-_-HomePageHorizontal1-1-_-NA-_-100449482-_-N
+F 2014-07-08 Heath
+http://www.homedepot.com/p/Crown-Bolt-1-in-x-72-in-Plain-Steel-Square-Tube-with-1-16-in-Thick-42330/100337410
+F 2014-07-08 Heath
+http://www.homedepot.com/p/Scotts-Earthgro-2-cu-ft-Brown-Mulch-647185/202585785?N=5yc1vZbx4a
+F 2014-07-08 Heath
+
+
+==product== //Product Page - full portal test
+http://www.homedepot.com/p/Samsung-28-1-cu-ft-French-Door-Refrigerator-in-Stainless-Steel-RF28HFEDBSR/204729876?MERCH=REC-_-NavPLPHorizontal1-1-_-NA-_-204729876-_-N
+P 2014-07-08 Heath
+http://www.homedepot.com/p/Scotts-Earthgro-2-cu-ft-Brown-Mulch-647185/202585785?N=5yc1vZbx4a
+P 2014-07-08 Heath
+
+
+
+
+
+//if the main product page has other products on it, then a product page url should be in the listing section

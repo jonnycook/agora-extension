@@ -1,0 +1,160 @@
+.v-frame .-agora.v-productPreview
+	position absolute
+	top 20px
+	bottom 20px
+	left 20px
+	right 20px
+	box-sizing border-box
+
+.-agora.v-productPreview
+	position relative
+
+	// > .title
+	// 	truncated-text()
+
+	> .title .title, > .price
+		font-size 16px
+		color white
+
+	> .price, > .title
+		display block
+
+	> .title
+		margin-right 31px
+		position relative
+		height 20px
+
+		.title
+			left 0
+			right 170px
+			position absolute
+			truncated-text()
+
+		.continue
+			color white
+			font-size 13px
+			float right
+			margin-top 1px
+
+			color: #666666;
+			font-size: 11px;
+			float: right;
+			margin-top: -1px;
+			background-color: white;
+			padding: 3px 6px;
+			border-radius: 2px;
+
+			.arrow
+				position relative
+				top 1px
+				color white
+				font-size 12px
+				display none
+
+	> .price
+		.price
+			color white
+			font-size 15px
+			vertical-align middle
+
+		.icon
+			margin-left 4px
+		font-weight bold
+
+	$top = 70px
+
+	&.loading
+		.picture
+			display none
+
+	.picture
+		background-size contain
+		background-position center
+		background-repeat no-repeat
+		position absolute
+		left 100px
+		top $top
+		right 32px
+		bottom 100px
+		&.lowRes
+			background-color white
+			
+		border-radius 2px
+		overflow hidden
+
+	&.singlePicture
+		.picture
+			left 0
+			bottom 0
+
+	.pictures
+		position absolute
+		top $top - 5px
+		bottom 0
+		overflow auto
+		width 80px
+		padding-top 5px
+		li
+			cursor pointer
+			border-radius 2px
+			overflow hidden
+			background-color white
+			margin 0 auto
+
+			background-size contain
+			background-position center
+			background-repeat no-repeat
+			width 75px
+			height 75px
+
+			&.active
+				box-style()
+
+			& + li
+				margin-top 10px
+
+
+
+	.stylesWrapper
+		position absolute 
+		left 100px - 3px
+		bottom 0
+		right 32px
+		height 80px
+		overflow auto
+
+	.styles
+		// position absolute 
+		// left 100px
+		// right 10px
+		height 80px
+		white-space nowrap
+		padding 0 3px
+
+		display inline-block
+
+		li
+			cursor pointer
+			margin-top 3px
+			background-color white
+			border-radius 2px
+			overflow hidden
+			background-size contain
+			background-position center
+			background-repeat no-repeat
+			width 75px
+			display inline-block
+			height 75px
+
+
+			&.active
+				box-style()
+
+			& + li
+				margin-left 10px
+
+
+	.productMenu
+		position absolute
+		right -9px
+		top $top

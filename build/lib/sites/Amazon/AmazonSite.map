@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "AmazonSite.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites/Amazon/AmazonSite.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAybwD"
+}

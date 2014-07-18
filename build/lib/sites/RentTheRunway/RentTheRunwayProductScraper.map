@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "RentTheRunwayProductScraper.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites/RentTheRunway/RentTheRunwayProductScraper.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,MAAA,CAAO,CAAC,yBAAD,EACN,kDADM,EAEN,mDAFM,EAGN,+CAHM,EAIN,sDAJM,EAIkD,YAJlD,CAAP,EAIwE,SAAC,cAAD,EAAiB,sBAAjB,EAAyC,uBAAzC,EAAkE,mBAAlE,EAAuF,0BAAvF,EAAmH,CAAnH,GAAA;SAEvE,cAAc,CAAC,yBAAf,CAAyC,SAAzC,EACC;AAAA,IAAA,SAAA,EACC;AAAA,MAAA,WAAA,EACC;AAAA,QAAA,GAAA,EAAK,SAAA,GAAA;iBAAI,+CAAA,GAA8C,IAAC,CAAA,WAAnD;QAAA,CAAL;OADD;KADD;AAAA,IAGA,OAAA,EAAS,SAHT;AAAA,IAIA,QAAA,EAAU,aAJV;GADD,EAFuE;AAAA,CAJxE,CAAA,CAAA"
+}

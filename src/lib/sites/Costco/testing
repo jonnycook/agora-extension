@@ -1,0 +1,33 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.costco.com/
+P 2014-07-08 Heath
+http://www.costco.com/CatalogSearch?storeId=10301&catalogId=10701&langId=-1&keyword=red
+P 2014-07-08 Heath
+http://www.costco.com/all-gift-baskets-towers.html
+P 2014-07-08 Heath
+http://www.costco.com/throws.html
+F 2014-07-08 Heath
+
+
+
+
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.costco.com/-.product.11625662.html
+P 2014-07-08 Heath
+http://www.costco.com/.product.100104595.html?cm_sp=RichRelevance-_-itempageVerticalRight-_-CategorySiloedViewCP&cm_vc=itempageVerticalRight|CategorySiloedViewCP#
+F 2014-07-08 Heath
+http://www.costco.com/Princess-Cut-0.40-ctw-VS2-Clarity%2c-I-Color-Diamond-14kt-White-Gold-Screwback-Stud-Earrings.product.100033052.html
+F 2014-07-08 Heath
+http://www.costco.com/Mrs.-Fields%C2%AE-Cookies-Deluxe-Bites-Basket.product.11616104.html
+F 2014-07-08 Heath
+
+
+
+==product== //Product Page - full portal test
+http://www.costco.com/Apple-iPad-Air-%7c-A7-chip-%7c-32GB-%7c-Silver.product.100122981.html
+F 2014-07-08 Heath
+http://www.costco.com/Divatex-Faux-Fur-Throw-Set.product.100074342.html
+P 2014-07-08 Heath
+
+//if the main product page has other products on it, then a product page url should be in the listing section

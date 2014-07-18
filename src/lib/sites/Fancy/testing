@@ -1,0 +1,31 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://fancy.com/search?q=love
+P 2014-07-08 Heath
+
+
+
+
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://fancy.com/things/607643296759553748
+P 2014-07-08 Heath
+http://fancy.com/things/97199173543136777/Glow-in-the-Dark-Nail-Polish?utm=rec
+P 2014-07-08 Heath
+
+
+
+
+==product== //Product Page - full portal test
+http://fancy.com/things/579578127236208851/No-Love-Long-Sleeve-Crop-Top-by-Daily-News-Project?utm=rec
+P 2014-07-08 Heath
+http://fancy.com/things/405991157672181989/Chanel-Logo-Beanie?utm=rec
+P 2014-07-08 Heath
+http://fancy.com/things/245473265/S%E2%80%99More-To-Love-S%E2%80%99More-Maker
+F 2014-07-08 Heath
+http://fancy.com/things/538593765267343356/Pacifier-Thermometer?list_id=14107833
+F 2014-07-08 Heath
+
+
+
+
+//if the main product page has other products on it, then a product page url should be in the listing section

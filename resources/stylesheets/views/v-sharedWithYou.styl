@@ -1,0 +1,66 @@
+.-agora .v-sharedWithYou
+	width 376px
+	height 302px
+	position relative
+	
+	.objects
+		height 240px
+		overflow auto
+		width 100%
+		padding-right 15px
+		li
+			cursor pointer
+			& + li
+				margin-top 27px
+			height 38px
+			padding-left 50px
+			position relative
+
+			line-height 20px
+
+			background-repeat no-repeat
+
+			&.Decision
+				image $base + 'icons/listDarkGray.png' 38px 38px
+
+			&.Belt
+				image $base + 'icons/beltDarkGray.png' 38px 38px
+
+			.title
+				font-weight bold
+				display block
+
+			.inBelt
+				position absolute
+				top 11px
+				right 0
+				visibility hidden
+				z-index 10
+				width 20px
+				height 17px
+
+				&:checked:before
+					image $base + 'views/ProductPopup/checkDarkGray.png' 20px 17px
+
+				&:before
+					content ''
+					visibility visible
+					background-repeat no-repeat
+					position absolute
+					top 0
+					right 0
+					width 20px
+					height 17px
+					image $base + 'views/ProductPopup/checkLightGray.png' 20px 17px
+
+
+			&:not(.seen)
+				&:after
+					content ''
+					position absolute
+					width 8px
+					height 8px
+					border-radius 4px
+					background-color $orange
+					right 34px
+					top 15px

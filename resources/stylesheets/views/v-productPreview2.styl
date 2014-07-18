@@ -1,0 +1,549 @@
+$fontSize = 14px
+
+htmlContainer()
+	&, *
+		font-size 14px
+
+	h1
+		font-size 18px
+
+	h2
+		font-size 16px
+
+	h3
+		font-style italic
+		font-size 14px
+
+	h4
+		font-style italic
+		font-size 12px
+
+	b
+		font-weight bold
+
+	a
+		// color $orange
+		font-weight bold
+
+	h1, h2, h3, h4,
+		&:first-child
+			margin-top 0
+		font-weight bold
+		margin 10px 0
+
+	ul
+		li
+			list-style-type disc
+			margin-left 20px
+
+	small
+		font-size 10px
+
+	h1 + br, h2 + br, h3 + br, h4 + br, p + br
+		display none
+
+	br + h1, br + h2, br + h2, br + h3, br + h4, br + p
+		margin-top 0
+
+	p
+		margin 10px 0
+		&:first-child
+			margin-top 0
+
+.-agora .-agora.v-compareTile .v-productPreview2
+	top 0
+	bottom 0
+	left 0
+	right 0
+
+	.head
+		right 0
+
+		> .title
+			margin-right 0
+
+	> .content
+		top 0
+	
+.-agora.v-compareTile.Product .title .head, .-agora.v-productPreview2 .head
+	> .title
+		display block
+		height 18px
+		margin 0 0 7px 0
+		.title
+			color white
+			font-size 16px
+			left 0
+			right 170px
+			position absolute
+			truncated-text()
+
+		.continue
+			color $darkGray
+			background-color white
+			border-radius 1px
+			font-size 11px
+			padding 3px 7px
+			float right
+
+	> .price
+		float left
+		.icon
+			-webkit-filter grayscale(1) blur(0px)
+			width 15px
+			height 15px
+			margin-top -4px
+			margin-left 6px
+			// background-color white
+			// border 1px solid white
+			// border-radius 3px
+		.price
+			color white
+			font-size 16px
+
+	.ratingInfo
+		float left
+		margin -2px 0 0 9px
+
+		.rating
+			div div
+				image $base + 'views/ProductPreview/starWhite.png' 18px 18px
+		.reviews
+			color white
+			font-size 16px
+
+
+
+.-agora.v-frame .v-productPreview2
+	position absolute
+	top 15px
+	bottom 15px
+	left 15px
+	right 15px
+
+.-agora.v-productPreview2
+	// .picture, .widgets
+	// 	transition opacity linear 200ms
+
+	// &.loading
+	// 	.picture, .widgets
+	// 		opacity 0
+
+	.head
+		$headHeight = 50px
+		position absolute
+		top 0
+		left 0
+		right 40px
+		height $headHeight
+
+	&.fullPicture
+		> .content
+			.picture
+				left 0
+				top 0
+				bottom 0
+				right 35px
+
+				.expand
+					image $base + 'views/ProductPreview/shrink.png' 25px 23px
+
+			.widgets
+				display none
+
+	&:not(.widgetPanel) 
+		> .content
+			.picture
+				.expand
+					display none
+	&.noPictures
+		> .content
+			.picture
+				*
+					display none
+				background-repeat no-repeat
+				background-position center
+				background-size contain
+
+	> .content
+		position absolute
+		top 66px
+		left 0
+		right 0
+		bottom 0
+
+		$widgetWidth = 319px
+		$widgetSpacing = 20px
+
+		$widgetsWidth = ($widgetWidth+$widgetSpacing)*1 - $widgetSpacing
+
+		.picture
+			&.singlePicture
+				.pictures
+					display none
+
+				.current
+					left 0
+
+			&.noStyles
+				.styles
+					display none
+
+				.current
+					bottom 0
+
+
+
+
+			position absolute
+			left 0
+			top 0
+			bottom 0
+			right $widgetsWidth + $widgetSpacing + 31px
+
+
+			$thumbSize = 70px
+			$spacing = 10px
+
+			.current
+				position absolute
+				left $thumbSize + $spacing
+				right 0
+				top 0
+				bottom $thumbSize + $spacing
+
+				&:hover, &.loading
+					.zoomLevel
+						opacity 1
+
+				&:not(:hover)
+					.controls
+						opacity 0
+
+
+
+
+				.zoomLevel
+					opacity 0
+					position absolute
+					right 0
+					bottom 0
+					z-index 1
+					border-radius 1px
+					background $darkGray
+					// box-shadow 0px 0px 0px 2px rgba(0,0,0,0.10);
+					color white
+					font-size 12px
+					padding 3px
+					transition opacity linear 200ms
+
+
+					
+
+				.bg
+					position absolute
+					left 0; right 0; top 0; bottom 0
+
+					background-repeat no-repeat
+					background-position center
+					background-size contain
+
+				.controls
+					transition opacity linear 200ms
+					position absolute
+					left 16px
+					top 16px
+					z-index 1
+
+					border-radius 1px;
+					background #666666;
+					box-shadow 0px 0px 0px 2px rgba(0,0,0,0.10);
+					
+					span
+						width 14px
+						height 14px
+						display block
+						font-size 0
+						// float left
+						margin 7px
+						background-repeat no-repeat
+						background-position center
+						cursor pointer
+
+
+					.zoomIn
+						image $base + 'views/ProductPreview/zoomIn.png' 14px 14px
+
+					.zoomOut
+						image $base + 'views/ProductPreview/zoomOut.png' 14px 4px
+
+					.actualSize
+						image $base + 'views/ProductPreview/actualSize.png' 14px 10px
+
+					.fit
+						image $base + 'views/ProductPreview/fit.png' 14px 14px
+
+				.scrollView
+					position absolute
+					left 0
+					right 0
+					top 0
+					bottom 0
+					overflow auto
+					font-size 0
+
+			.stylesWrapper
+				position absolute
+				left 80px
+				bottom 1px
+				right 0
+				height $thumbSize + 4px
+				overflow auto
+				padding 2px 7px 0 2px
+				.styles
+					display inline-block
+					white-space nowrap
+
+					span
+						&.active
+							border-radius 1px
+							// background #FFFFFF
+							box-shadow 0px 0px 0px 2px rgba(0, 0, 0, 0.10)
+
+					span + span
+						margin-left $spacing
+
+			.pictures
+				overflow auto
+				position absolute
+				left 3px
+				top 0
+				width $thumbSize + 4px
+				bottom 0//$thumbSize + $spacing
+				padding 5px 0 5px 2px
+
+				span.active
+					border-radius 1px
+					// background #FFFFFF
+					box-shadow 0px 0px 0px 2px rgba(0, 0, 0, 0.10)
+				span + span
+					margin-top $spacing
+
+
+			.styles, .pictures
+				span
+					background-repeat no-repeat
+					background-position center
+					background-size contain
+					display inline-block
+					width $thumbSize
+					height $thumbSize
+					background-color white
+					border-radius 2px
+					overflow hidden
+					cursor pointer
+				
+		.widgets
+			position absolute
+			right 31px
+			bottom 2px
+			top -2px
+			width $widgetsWidth + 4
+			overflow auto
+			padding 2px 0 2px 2px
+
+			.widget + .widget
+				margin-top $widgetSpacing
+
+			.widget
+				position relative
+				display block
+				width $widgetWidth
+				padding 20px
+				box-sizing border-box
+
+				&, *
+					font-size 14px
+
+
+				> .title
+					font-size 22px
+					font-weight bold
+
+			
+		.widget
+			border-radius 1px
+			background #FFFFFF
+			box-shadow 0px 0px 0px 2px rgba(0, 0, 0, 0.10)
+
+			.expand
+				display block
+				width 25px
+				height 23px
+				background-repeat no-repeat
+				background-position center
+				image $base + 'views/ProductPreview/expand.png' 18px 18px
+				position absolute
+				top 10px
+				right 10px
+				cursor pointer
+				z-index 1
+				// display none
+
+			.content
+				margin-top 10px
+
+		.productMenu
+			position absolute
+			right -4px
+			top 0
+
+
+
+	.widget-AmazonFeatures
+		ul li
+			list-style-type disc
+			margin-left 17px
+			font-size $fontSize
+
+	.widget-AmazonDetails
+		.name
+			font-weight bold
+
+
+	.widget-AmazonMostHelpfulReview, .widget-AmazonMostRecentReviews, .widget-Reviews
+		.content
+			.title
+				font-weight bold
+				background-color #E6E6E6
+				padding 10px
+				border-radius 1px
+				font-size 14px
+				position relative
+				display block
+
+				&:before
+					content ''
+					display block
+					width 22px
+					height 19px
+					image $base + 'views/ProductPreview/reviewArrow.png' 22px 19px
+
+					position absolute
+					bottom -19px
+					left 102px
+
+			.wrapper
+				position relative
+				margin-bottom: 35px;
+
+			.author
+				position absolute
+				bottom -25px
+				left 136px
+				overflow hidden
+				white-space nowrap
+				text-overflow ellipsis
+				right 0
+
+
+			.rating
+				font-size 0
+				position absolute
+				bottom -24px
+				div
+					width 18px
+					height 18px
+					display inline-block
+
+				> div
+					image $base + 'views/ProductPreview/lightGrayStar.png' 18px 18px
+
+					> div
+						image $base + 'views/ProductPreview/orangeStar.png' 18px 18px
+						width 0
+
+					& + div
+						margin-left 2px
+					
+			div.review
+				// white-space pre-wrap
+				max-height 200px
+				overflow hidden
+				htmlContainer()
+
+	.widget-AmazonMostRecentReviews
+		.recentReview
+			padding-bottom 1px
+		.recentReview + .recentReview
+			margin-top 16px
+
+	.widget-Reviews
+		li.review
+			padding-bottom 1px
+			div.review
+				max-height none
+		li.review + li.review
+			margin-top 16px
+
+
+	.widget-AmazonQuotes
+		.content
+			.quote
+				font-weight bold
+				background-color #E6E6E6
+				padding 10px
+				border-radius 1px
+				font-size 14px
+				position relative
+				display block
+
+				&:before
+					content ''
+					display block
+					width 22px
+					height 19px
+					image $base + 'views/ProductPreview/reviewArrow.png' 22px 19px
+
+					position absolute
+					bottom -19px
+					left 22px
+
+			.wrapper
+				position relative
+				margin-bottom: 35px;
+
+			.author
+				position absolute
+				bottom -25px
+				left 56px
+				overflow hidden
+				white-space nowrap
+				text-overflow ellipsis
+				right 0
+
+
+	.widget-AmazonSizes
+		strong
+			font-weight bold
+		ul li
+			list-style-type disc
+			margin-left 17px
+
+	.widget-html
+		htmlContainer()
+
+		.htmlContent
+			max-height 50px
+			overflow hidden
+
+	.widget-List
+		ul li
+			list-style-type disc
+			margin-left 17px
+			font-size $fontSize
+
+
+	.widget-Details
+		.name
+			font-weight bold

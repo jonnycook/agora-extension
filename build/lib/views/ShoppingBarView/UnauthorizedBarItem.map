@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "UnauthorizedBarItem.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/views/ShoppingBarView/UnauthorizedBarItem.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,IAAA;iSAAA;;AAAA,MAAA,CAAO,CAAC,MAAD,EAAS,MAAT,EAAiB,WAAjB,EAA8B,MAA9B,EAAsC,YAAtC,EAAoD,WAApD,CAAP,EAAyE,SAAC,IAAD,EAAO,IAAP,EAAa,SAAb,EAAwB,IAAxB,EAA8B,CAA9B,EAAiC,OAAjC,GAAA;AACxE,MAAA,mBAAA;SAAM;AACL,0CAAA,CAAA;;;;KAAA;;AAAA,kCAAA,IAAA,GAAM,SAAA,GAAA;aACL,IAAC,CAAA,IAAD,GACC;AAAA,QAAA,IAAA,EAAM,cAAN;AAAA,QACA,WAAA,EAAY,EADZ;QAFI;IAAA,CAAN,CAAA;;+BAAA;;KADiC,SADsC;AAAA,CAAzE,CAAA,CAAA"
+}

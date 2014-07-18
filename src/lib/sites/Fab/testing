@@ -1,0 +1,36 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://fab.com/search/?q=happy&page=1
+F 2014-07-08 Heath
+http://fab.com/new-arrivals/?ref=subnav&page=4
+P 2014-07-08 Heath
+http://fab.com/browse/art/?page=1
+P 2014-07-08 Heath
+
+
+
+
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://fab.com/product/adjustable-sktech-ring-452728
+P 2014-07-08 Heath
+http://fab.com/product/dino-claw-ring-174511/?ref=reco%257Chome%257Crfy-pop%257C2%257C1%257C1124
+F 2014-07-08 Heath
+http://fab.com/product/happy-birthday-banner-480140/?ref=sr-p4&pref[]=search%7Chappy&pos=3
+P 2014-07-08 Heath
+
+
+
+==product== //Product Page - full portal test
+http://fab.com/product/adjustable-sktech-ring-452728
+F 2014-07-08 Heath
+http://fab.com/product/great-lakes-tee-475682/?ref=breakoutProd%257CDiA%2520%257C%2520Tees%257C6%257C3
+F 2014-07-08 Heath
+http://fab.com/product/sky-planter-3-pack-multi-248784/?ref=breakoutProd%257CDesign%2520Deals:%25203%2520Days%2520Left%257C1%257C2
+F 2014-07-08 Heath
+
+
+
+
+
+
+//if the main product page has other products on it, then a product page url should be in the listing section

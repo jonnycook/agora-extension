@@ -1,0 +1,77 @@
+	.barItem.list.element.session
+		border-top 2px solid #696969
+		background-color white
+		height 64px
+		border-bottom-left-radius 2px
+		border-bottom-right-radius 2px
+
+		&.dragging
+			z-index 9999999
+
+		> .element, > .addDrop
+			margin-top $marginTop
+
+		.bundle
+			height 56px
+
+		&.empty
+			width 48px
+
+		// &:not(:hover) .title
+		// 	display none
+
+		.title
+			display block
+			position absolute
+			top -2px
+			left 0
+			background #696969
+			z-index 100
+
+			span
+				display block
+				color white
+				overflow hidden
+				text-overflow ellipsis
+				white-space nowrap
+				height 16px
+				line-height 15px
+				font-size 10px
+
+			font-size 10px
+			padding 0 21px 0 4px
+			cursor default
+
+			box-sizing border-box
+			max-width 100%
+			min-width 66px
+
+			height 16px
+
+			overflow hidden
+			text-overflow ellipsis
+			white-space nowrap
+
+			border-bottom-right-radius 1px
+			border-bottom-left-radius 1px
+			line-height 8px
+
+			.toggle
+				position absolute
+				top 2px
+				right 6px
+				width 11px
+				height 11px
+				background-repeat no-repeat
+				background-position center
+				cursor pointer
+
+		&.collapsed .title
+			width 100%
+			min-width 0
+
+		&.collapsed .title .toggle
+			image: $base + 'views/SessionBarItem/expandSession.png' 11px 11px
+
+		&.expanded .title .toggle
+			image: $base + 'views/SessionBarItem/collapseSession.png' 11px 3px

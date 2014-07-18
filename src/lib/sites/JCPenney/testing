@@ -1,0 +1,23 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.jcpenney.com/bed-bath/comforters-bedding-sets/cat.jump?id=cat100250063&deptId=dept20000012&cmJCP_T=G1&cmJCP_C=D2
+P 2014-07-08 Heath
+http://www.jcpenney.com/for-the-home/electronics/cat.jump?id=cat100300092&deptId=dept20000011&cmJCP_T=G1&cmJCP_C=D1
+P 2014-07-08 Heath
+http://www.jcpenney.com/dotcom/jsp/search/results.jsp?fromSearch=true&Ntt=flower&ruleZoneName=XGNSZone&_requestid=113266
+P 2014-07-08 Heath
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.jcpenney.com/women/liz-claiborne/clearance-/liz-claiborne-sleeveless-henley-top/prod.jump?ppId=pp5003860265&catId=cat100210006&deptId=dept20000013&
+P 2014-07-08 Heath
+http://www.jcpenney.com/handbags-accessories/clearance/fashion-jewelry/lego-kids-legends-of-chima-cragger-alarm-clock/prod.jump?ppId=pp5003170390&catId=cat100300092&deptId=dept20000011&
+P 2014-07-08 Heath
+http://www.jcpenney.com/jewelry-watches/fashion-silver-jewelry-accessories/view-all-brands/arizona-blue-stone-link-necklace/prod.jump?ppId=pp5004020219&catId=cat100240091&subcatId=cat1003450013&deptId=dept20000020&
+P 2014-07-08 Heath
+http://www.jcpenney.com/dotcom/window/royal-velvet-ally-rod-pocket-curtain-panel/prod.jump?containerId=JCP|dept20021210041&cmJCP_T=X2H2&cmJCP_C=MERCHA&ppId=pp5003760078&searchTerm=ally+rod+pocket+curtain&catId=SearchResults&colorizedImg=DP0106201418364280C.tif&cm_re=S6-_-PP%20-_-CLEARANCE_FEATURE_4
+F 2014-07-08 Heath
+
+==product== //Product Page - full portal test
+http://www.jcpenney.com/jewelry-watches/fashion-silver-jewelry-accessories/view-all-brands/arizona-blue-stone-link-necklace/prod.jump?ppId=pp5004020219&catId=cat100240091&subcatId=cat1003450013&deptId=dept20000020&
+F 2014-07-08 Heath
+
+//if the main product page has other products on it, then a product page url should be in the listing section

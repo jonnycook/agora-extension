@@ -1,0 +1,63 @@
+define -> d: ['SiteInjector', 'views/ShoppingBarView'], c: ->
+	class HomeDepotSiteInjector extends SiteInjector
+		siteName: 'HomeDepot'
+		run: ->
+			@initPage =>
+				@shoppingBarView = new ShoppingBarView @contentScript
+				@shoppingBarView.el.appendTo document.body
+				@shoppingBarView.represent()
+
+				window.initProducts = initProducts = =>
+					for img in $('a img')
+						a = $(img).parents 'a'
+						if a.attr('href') && a.attr('href')[0] != '#'
+							href = a.prop 'href'
+							matches = /^http:\/\/www\.homedepot\.com\/p\/[^\/]*\/(\d+)/.exec href
+							if matches
+								@initProductEl img, productSid:matches[1]
+						
+				$ initProducts
+				$(window).load initProducts
+
+				setInterval initProducts, 2000
+
+
+				$ =>
+					if $('meta[property="og:type"]').attr('content') == 'product'
+						currentSid = -> /^http:\/\/www\.homedepot\.com\/p\/[^\/]*\/(\d+)/.exec($('meta[property="og:url"]').attr('content'))[1]
+
+						hoverSelector = '.zoomIt_area'
+						$('body').delegate hoverSelector, 'mouseover', =>
+							$(hoverSelector).unbind '.agora'
+							down = false
+							event = null
+							$(hoverSelector)
+								.bind 'mousedown.agora', (e) ->
+									down = true
+									$('html').disableSelection()
+									e.preventDefault()
+									event = e
+									true
+								.bind 'mouseup.agora', ->
+									down = false
+									true
+								.bind 'mousemove.agora', (e) =>
+									if down
+										down = false
+										selector = '#superPIP__productImage'
+										# @clearProductEl el for el in $ selector
+										# @products $(selector), productSid:currentSid()
+
+										setTimeout (->
+											$(hoverSelector).hide()
+											$(selector).trigger event
+											$('html').one 'mouseup', ->
+												$('html').enableSelection()
+												$(hoverSelector).show()
+
+										), 100
+
+
+						@waitFor '#superPIP__productImage', (el) =>
+							@initProductEl el, productSid:currentSid(),
+								initOverlay: (overlay) -> overlay.el.css 'zIndex', 10000

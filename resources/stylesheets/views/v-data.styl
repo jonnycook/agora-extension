@@ -1,0 +1,176 @@
+.-agora .v-data
+	width 357px
+	padding 10px
+	position relative
+
+	box-sizing border-box
+
+	background-color $darkGrayColor
+	
+	border-radius 2px
+
+	&.empty
+		box-sizing content-box
+		width 152px
+
+		.data
+			display none
+
+		.add
+			width 152px
+
+
+	.addWrapper
+		position absolute
+		bottom 0
+
+	.add
+		width 335px
+
+
+	// .cont
+	// 	height 100%
+
+	.cont
+		position relative
+	
+	ul.data		
+		border-radius 2px
+		margin-bottom 10px
+		overflow auto
+		position absolute
+		top 0
+		bottom 29px
+		width 100%
+
+
+
+	li
+		padding 11px
+		position relative
+
+		background-color white
+		border-radius 1px
+
+		a, a:link, &
+			color $darkGrayColor
+			font-size 12px
+
+		& + li
+			margin-top 10px
+
+
+		a.title, a.url
+			color $darkGrayColor
+			overflow hidden
+			white-space nowrap
+			margin-right 17px
+			display block
+			text-overflow ellipsis
+
+
+		&.video
+			.videoWrapper
+				iframe.videoPlayer
+					width 314px
+					height 177px
+
+				display block
+				margin-bottom 20px
+
+		&.plainText
+			.text
+				color $darkGrayColor
+				font-size 22px
+				font-style italic
+				display block
+				margin-bottom 12px
+
+		&.url
+			.title
+				font-size 15px
+				color $darkGrayColor
+
+		&.image
+			.image
+				width 124px
+				background-size contain
+				background-repeat no-repeat
+				background-position center
+				display block
+				height 124px
+
+		.delete
+			image $base + 'trashLightGray.png' 14px 16px
+			display block
+			width 14px 
+			height 16px
+
+			position absolute
+			bottom 10px
+			right 10px
+
+			&:hover
+				image $base + 'trashDarkGray.png' 14px 16px
+
+
+// .-agora .v-data.t-dialog
+// 	width 376px
+
+// 	padding 0 0 20px 0
+	
+// 	li
+// 		padding 11px
+// 		border-radius 1px
+// 		background #FFFFFF
+// 		box-shadow 0px 0px 0px 2px rgba(0, 0, 0, 0.10)
+// 		position relative
+
+// 		a, &
+// 			font-size 12px
+
+// 		& + li
+// 			margin-top 20px
+
+
+// 		&.video
+// 			.videoWrapper
+// 				.videoPlayer
+// 					width 322px
+// 					height 181px
+
+// 				display block
+// 				margin-bottom 12px
+
+// 		&.plainText
+// 			.text
+// 				color #D9D9D9
+// 				font-size 22px
+// 				font-style italic
+// 				display block
+// 				margin-bottom 12px
+
+// 		&.url
+// 			.title
+// 				font-size 15px
+
+// 		&.image
+// 			.image
+// 				width 124px
+// 				background-size contain
+// 				background-repeat no-repeat
+// 				display block
+// 				height 124px
+
+// 		.delete
+// 			image $base + 'trash.png' 14px 16px
+// 			display block
+// 			width 14px 
+// 			height 16px
+
+// 			position absolute
+// 			bottom 10px
+// 			right 10px
+
+// 			&:hover
+// 				image $base + 'trashHover.png' 14px 16px

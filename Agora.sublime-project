@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": ".",
+			"name": "Agora Extension",
+			"file_exclude_patterns": [".DS_Store", "test.html", "manifest.json.bak", "*agora-built.js", "client_all.js", "all.js"],
+			"folder_exclude_patterns": ["*.git", "git", "build", "cache", "tests", "node_modules"],
+		}
+	]
+}

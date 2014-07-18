@@ -1,0 +1,8 @@
+http://www.cvs.com/shop/product-detail/Body-Wand-Personal-Massager-Mini?skuId=859523
+trimmed to
+http://www.cvs.com/shop/product-detail/-?skuId=859523
+
+
+note:
+injector looks for element class "productImgGallery" to determine if it is a product page.
+but img element is direct child of element with class "productImage"

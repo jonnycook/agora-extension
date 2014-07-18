@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "config.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites/FashionBug/config.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,CAAA;AAAA,EAAA,gBAAA,EAAkB,CAAC,QAAD,EAAW,OAAX,EAAoB,SAApB,CAAlB;AAAA,EACA,eAAA,EAAgB,KADhB;AAAA,EAEA,IAAA,EAAM,YAFN;AAAA,EAGA,KAAA,EAAO,CAAC,oBAAD,CAHP;AAAA,EAIA,QAAA,EAAU,QAJV;AAAA,EAKA,OAAA,EAAQ,IALR;AAAA,EAMA,OAAA,EAAQ,KANR;AAAA,EAOA,IAAA,EAAM,uCAPN;CAAA,CAAA,CAAA"
+}

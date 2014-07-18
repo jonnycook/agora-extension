@@ -1,0 +1,22 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+https://www.victoriassecret.com/bras/bra-clearance
+P 2014-07-06 Heath
+https://sp10048b28.guided.ss-omtrdc.net/?q=red&theme=vs
+F 2014-07-06 Heath
+P 2014-07-07 Heath
+https://www.victoriassecret.com/sleepwear/babydolls-and-slips
+P 2014-07-06 Heath
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+https://www.victoriassecret.com/victorias-secret-sport/sports-bras/fabulous-by-victorias-secret-sport-bra-vs-sport?ProductID=193106&CatalogueType=OLS
+P 2014-07-06 Heath
+https://www.victoriassecret.com/panties/thongs-and-v-strings/thong-panty-allover-lace-from-cotton-lingerie?ProductID=166310&CatalogueType=OLS
+P 2014-07-06 Heath
+
+==product== //Product Page - full portal test
+https://www.victoriassecret.com/victorias-secret-sport/sports-bras/knockout-by-victoria39s-secret-capri-vs-sport?ProductID=188075&CatalogueType=OLS
+P 2014-07-06 Heath
+https://www.victoriassecret.com/shoes/sneakers/canvas-bowie-wedge-sneaker-ash?ProductID=179694&CatalogueType=OLS
+P 2014-07-06 Heath
+
+//if the main product page has other products on it, then a product page url should be in the listing section

@@ -1,0 +1,8 @@
+utils/build-single-file
+cd resources/stylesheets/
+stylus -u ../../node_modules/nib/lib/nib.js < webapp.styl > webapp.css
+cd ../../
+zip -r webapp.zip resources/ build/webapp/ taxonomy build/require.config.js client.agora-built.js agora-built.js libs/
+scp webapp.zip root@agora.sh:/var/www/agora.sh
+rm webapp.zip
+ssh root@agora.sh "cd /var/www/agora.sh; mv webapp/entry.php ./; mv webapp/.htaccess ./; rm -rf webapp; mkdir webapp; mv webapp.zip webapp/; cd webapp; unzip webapp.zip; rm webapp.zip; mv ../entry.php ./; mv ../.htaccess ./"

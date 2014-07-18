@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "LuLusProductScraper.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites.off/LuLus/LuLusProductScraper.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,MAAA,CAAO,CAAC,yBAAD,CAAP,EAAoC,SAAC,cAAD,GAAA;SACnC,cAAc,CAAC,yBAAf,CAAyC,SAAzC,EACC;AAAA,IAAA,SAAA,EACC;AAAA,MAAA,WAAA,EACC;AAAA,QAAA,GAAA,EAAK,SAAA,GAAA;iBAAI,gCAAA,GAA+B,IAAC,CAAA,UAAhC,GAA4C,QAAhD;QAAA,CAAL;OADD;KADD;AAAA,IAGA,OAAA,EAAS,SAHT;AAAA,IAIA,QAAA,EAAU,aAJV;GADD,EADmC;AAAA,CAApC,CAAA,CAAA"
+}

@@ -1,0 +1,96 @@
+.-agora.v-productAdded
+	width 228px
+	height 64px
+	
+	position relative
+			
+	.p-picture
+		width 64px
+		height 64px
+		background-size contain
+		background-position center
+		background-repeat no-repeat
+		position absolute
+
+	.g-info
+		display block
+		margin-left 64px + 4px
+		top 0
+		padding-top 1px
+
+		.p-site
+			truncated-text()
+
+		.t-field
+			display block
+			.display
+				truncated-text()
+				display block
+			.edit-w
+				display none
+				background transparent url($base + "textFieldMiddle.png")
+				margin-left 15px
+				margin-right 15px
+				margin-left: 11px;
+				margin-top: -3px;
+				margin-bottom: -12px;
+
+				margin-bottom: -8px;
+				margin-top: -7px;
+
+				margin-left 10px
+				z-index 1
+				position relative
+				.w
+					margin-left -15px
+					display block
+					background url($base "textFieldLeft.png") no-repeat top left
+
+			.edit
+				&:focus 
+					outline-width 0
+				border-width 0
+				height 31px
+				width 100%
+				padding 0
+				margin 0
+
+				padding-right: 6px
+				padding-left: 24px
+				margin-left: -15px
+
+				background url($base "textFieldRight.png") no-repeat top right
+
+		.t-field.s-editing
+			.display
+				display none
+			.edit-w
+				display block
+
+		.p-title
+			.display
+				font-size 13px 
+				truncated-text()
+			margin-bottom 1px
+
+		.p-site
+			color $textColor
+			font-size 10px
+			margin-bottom 5px
+			display block
+
+		.p-price .edit-w
+			width 39px
+
+
+			
+	&:hover
+		.g-buttons
+			opacity 1
+
+
+	.v-button
+		padding 0 8px
+		position absolute
+		bottom 0
+		right 0

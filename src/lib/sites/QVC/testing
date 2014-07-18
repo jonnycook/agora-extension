@@ -1,0 +1,35 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.qvc.com/Clarks-Shoes-&-Handbags.category.9945.html?refine=1431718+4294967000+4294942883+4294942785
+P 2014-07-08 Heath
+http://www.qvc.com/CatalogSearch?langId=-1&storeId=10251&catalogId=10151&keyword=green
+P 2014-07-08 Heath
+
+
+
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.qvc.com/Tignanello-Pebble-Leather-All-Star-Shoulder-Bag-w-Vachetta-Trim.product.A252606.html
+P 2014-07-08 Heath
+http://www.qvc.com/Clarks-Bendables-Ina-Jewel-Fisherman-Sandals.product.A87604.html?sc=A87604-User&cm_sp=VIEWPOSITION-_-96-_-A87604&catentryImage=http://images.qvc.com/is/image/a/04/a87604.001?$uslarge$
+P 2014-07-08 Heath
+http://www.qvc.com/Steel-by-Design-Faith,-Hope-&-Love-Leather-Wrap-Charm-Bracelet.product.J291552.html?sc=J291552-Targeted&cm_sp=VIEWPOSITION-_-1-_-J291552&catentryImage=http://images.qvc.com/is/image/j/52/j291552.001?$uslarge$
+P 2014-07-08 Heath
+http://www.qvc.com/Judith-Ripka-Sterling-Green-Chalcedony-Faceted-Ring.product.J293708.html?sc=J293708-SRCH&cm_sp=VIEWPOSITION-_-25-_-J293708&catentryImage=http://images.qvc.com/is/image/j/08/j293708.001?$uslarge$
+F 2014-07-08 Heath
+http://www.qvc.com/Margaritaville-Mixed-Drink-Maker-w48-Programmed.product.K41052.html?sc=K41052-&cm_sp=VIEWPOSITION-_-3-_-K41052&catentryImage=http://images.qvc.com/is/image/k/52/k41052.001?$uslarge$
+F 2014-07-08 Heath
+
+==product== //Product Page - full portal test
+http://www.qvc.com/Temp-tations-Old-World-24-piece-Complete-Oven--to-Table-Set.product.K38331.html?sc=K38331-Targeted&cm_sp=VIEWPOSITION-_-3-_-K38331&catentryImage=http://images.qvc.com/is/image/k/31/k38331.001?$uslarge$
+P 2014-07-08 Heath
+http://www.qvc.com/Ninja-72-oz.-Ultima-Blender-wDual-Stage-Blending.product.K40232.html?refType=IOFFER&refNumber=K41052&sc=K40232-DTLR&cm_sp=UPSELL-_-IOFFER-_-1&relType=IOFFER&refLocation=1
+F 2014-07-08 Heath
+http://www.qvc.com/Ninja-Pulse-40-oz.-Blender-and-Food-Processor-with-Accessories.product.K39995.html?sc=K39995-&cm_sp=VIEWPOSITION-_-6-_-K39995&catentryImage=http://images.qvc.com/is/image/k/95/k39995.001?$uslarge$
+F 2014-07-08 Heath
+
+
+
+
+
+
+//if the main product page has other products on it, then a product page url should be in the listing section

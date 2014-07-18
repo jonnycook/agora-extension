@@ -1,0 +1,58 @@
+# BazaarVoice
+			rating: 
+				resource: 'reviewData'
+				scraper: PatternResourceScraper [
+					[/Write the first review<\\\/a>/, 0, -> 0]
+					[/alt=\\"(.*?) \/ 5\\"/, 1]
+				]
+
+			ratingCount: 
+				resource: 'reviewData'
+				scraper: PatternResourceScraper [
+					[/Write the first review<\\\/a>/, 0, -> 0]
+					[/<span class=\\"BVRRNumber\\">(\d+)/, 1]
+				]
+
+			reviews:
+				resource: 'reviewData'
+				scraper: ScriptedResourceScraper ->
+					reviewsText = @resource.match(/BVRRDisplayContentBodyID([\S\s]*)/)?[1]
+
+					if reviewsText
+						titleMatches = @matchAll reviewsText, /<span class=\\"BVRRValue BVRRReviewTitle\\">([\S\s]*?)<\\\/span>/, 1
+
+						contentMatches = @matchAll reviewsText, /<span class=\\"BVRRReviewText\\">([\S\s]*?)<\\\/span>/, 1
+
+						ratingsMatches = @matchAll reviewsText, /title=\\"(\d+) \/ 5\\"/, 1
+
+						authorMatches = @matchAll reviewsText, /<span class=\\"BVRRNickname\\">([^<]*?) <\\\/span>/, 1
+
+						dateMatches = @matchAll reviewsText, /<span class=\\"BVRRValue BVRRReviewDate\\">([^<]*)<\\\/span>/, 1
+
+						reviews = for titleMatch,i in titleMatches
+							title:titleMatch
+							content:contentMatches[i]
+							rating:ratingsMatches[i]
+							author:authorMatches[i]
+							date:dateMatches[i]
+
+						@value reviews
+					else
+						@value []
+					
+# Product Widgets
+		widgets: (cb) ->
+			@product.with 'more', 'reviews', (more, reviews) =>
+				widgets = @genWidgets more,
+					description: 'Description'
+					sizes: 'Sizes'
+					details: 'Details'
+					colors:
+						title: 'Colors'
+						map: (color) -> util.ucfirst color.name
+					reviews:
+						obj: reviews
+						map:
+							review: 'content'
+
+				cb widgets

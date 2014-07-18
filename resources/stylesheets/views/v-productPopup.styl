@@ -1,0 +1,285 @@
+.-agora.v-productPopup
+	width 204px
+	box-sizing border-box	
+	padding 9px
+
+	z-index $bottomBarZ + 1
+	
+	position relative
+	
+	.p-title, .p-site, > .price
+		color $textColor
+		display block
+		margin-top 12px
+		font-size 12px
+
+	// > .price
+	// 	margin-top 4px
+
+	.p-site
+		display none
+
+	// .v-productPrice
+	// 	.price
+	// 		font-size 14px
+	
+	span.p-picture
+		height 185px
+		background-size contain
+		background-position center
+		background-repeat no-repeat
+		background-color $lightGray
+		border-radius 2px
+		overflow hidden
+
+		&:hover
+			&:before
+				content ''
+				position absolute
+				border-radius 14px
+				// margin 2px 0 0 2px
+				width 28px
+				height 28px
+				shadow-style()
+				image $base + 'inspectWhite.png' 18px 14px
+				background-color $darkGray
+
+				background-repeat no-repeat
+				background-position center
+
+				left 50%
+				top 50%
+				margin-left -(@width/2)
+				margin-top -(@height/2)
+				z-index 1
+
+
+
+	.p-picture
+		width 185px
+		display block
+		cursor pointer
+
+	&.unconstrainedPictureHeight
+		.p-picture
+			position relative
+			height 185px
+
+			img
+				width 185px
+				position absolute
+
+	&.hasOffersPane .p-price
+		cursor pointer
+
+	&:not(:hover):not(.pinSidebar) .productSidebar
+		display none
+
+	.productSidebar.horizontal
+		.group:first-child
+			margin-left 7px	
+		left 0
+		width 100%
+		position absolute
+		top (185px+9px - 32px)
+	
+	.menu
+		display block
+		width 25px
+		height 7px
+		image $base + 'overflowMenu.png' 25px 7px
+
+		margin 10px 0 0 auto
+
+	.subAdd
+		display none
+		margin-top 4px
+		font-size 12px
+		margin-left -7px
+		> li
+			position relative
+			height 32px
+			width 100%
+			padding-right 7px
+
+			> a
+				font-size 12px
+				display block
+				height 32px
+				line-height 32px
+				padding 0 14px 0 31px
+
+				position absolute
+				left 0
+				right 0
+
+				background-repeat no-repeat
+
+			&.active
+				&:before
+					content ''
+					z-index 1
+
+					display block
+					position absolute
+					right -2px
+					width 7px
+					height 16px
+
+					top 50%
+					margin-top -8px
+
+					image $base + 'popoutArrowLeft.png' 7px 16px
+
+			&.feelings 
+				> a
+					background-position 6px 10px
+				&.positive, &
+					> a
+						image $base + 'smileLightGray.png' 20px 14px
+
+				&.negative
+					> a
+						image $base + 'frownLightGray.png' 20px 14px
+
+				&.veryPositive
+					> a
+						image $base + 'bigSmileLightGray.png' 20px 14px
+
+				&.veryNegative
+					> a
+						image $base + 'bigFrownLightGray.png' 20px 14px
+
+				&.neutral
+					> a
+						image $base + 'neutralFaceLightGray.png' 20px 12px
+
+
+				&:hover, &.active
+					&.positive, &
+						> a
+							image $base + 'smileDarkGray.png' 20px 14px
+
+					&.negative
+						> a
+							image $base + 'frownDarkGray.png' 20px 14px
+
+					&.veryPositive
+						> a
+							image $base + 'bigSmileDarkGray.png' 20px 14px
+
+					&.veryNegative
+						> a
+							image $base + 'bigFrownDarkGray.png' 20px 14px
+
+					&.neutral
+						> a
+							image $base + 'neutralFaceDarkGray.png' 20px 12px
+
+
+			&.arguments
+				&.for > a
+					background-position 10px center
+					image $base + 'proLightGray.png' 12px 12px 
+			
+				&.against > a
+					image $base + 'conLightGray.png' 12px 4px
+					background-position 10px center
+
+				> a
+					image $base + 'proConLightGray.png' 12px 17px
+					background-position 10px 7px
+
+
+				&:hover, &.active
+					&.for > a
+						image $base + 'proDarkGray.png' 12px 12px 
+				
+					&.against > a
+						image $base + 'conDarkGray.png' 12px 4px
+
+					> a
+						image $base + 'proConDarkGray.png' 12px 17px
+
+			&.attachments
+				> a
+					image $base + 'paperClipLightGray.png' 15px 17px
+					background-position 10px 7px
+
+				&:hover > a
+					image $base + 'paperClipDarkGray.png' 15px 17px
+
+
+	.actions
+		z-index 1000
+		position absolute
+
+		height 32px
+		// width 64px
+
+		right 10px
+		top 9px
+
+		background-color white
+		// border-radius 1px
+		border-bottom-left-radius 2px
+
+		*
+			float left
+
+		.dismiss
+			display inline-block
+			width 32px
+			height 32px
+			background-repeat no-repeat
+			background-position center
+			image $base + 'closeLightGray.png' 18px 18px
+
+			&:hover
+				image $base + 'closeDarkGray.png' 18px 18px
+
+		input.chosen
+			visibility hidden
+			width 32px
+			height 32px
+
+			&:checked:before
+				image $base + 'views/ProductPopup/checkDarkGray.png' 20px 17px
+
+			&:before
+				content ''
+				visibility visible
+				display inline-block
+
+				width 32px
+				height 32px
+				image $base + 'views/ProductPopup/checkLightGray.png' 20px 17px
+
+				background-repeat no-repeat
+				background-position center
+
+	// .productSidebar
+	// 	position absolute
+	// 	right -33px
+	// 	top 0
+
+	.feelingBadge
+		left -10px
+		top 9px
+		position absolute
+		@extend .-agora .feelingBadge.showText
+
+
+	.ratingInfo
+		display block
+		margin-top 5px
+
+		.rating
+			div div
+				image $base + 'starDarkGray.png' 18px 18px
+		// .reviews
+			// color $darkGray
+			// font-size 13px
+
+	.price
+		margin-top 6px

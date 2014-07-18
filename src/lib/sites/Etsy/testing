@@ -1,0 +1,26 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+https://www.etsy.com/search?q=bed&ship_to=US
+P 2014-07-08 Heath
+https://www.etsy.com/?ref=si_home
+P 2014-07-08 Heath
+https://www.etsy.com/people/TheJobinator/favorites/items-i-love?ref=hp_tastemaker
+P 2014-07-08 Heath
+https://www.etsy.com/shop/Studio1040?ref=hp_trending
+P 2014-07-08 Heath
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+https://www.etsy.com/listing/177490787/aya-contour-lumbar-pillow-cover-hand?ref=fp_treasury_3
+P 2014-07-08 Heath
+https://www.etsy.com/listing/156432409/black-leather-bag-soft-leather-bag-tote?ref=hp_trending
+P 2014-07-08 Heath
+
+==product== //Product Page - full portal test
+https://www.etsy.com/listing/163968079/penn-grid-lumbar-pillow-cover-hand?ref=listing-shop-header-2
+P 2014-07-08 Heath
+https://www.etsy.com/listing/126139336/felted-cat-bed-cat-cave-pattern-instant
+P 2014-07-08 Heath
+https://www.etsy.com/listing/153243895/you-me-pillow-white-cotton-and-silver?ref=hp_trending
+P 2014-07-08 Heath
+
+
+//if the main product page has other products on it, then a product page url should be in the listing section

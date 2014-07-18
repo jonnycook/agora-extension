@@ -1,0 +1,43 @@
+Injector
+
+
+samsclub issue
+Fancy issue
+costco issue - recs.richrelevance.com URL
+rei issue - zoom overlay on product image
+
+also issue in research file
+
+lowes not done, previous issue
+
+rakuten search pages don't let you click on images to load the page, cause agora dragger loads to quick, or something.
+also zoom grid loads to fast, have to go quick to the agora eye on product pages
+
+victoriassecret needs the agora logo on the top left side, cause there is a native fav button on the top right corner, blocking access
+also, zoom overlay blocks agora icon
+
+barnesandnoble product image on product page doesn't show logo
+barnes and noble - http://www.barnesandnoble.com/u/book-awards/379003334 first book on carosel doesn't work (maybe it does now?)
+
+
+
+
+
+
+Scraper
+
+BarnesAndNoble
+- Shipping - flat across site
+- author - image code present, needs fix so it doesn't fail if image isn't there
+
+
+Costco 
+- details and shipping need formatting
+- rating and review count are using Bazaar Voice
+
+Fab
+- Not scraping designer section on each product page, but could easily
+
+
+Fancy
+- Fancy boxes seem to start with a 5, http://fancy.com/things/595509055011687403/Snoop-Dogg-Fancy-Box, and need different code cause of their layout

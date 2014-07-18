@@ -1,0 +1,11 @@
+simple url structure
+
+http://www.toysrus.com/product/index.jsp?productId=13018810&ab=TRU:thome_rr:Hot%20Sellers:1
+
+trimmed to
+
+http://www.toysrus.com/product/index.jsp?productId=13018810
+
+
+
+I've commented out the description code that scrapes "From the manufacturer" section because it looks godawful in the portal

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "BundleTileItem.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/views/compare/BundleTileItem.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,IAAA;iSAAA;;AAAA,MAAA,CAAO,CAAC,MAAD,EAAS,MAAT,EAAiB,WAAjB,EAA8B,MAA9B,EAAsC,YAAtC,EAAoD,gBAApD,CAAP,EAA8E,SAAC,IAAD,EAAO,IAAP,EAAa,SAAb,EAAwB,IAAxB,EAA8B,CAA9B,EAAiC,YAAjC,GAAA;AAC7E,MAAA,cAAA;SAAM;AACL,qCAAA,CAAA;;;;KAAA;;AAAA,6BAAA,IAAA,GAAM,QAAN,CAAA;;0BAAA;;KAD4B,cADgD;AAAA,CAA9E,CAAA,CAAA"
+}

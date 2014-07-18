@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "BundleBarItem.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/views/ShoppingBarView/BundleBarItem.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,IAAA;iSAAA;;AAAA,MAAA,CAAO,CAAC,MAAD,EAAS,MAAT,EAAiB,WAAjB,EAA8B,MAA9B,EAAsC,YAAtC,EAAoD,eAApD,CAAP,EAA6E,SAAC,IAAD,EAAO,IAAP,EAAa,SAAb,EAAwB,IAAxB,EAA8B,CAA9B,EAAiC,WAAjC,GAAA;AAC5E,MAAA,aAAA;SAAM;AACL,oCAAA,CAAA;;;;KAAA;;AAAA,4BAAA,IAAA,GAAM,QAAN,CAAA;;yBAAA;;KAD2B,aADgD;AAAA,CAA7E,CAAA,CAAA"
+}

@@ -1,0 +1,25 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.kmart.com/
+P 2014-07-08 Heath
+http://www.kmart.com/toys-games-outdoor-play-bubbles-bubble-makers/b-20664
+P 2014-07-08 Heath
+http://www.kmart.com/search=blue?catalogId=10104&previousSort=ORIGINAL_SORT_ORDER&pageNum=2&viewItems=50&storeId=10151&viewType=pac
+P 2014-07-08 Heath
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.kmart.com/nerf-sports-bash-ball-tan/p-004W006932969001P
+P 2014-07-08 Heath
+http://www.kmart.com/uniflame-blue-glass-kit/p-028V005353192000P?prdNo=36
+P 2014-07-08 Heath
+http://www.kmart.com/bbq-pro-14in-tabletop-charcoal-grill-blue/p-028W006201693001P?prdNo=41
+F 2014-07-08 Heath
+http://www.kmart.com/amour-02-ct-diamond-tw-and-4/p-026V005666101000P?prdNo=42
+F 2014-07-08 Heath
+
+==product== //Product Page - full portal test
+http://www.kmart.com/lg-refurbished-lg-bd645-3d-blu-ray-disc/p-018V008011828000P?prdNo=1&blockNo=51&blockType=L51
+F 2014-07-08 Heath
+http://www.kmart.com/uniflame-blue-glass-kit/p-028V005353192000P?prdNo=36
+F 2014-07-08 Heath
+
+//if the main product page has other products on it, then a product page url should be in the listing section

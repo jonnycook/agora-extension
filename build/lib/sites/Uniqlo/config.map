@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "config.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites/Uniqlo/config.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,CAAA;AAAA,EAAA,gBAAA,EAAkB,CAAC,QAAD,EAAW,OAAX,CAAlB;AAAA,EACA,eAAA,EAAiB,IADjB;AAAA,EAEA,IAAA,EAAM,QAFN;AAAA,EAGA,KAAA,EAAO,CAAC,gBAAD,CAHP;AAAA,EAIA,QAAA,EAAU,QAJV;AAAA,EAKA,OAAA,EAAS,IALT;AAAA,EAMA,OAAA,EAAS,IANT;AAAA,EAOA,IAAA,EAAM,mCAPN;CAAA,CAAA,CAAA"
+}

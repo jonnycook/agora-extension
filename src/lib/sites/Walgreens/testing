@@ -1,0 +1,32 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.walgreens.com/store/c/solutions-drops-and-cases/ID=360305-tier3contactlens
+P 2014-07-07 Heath
+http://www.walgreens.com/search/results.jsp?Ntt=vacuum
+P 2014-07-07 Heath
+http://www.walgreens.com/store/c/productlist/N=359457
+P 2014-07-07 Heath
+http://www.walgreens.com/store/store/brands/general_brand.jsp?N=359497+362398&catId=359497&brandId=362398
+F 2014-07-07 Heath
+P 2014-07-07 Heath
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.walgreens.com/store/c/six-star-elite-series-professional-strength-casein-protein-dietary-supplement-powder-triple-chocolate/ID=prod6051381-product?utm_campaign=bazaarvoice&utm_medium=SearchVoice&utm_source=RatingsAndReviews&utm_content=Default
+P 2014-07-07 Heath
+
+
+==product== //Product Page - full portal test
+http://www.walgreens.com/store/c/nature's-bounty-fish-oil-1000-mg-dietary-supplement-rapid-release-liquid-softgel/ID=prod835497-product#BVRRWidgetID
+P 2014-07-07 Heath
+http://www.walgreens.com/store/c/nice!-2x-ultra-laundry-detergent-liquid-lake-breeze/ID=prod6091918-product
+F 2014-07-07 Heath
+P 2014-07-07 Heath
+http://www.walgreens.com/store/c/seventh-generation-natural-hand-wash-just-clean-unscented/ID=prod6146743-product
+P 2014-07-07 Heath
+http://www.walgreens.com/store/c/nice!-all-purpose-dish-brush/ID=prod6159053-product
+F 2014-07-07 Heath
+P 2014-07-07 Heath
+http://www.walgreens.com/store/c/seventh-generation-chlorine-free-ultra-thin-pads/ID=prod6155876-product
+F 2014-07-07 Heath
+P 2014-07-07 Heath
+
+//if the main product page has other products on it, then a product page url should be in the listing section

@@ -1,0 +1,309 @@
+.-agora .v-productMenu
+		width 32px
+
+		.popout
+			z-index 99999
+
+		&:not(.horizontal)
+			.group + .group
+				margin-top 16px
+
+		&.horizontal
+			width auto
+			height 32px
+			background-color white
+
+			.item
+				display block
+				float left
+				width 27px
+
+
+			.item + .item, .group + .group
+				margin-left 9px
+
+			// .group:first-child .item:first-child
+			// 	margin-left 0
+
+			.group
+				display inline-block
+
+			// .group + .group
+			// 	margin-left 8px
+
+		.item
+			position relative
+			height 32px
+			width 32px
+
+			// &.hover a
+			// 	background-color $lightGrayColor
+			// 	border-radius 1px
+			// 	font-size 12px
+			// 	width auto
+			// 	padding 0 9px 0 32px
+			// 	color white
+
+			&.feelings
+				&.positive
+					> a
+						image $base + 'smileDarkGray.png' 16px 12px
+
+				&.negative
+					> a
+						image $base + 'frownDarkGray.png' 16px 12px
+
+				&.veryPositive
+					> a
+						image $base + 'bigSmileDarkGray.png' 16px 12px
+
+				&.veryNegative
+					> a
+						image $base + 'bigFrownDarkGray.png' 16px 12px
+
+				&.neutral
+					> a
+						image $base + 'neutralFaceDarkGray.png' 16px 12px
+
+				&.mixed
+					> a
+						image $base + 'mixedExpressionDarkGray.png' 16px 12px
+
+				> a
+					image $base + 'neutralFaceDarkGray.png' 16px 12px
+
+					// background-position 6px 9px
+
+
+			&.arguments
+				&.for > a
+					// background-position 10px center
+					image $base + 'proDarkGray.png' 12px 12px 
+			
+				&.against > a
+					image $base + 'conDarkGray.png' 12px 4px
+					// background-position 10px center
+
+				> a
+					image $base + 'proConDarkGray.png' 12px 17px
+					// background-position 10px 7px
+
+
+			&.attachments
+				> a
+					image $base + 'paperClipDarkGray.png' 15px 17px
+					// background-position 9px 7px
+
+			> a
+				right 0
+				top 0
+				position absolute
+				font-size 0
+				background-repeat no-repeat
+				background-position center
+
+
+				display block
+				height 32px
+				width 100%
+				line-height 32px
+
+				white-space nowrap
+
+			&.priceComparison > a
+				image $base + 'dollarDarkGray.png' 12px 16px
+				// background-position 11px center
+
+			&.coupons > a
+				image $base + 'couponDarkGray.png' 14px 16px
+				// background-position 9px center
+
+			&.reviews > a
+				image $base + 'starDarkGray.png' 18px 18px
+				// background-position 9px center
+
+
+		&.white
+			.item
+				&.feelings
+					&.positive
+						> a
+							image $base + 'smileWhite.png' 16px 12px
+
+					&.negative
+						> a
+							image $base + 'frownWhite.png' 16px 12px
+
+					&.veryPositive
+						> a
+							image $base + 'bigSmileWhite.png' 16px 12px
+
+					&.veryNegative
+						> a
+							image $base + 'bigFrownWhite.png' 16px 12px
+
+					&.neutral
+						> a
+							image $base + 'neutralFaceWhite.png' 16px 12px
+
+					&.mixed
+						> a
+							image $base + 'mixedExpressionWhite.png' 16px 12px
+
+					> a
+						image $base + 'neutralFaceWhite.png' 16px 12px
+
+
+				&.arguments
+					&.for > a
+						image $base + 'proWhite.png' 12px 12px 
+				
+					&.against > a
+						image $base + 'conWhite.png' 12px 4px
+
+					> a
+						image $base + 'proConWhite.png' 12px 17px
+
+
+				&.attachments
+					> a
+						image $base + 'paperClipWhite.png' 15px 17px
+
+				&.priceComparison > a
+					image $base + 'dollarWhite.png' 12px 16px
+
+				&.coupons > a
+					image $base + 'couponWhite.png' 14px 16px
+
+				&.reviews > a
+					image $base + 'starWhite.png' 18px 18px
+
+
+
+		&.horizontal
+			.item
+				&.feelings 
+					&.positive
+						> a
+							image $base + 'smileDarkGray.png' 16px 12px
+
+					&.negative
+						> a
+							image $base + 'frownDarkGray.png' 16px 12px
+
+					&.veryPositive
+						> a
+							image $base + 'bigSmileDarkGray.png' 16px 12px
+
+					&.veryNegative
+						> a
+							image $base + 'bigFrownDarkGray.png' 16px 12px
+
+					&.neutral
+						> a
+							image $base + 'neutralFaceDarkGray.png' 16px 12px
+
+					&.mixed
+						> a
+							image $base + 'mixedExpressionDarkGray.png' 16px 12px
+
+					> a
+						image $base + 'neutralFaceDarkGray.png' 16px 12px
+						background-position center 12px
+
+
+
+				&.arguments
+					&.for > a
+						image $base + 'proDarkGray.png' 12px 12px 
+				
+					&.against > a
+						image $base + 'conDarkGray.png' 12px 4px
+
+					> a
+						image $base + 'proConDarkGray.png' 12px 17px
+
+
+				&.attachments
+					> a
+						image $base + 'paperClipDarkGray.png' 15px 17px
+
+				&.priceComparison > a
+					image $base + 'dollarDarkGray.png' 12px 16px
+
+				&.coupons > a
+					image $base + 'couponDarkGray.png' 14px 16px
+
+				&.reviews > a
+					image $base + 'starDarkGray.png' 18px 18px
+
+				&.watch > a
+					image $base + 'watchDarkGraySmall.png' 16px 16px
+
+				&:hover
+					&.feelings 
+						&.positive
+							> a
+								// image $base + 'smileDarkGray.png' 16px 12px
+								hover-style()
+
+						&.negative
+							> a
+								hover-style()
+								// image $base + 'frownDarkGray.png' 16px 12px
+
+						&.veryPositive
+							> a
+								hover-style()
+								// image $base + 'bigSmileDarkGray.png' 16px 12px
+
+						&.veryNegative
+							> a
+								hover-style()
+								// image $base + 'bigFrownDarkGray.png' 16px 12px
+
+						&.neutral
+							> a
+								hover-style()
+								// image $base + 'neutralFaceDarkGray.png' 16px 12px
+
+						&.mixed
+							> a
+								hover-style()
+								// image $base + 'mixedExpressionDarkGray.png' 16px 12px
+
+						> a
+								hover-style()
+							// image $base + 'neutralFaceDarkGray.png' 16px 12px
+
+
+					&.arguments
+						&.for > a
+							hover-style()
+							// image $base + 'proDarkGray.png' 12px 12px 
+					
+						&.against > a
+							hover-style()
+							// image $base + 'conDarkGray.png' 12px 4px
+
+						> a
+							hover-style()
+							// image $base + 'proConDarkGray.png' 12px 17px
+
+
+					&.attachments
+						> a
+							hover-style()
+							// image $base + 'paperClipDarkGray.png' 15px 17px
+
+					&.priceComparison > a
+						hover-style()
+						// image $base + 'dollarDarkGray.png' 12px 16px
+
+					&.coupons > a
+						hover-style()
+						// image $base + 'couponDarkGray.png' 14px 16px
+
+					&.reviews > a
+						hover-style()
+						// image $base + 'starDarkGray.png' 18px 18px

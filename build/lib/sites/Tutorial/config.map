@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "config.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites/Tutorial/config.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,CAAA;AAAA,EAAA,KAAA,EAAO,CAAC,gBAAD,CAAP;CAAA,CAAA,CAAA"
+}

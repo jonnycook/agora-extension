@@ -1,0 +1,60 @@
+artifact
+	Brand
+
+garment (clothes, clothing) : artifact
+	Wash Instructions
+	Materials
+	Color
+	Size
+	Gender
+	Origin
+	
+undergarment : garment
+
+shoe : garment
+
+brassier (bra) : undergarment
+	Neckline
+	Closure
+	Underbust Band
+	Straps
+	
+trouser (pant) : garment
+	Waistband
+	Closure
+	Hand Pockets
+	Back Pockets
+	Fit
+	Cuff
+
+baby toy : artifact
+	@icon babyToy
+
+computer hardware : artifact
+	Model
+
+video card : computer hardware
+	# Chipset
+	Core Clock
+	Boost Clock
+	GPU
+	
+	Memory
+		Effective Memory Clock
+		Memory Size
+		Memory Type
+	Interface
+
+cpu : computer hardware
+	Series
+	Socket Type
+	Core
+	Number of Cores
+	Number of Threads
+	Clock Speed
+	Turbo Clock Speed
+	L2 Cache
+	L3 Cache
+	Manufacturing Tech
+	DMI
+	Thermal Design Power

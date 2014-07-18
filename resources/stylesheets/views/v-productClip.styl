@@ -1,0 +1,47 @@
+div.-agora-productClip
+	reset()
+	z-index $bottomBarZ + 1
+	width 48px
+	height 48px
+	padding 2px
+
+	&.adding:before
+		content ''
+		position absolute
+		width 48px
+		height 48px
+		image $base + 'plus.png' 26px 26px
+		background-repeat no-repeat
+		background-position center
+		// background-color rgba(0, 0, 0, .15)
+		z-index 2
+		border-radius 2px
+
+	.p-image
+		margin 2px 0 0 2px
+		display block
+		background-size contain
+		background-position center
+		background-repeat no-repeat
+	
+	.g-productInfo
+		font-size 10px
+		position absolute
+		top 4px
+		left 48px + 6px
+		color $textColor
+		height 100%
+
+		.p-title, .p-price, .p-site
+			display block
+			width 94px
+			margin-bottom 2px
+			truncated-text()
+			font-size 10px
+		
+		.p-price
+			position absolute
+			bottom 11px
+			font-weight bold
+			margin-bottom 0
+			

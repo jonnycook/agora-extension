@@ -1,0 +1,284 @@
+html body .-agora div.product {
+  overflow: visible;
+}
+html body .-agora,
+html body .-agora.table {
+  text-align: left;
+  width: auto;
+  color: #fff;
+  padding: 0;
+  font: normal 12px/auto arial;
+  font-size: 12px;
+  border: 0;
+  margin: 0;
+  margin-left: 0;
+/* HTML5 display-role reset for older browsers */
+}
+html body .-agora label,
+html body .-agora.table label {
+  display: inline;
+}
+html body .-agora div,
+html body .-agora.table div,
+html body .-agora applet,
+html body .-agora.table applet,
+html body .-agora object,
+html body .-agora.table object,
+html body .-agora iframe,
+html body .-agora.table iframe,
+html body .-agora h1,
+html body .-agora.table h1,
+html body .-agora h2,
+html body .-agora.table h2,
+html body .-agora h3,
+html body .-agora.table h3,
+html body .-agora h4,
+html body .-agora.table h4,
+html body .-agora h5,
+html body .-agora.table h5,
+html body .-agora h6,
+html body .-agora.table h6,
+html body .-agora p,
+html body .-agora.table p,
+html body .-agora blockquote,
+html body .-agora.table blockquote,
+html body .-agora pre,
+html body .-agora.table pre,
+html body .-agora a,
+html body .-agora.table a,
+html body .-agora abbr,
+html body .-agora.table abbr,
+html body .-agora acronym,
+html body .-agora.table acronym,
+html body .-agora address,
+html body .-agora.table address,
+html body .-agora big,
+html body .-agora.table big,
+html body .-agora cite,
+html body .-agora.table cite,
+html body .-agora code,
+html body .-agora.table code,
+html body .-agora del,
+html body .-agora.table del,
+html body .-agora dfn,
+html body .-agora.table dfn,
+html body .-agora em,
+html body .-agora.table em,
+html body .-agora img,
+html body .-agora.table img,
+html body .-agora ins,
+html body .-agora.table ins,
+html body .-agora kbd,
+html body .-agora.table kbd,
+html body .-agora q,
+html body .-agora.table q,
+html body .-agora s,
+html body .-agora.table s,
+html body .-agora samp,
+html body .-agora.table samp,
+html body .-agora small,
+html body .-agora.table small,
+html body .-agora strike,
+html body .-agora.table strike,
+html body .-agora strong,
+html body .-agora.table strong,
+html body .-agora sub,
+html body .-agora.table sub,
+html body .-agora sup,
+html body .-agora.table sup,
+html body .-agora tt,
+html body .-agora.table tt,
+html body .-agora var,
+html body .-agora.table var,
+html body .-agora b,
+html body .-agora.table b,
+html body .-agora u,
+html body .-agora.table u,
+html body .-agora i,
+html body .-agora.table i,
+html body .-agora center,
+html body .-agora.table center,
+html body .-agora dl,
+html body .-agora.table dl,
+html body .-agora dt,
+html body .-agora.table dt,
+html body .-agora dd,
+html body .-agora.table dd,
+html body .-agora ol,
+html body .-agora.table ol,
+html body .-agora ul,
+html body .-agora.table ul,
+html body .-agora li,
+html body .-agora.table li,
+html body .-agora fieldset,
+html body .-agora.table fieldset,
+html body .-agora form,
+html body .-agora.table form,
+html body .-agora label,
+html body .-agora.table label,
+html body .-agora legend,
+html body .-agora.table legend,
+html body .-agora table,
+html body .-agora.table table,
+html body .-agora caption,
+html body .-agora.table caption,
+html body .-agora tbody,
+html body .-agora.table tbody,
+html body .-agora tfoot,
+html body .-agora.table tfoot,
+html body .-agora thead,
+html body .-agora.table thead,
+html body .-agora tr,
+html body .-agora.table tr,
+html body .-agora th,
+html body .-agora.table th,
+html body .-agora td,
+html body .-agora.table td,
+html body .-agora article,
+html body .-agora.table article,
+html body .-agora aside,
+html body .-agora.table aside,
+html body .-agora canvas,
+html body .-agora.table canvas,
+html body .-agora details,
+html body .-agora.table details,
+html body .-agora embed,
+html body .-agora.table embed,
+html body .-agora figure,
+html body .-agora.table figure,
+html body .-agora figcaption,
+html body .-agora.table figcaption,
+html body .-agora footer,
+html body .-agora.table footer,
+html body .-agora header,
+html body .-agora.table header,
+html body .-agora hgroup,
+html body .-agora.table hgroup,
+html body .-agora menu,
+html body .-agora.table menu,
+html body .-agora nav,
+html body .-agora.table nav,
+html body .-agora output,
+html body .-agora.table output,
+html body .-agora ruby,
+html body .-agora.table ruby,
+html body .-agora section,
+html body .-agora.table section,
+html body .-agora summary,
+html body .-agora.table summary,
+html body .-agora time,
+html body .-agora.table time,
+html body .-agora mark,
+html body .-agora.table mark,
+html body .-agora audio,
+html body .-agora.table audio,
+html body .-agora video,
+html body .-agora.table video,
+html body .-agora select,
+html body .-agora.table select,
+html body .-agora span,
+html body .-agora.table span,
+html body .-agora input,
+html body .-agora.table input,
+html body .-agora textarea,
+html body .-agora.table textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 12px;
+  vertical-align: baseline;
+  font-family: helvetica;
+  text-align: left;
+  width: auto;
+  min-width: auto;
+  font-weight: normal;
+  box-shadow: none;
+  background-color: transparent;
+  box-sizing: content-box;
+  float: none;
+  color: #676767;
+  line-height: normal;
+  overflow: visible;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+html body .-agora article,
+html body .-agora.table article,
+html body .-agora aside,
+html body .-agora.table aside,
+html body .-agora details,
+html body .-agora.table details,
+html body .-agora figcaption,
+html body .-agora.table figcaption,
+html body .-agora figure,
+html body .-agora.table figure,
+html body .-agora footer,
+html body .-agora.table footer,
+html body .-agora header,
+html body .-agora.table header,
+html body .-agora hgroup,
+html body .-agora.table hgroup,
+html body .-agora menu,
+html body .-agora.table menu,
+html body .-agora nav,
+html body .-agora.table nav,
+html body .-agora section,
+html body .-agora.table section {
+  display: block;
+}
+html body .-agora ol,
+html body .-agora.table ol,
+html body .-agora ul,
+html body .-agora.table ul,
+html body .-agora ul li,
+html body .-agora.table ul li,
+html body .-agora ol li,
+html body .-agora.table ol li {
+  list-style: none;
+}
+html body .-agora blockquote,
+html body .-agora.table blockquote,
+html body .-agora q,
+html body .-agora.table q {
+  quotes: none;
+}
+html body .-agora blockquote:before,
+html body .-agora.table blockquote:before,
+html body .-agora blockquote:after,
+html body .-agora.table blockquote:after,
+html body .-agora q:before,
+html body .-agora.table q:before,
+html body .-agora q:after,
+html body .-agora.table q:after {
+  content: '';
+  content: none;
+}
+html body .-agora table,
+html body .-agora.table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html body .-agora table td,
+html body .-agora.table table td {
+  dispaly: table-cell;
+}
+html body .-agora td,
+html body .-agora.table td {
+  display: table-cell;
+}
+html body .-agora tr,
+html body .-agora.table tr {
+  dispaly: table-row;
+}
+html body .-agora a,
+html body .-agora.table a,
+html body .-agora a:visited,
+html body .-agora.table a:visited,
+html body .-agora a:hover,
+html body .-agora.table a:hover,
+html body .-agora a:link,
+html body .-agora.table a:link {
+  border: 0;
+  color: #676767;
+  text-decoration: none;
+}

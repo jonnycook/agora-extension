@@ -1,0 +1,99 @@
+video
+http://www.amazon.com/gp/product/B00HGCA5GY/ref=olp_product_details?ie=UTF8&me=&seller=
+
+
+B00E19HYXW
+B00E19J052
+B00E19J052
+B00E19J04I
+
+
+
+B00FDOEDT2
+B00E1YL6I6
+
+
+
+no parent
+http://www.amazon.com/Toshiba-Satellite-C55-A5105-15-6-Inch-DVD-SuperMulti/dp/B00JTI4X3E/ref=pd_ts_zgc_e_565108_5_i?ie=UTF8&s=electronics&pf_rd_p=1611884842&pf_rd_s=right-5&pf_rd_t=101&pf_rd_i=507846&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=1ZR54JX1ZD4G7TNX96MJ
+
+
+parent
+http://www.amazon.com/PS3-250GB-Last-Bundle-Playstation-3/dp/B00GBCLG0E/ref=dp_ob_title_vg
+
+http://www.amazon.com/Keen-Santa-Cruz-Cvo-Fashion/dp/B00E19HYXW/ref=pd_sbs_shoe_4?ie=UTF8&refRID=17G77G7V96NJ158WDCYE
+
+
+http://www.amazon.com/Toshiba-Satellite-C55-A5105-15-6-Inch-DVD-SuperMulti/dp/B00JTI4X3E/ref=pd_ts_zgc_e_565108_5_i?ie=UTF8&s=electronics&pf_rd_p=1611884842&pf_rd_s=right-5&pf_rd_t=101&pf_rd_i=507846&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=1ZR54JX1ZD4G7TNX96MJ
+jQuery('#swfText').attr('href').match(/contentID=(.*?)&/)
+
+http://www.amazon.com/PS3-250GB-Last-Bundle-Playstation-3/dp/B00HK74G2E/?psc=1
+jQuery('#swftext').attr('href').match(/contentID=(.*?)&/)
+
+
+
+reviews
+	*
+		(no reviews)
+		<h2 id="reviewBucketHeader" class="a-spacing-small">
+		http://www.amazon.com/gp/product/B00I961QVO/ref=s9_al_bw_g193_i1?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-7&pf_rd_r=0HQ3YKRYGAPEZ3C27DZ9&pf_rd_t=101&pf_rd_p=1800317802&pf_rd_i=14333511
+
+	*
+		<h2 style="font-size: 18px;" class="orange" id="customerReviewsHeader">Customer Reviews</h2>
+		http://www.amazon.com/PS3-250GB-Last-Bundle-Playstation-3/dp/B00HK74G2E/?psc=1
+
+	*
+		<h2 class="a-spacing-small">Customer Reviews</h2>
+		http://www.amazon.com/gp/product/B003PGR70C/
+		http://www.amazon.com/dp/B00FB6RZVK/
+
+
+
+current style
+	*
+		http://www.amazon.com/gp/product/B00HK74G2E/?psc=1
+	*
+		http://www.amazon.com/gp/product/B003PGR70C/
+		http://www.amazon.com/Optimum-Nutrition-Standard-Double-Chocolate/dp/B000QSNYGI/ref=sr_1_1?ie=UTF8&qid=1400933176&sr=8-1&keywords=protein+powder
+
+
+
+
+===
+errors
+
+recent reviews not scraped +
+http://www.amazon.com/PS3-250GB-Last-Bundle-Playstation-3/dp/B00HK74G2E/?psc=1
+
+images not scraped +
+http://www.amazon.com/gp/product/B008P9IO2Y/?psc=1
+
+wine +
+http://www.amazon.com/ONEHOPE-California-Reds-Mixed-Pack/dp/B00DMXEM74/ref=lp_6503737011_1_1?s=wine&ie=UTF8&qid=1401013983&sr=1-1
+
+price (Current Unavailable) +
+http://www.amazon.com/gp/product/B0030A726W/?psc=1
+
+preorder +
+http://www.amazon.com/gp/product/B00DC7G2W8/?psc=1
+
+third party +
+http://www.amazon.com/gp/product/B0067TZ1D4/?psc=1
+
+kindle +
+http://www.amazon.com/gp/product/B005X0ZANO/?psc=1
+
+song +
+http://www.amazon.com/gp/product/B00CM1N2XM/?psc=1
+
+rent or by
+http://www.amazon.com/gp/product/1449355730/?psc=1
+
+no price
+http://www.amazon.com/gp/product/0571309550/?psc=1
+
+no amazon price
+
+rating
+http://www.amazon.com/gp/product/B000069U53/?psc=1
+http://www.amazon.com/gp/product/B000092PJX/?psc=1

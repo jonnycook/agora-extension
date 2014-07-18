@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "config.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites/SamsClub/config.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,CAAA;AAAA,EAAA,gBAAA,EAAkB,CAAC,QAAD,EAAW,OAAX,EAAoB,SAApB,EAA+B,QAA/B,CAAlB;AAAA,EACA,eAAA,EAAgB,IADhB;AAAA,EAEA,IAAA,EAAM,UAFN;AAAA,EAGA,KAAA,EAAO,CAAC,kBAAD,CAHP;AAAA,EAIA,QAAA,EAAU,QAJV;AAAA,EAKA,OAAA,EAAQ,IALR;AAAA,EAMA,OAAA,EAAQ,IANR;AAAA,EAOA,IAAA,EAAM,qCAPN;CAAA,CAAA,CAAA"
+}

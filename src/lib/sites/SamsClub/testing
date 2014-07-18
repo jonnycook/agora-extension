@@ -1,0 +1,33 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.samsclub.com/sams/rockers-recliners-loungers/1290.cp?navTrack=gnav3_fur
+niture_livingroomfurniture_rockersreclinersloungers&navAction=jump
+P 2014-07-08 Heath
+http://www.samsclub.com/sams/shoes/1090111.cp?cid=INT_APPAREL_SHOES
+P 2014-07-08 Heath
+http://www.samsclub.com/sams/search/searchResults.jsp?searchCategoryId=all&searchTerm=blue&fromHome=no&_requestid=258447
+F 2014-07-08 Heath
+
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.samsclub.com/sams/post-it-notes-1-5-x-2-100-sheets-pad-18-pads/prod4190038.ip?navAction=push
+P 2014-07-08 Heath
+http://www.samsclub.com/sams/ladies-slip-on-sneaker-various-colors/prod12810005.ip?navAction=push
+P 2014-07-08 Heath
+
+
+
+
+==product== //Product Page - full portal test
+http://www.samsclub.com/sams/post-it-notes-1-5-x-2-100-sheets-pad-18-pads/prod4190038.ip?navAction=push
+F 2014-07-08 Heath
+http://www.samsclub.com/sams/ladies-beach-classic-flip-flop-various-colors/prod13070006.ip?navAction=push
+F 2014-07-08 Heath
+http://www.samsclub.com/sams/sanford-col-erase-pencils/137190.ip
+F 2014-07-08 Heath
+
+
+
+
+
+
+//if the main product page has other products on it, then a product page url should be in the listing section

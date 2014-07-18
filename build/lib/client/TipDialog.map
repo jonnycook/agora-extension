@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "TipDialog.js",
+  "sourceRoot": "../../..",
+  "sources": [
+    "src/lib/client/TipDialog.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,MAAA,CAAO,SAAA,GAAA;SAAG,SAAA,GAAA;AAAG,QAAA,SAAA;WAAM;6BAAN;;uBAAA;;SAAH;EAAA,EAAH;AAAA,CAAP,CAAA,CAAA"
+}

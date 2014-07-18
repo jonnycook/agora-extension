@@ -1,0 +1,19 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.toysrus.com/family/index.jsp?categoryId=3250947
+P 2014-07-06 Heath
+http://www.toysrus.com/shop/index.jsp?categoryId=2255956&ab=TRU_Header:Utility2:TRU-Logo:Family
+P 2014-07-06 Heath
+http://www.toysrus.com/search/index.jsp?kwCatId=&kw=hippo&keywords=hippo&origkw=hippo&sr=1
+P 2014-07-06 Heath
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.toysrus.com/product/index.jsp?productId=22268626
+P 2014-07-06 Heath
+
+==product== //Product Page - full portal test
+http://www.toysrus.com/product/index.jsp?productId=24703116
+P 2014-07-06 Heath
+http://www.toysrus.com/product/index.jsp?productId=13018810
+P 2014-07-06 Heath
+
+//if the main product page has other products on it, then a product page url should be in the listing section

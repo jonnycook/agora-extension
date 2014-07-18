@@ -1,0 +1,199 @@
+@import 'nib/index'
+
+body
+	padding 0
+	font-family helvetica
+
+#page
+	width 1000px	
+	margin 0 auto
+	position relative
+
+#header
+	position relative
+	height 100px
+
+	h1
+		width 302px
+		display block
+		margin 0
+		position absolute
+		top 12px
+
+		a
+			display block
+			height 49px
+			image 'images/logo.png' 302px 49px
+			font-size 0
+
+
+	#search
+		position absolute
+		left 50%
+		top 18px
+		margin 0 0 0 -150px
+		background-color #EFEFEF
+		border-radius 4px
+		height 44px
+		width 481px
+		display inline-block
+		[type="text"]
+			background-color transparent
+			border-width 0
+			padding 0 10px
+			box-sizing border-box
+			width 371px
+			height 44px
+			font-size 15px
+
+
+		[type="submit"]
+			border-width 0
+			width 120px
+			height 44px
+			background-color transparent
+			image 'images/search.png' 120px 44px
+			font-size 0
+
+			position absolute
+			right 0
+			top 0
+
+
+	#headerMenu
+		position absolute
+		right 0
+		top 19px
+		a
+			float left
+			font-size 0
+
+			& + a
+				margin-left 10px
+
+		#headerMenuCart
+			width 36px
+			height 34px
+			image 'images/shoppingCart.png' 36px 34px
+
+		#headerMenuUser
+			margin-top 4px
+			width 24px
+			height 29px
+			image 'images/user.png' 24px 29px
+
+#nav
+	position absolute
+	left 10px
+	top 100px
+
+	margin 0
+	padding 0
+	background-color #EFEFEF
+	border-radius 4px
+	padding 10px 0
+	width 138px
+	list-style-type none
+
+	li
+		&.active:before
+			position absolute
+			content ''
+			width 10px
+			height 54px
+			image 'images/navDec.png' 10px 54px
+			right -10px
+
+		a
+			background-position 15px 20px
+			background-repeat no-repeat
+
+		&#navAll a
+			image 'images/navAllActive.png' 15px 12px
+
+		&#navHome a
+			image 'images/navHome.png' 40px 13px
+
+		&#navClothing a
+			image 'images/navClothing.png' 54px 17px
+
+		
+		&#navTechnology a
+			image 'images/navTechnology.png' 77px 16px
+
+		&#navSports a
+			image 'images/navSports.png' 44px 16px
+
+
+
+
+
+		&:not(.active)
+			&:first-child
+				border-top 1px solid white
+
+			border-bottom 1px solid white
+
+		&.active
+			background-color #006E90
+
+		margin 0
+		padding 0
+		font-size 0
+
+		a
+			display block
+			height 54px
+
+
+#content
+	margin 10px 201px 0
+	width 728px
+
+	#products
+		overflow hidden
+		.product
+			float left
+			width 186px
+			height 228px
+			margin-bottom 30px
+			&:not(:nth-child(3n))
+				margin-right 55px
+
+			.picture
+				display block
+				width 190px
+				height 191px
+				image 'images/productFrame.png' 190px 191px
+				text-align center
+				line-height 191px
+				margin-bottom 5px
+
+			&.placeholder
+				.picture
+					span
+						display inline-block
+						margin-top 39px
+						width 87px
+						height 105px
+						image 'images/productPlaceholder.png' 87px 105px
+						background-position center
+						background-repeat no-repeat
+
+			.picture
+				img
+					margin-top 20px
+			
+			.title
+				font-size 12px
+				color #666666
+				text-decoration none
+				display block
+				overflow hidden
+				text-overflow ellipsis
+				white-space nowrap
+
+			.price
+				color #006B8D
+				font-size 12px
+				font-weight bold

@@ -1,0 +1,23 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.rei.com/c/camping-and-hiking
+P 2014-07-08 Heath
+http://www.rei.com/search?query=red
+P 2014-07-08 Heath
+http://www.rei.com/s/deals
+P 2014-07-08 Heath
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.rei.com/product/869699/marmot-zeus-down-jacket-mens-2013-closeout
+P 2014-07-08 Heath
+http://www.rei.com/product/871874/black-diamond-spot-headlamp-2013-closeout
+P 2014-07-08 Heath
+
+==product== //Product Page - full portal test
+http://www.rei.com/product/863655/rei-lite-core-15-self-inflating-pad-special-buy
+P 2014-07-08 Heath
+http://www.rei.com/product/857918/suunto-ambit2-s-gps-multifunction-watch
+P 2014-07-08 Heath
+http://www.rei.com/product/810811/mammut-gravity-superdry-102mm-x-60m-dry-rope
+P 2014-07-08 Heath
+
+//if the main product page has other products on it, then a product page url should be in the listing section

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "FabProduct.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites.off/Fab/FabProduct.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAQyD"
+}

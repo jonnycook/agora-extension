@@ -1,0 +1,108 @@
+.-agora.v-reviews
+	.cont
+		overflow auto
+		height 100%
+
+	background-color $darkGray
+	border-radius 2px
+	padding 10px
+	width 300px
+	box-sizing border-box
+	font-size 12px
+	span, a, .cont
+		color white
+
+	overflow hidden
+
+	.review
+		& + .review
+			margin-top 10px
+
+		position relative
+
+		$starSize = 10px
+		$starMargin = 5px
+		$ratingWidth = ($starSize*5 + $starMargin*4)
+
+		.rating
+			display inline-block
+			width $ratingWidth
+			font-size 0
+			// height 14px
+			// vertical-align top
+			// line-height @height
+
+			margin-right 7px
+
+			span
+				display inline-block
+				width $starSize
+				height $starSize
+				image $base + 'starWhite.png' $starSize $starSize
+				opacity .1
+				// margin-top 2px
+
+				& + span
+					margin-left $starMargin
+
+			&.rating1, &.rating2, &.rating3, &.rating4, &.rating5 
+				span:nth-child(1)
+					// image $base + 'starWhite.png' 14px 14px
+					opacity 1
+
+			&.rating2, &.rating3, &.rating4, &.rating5 
+				span:nth-child(2)
+					// image $base + 'starWhite.png' 14px 14px
+					opacity 1
+
+			&.rating3, &.rating4, &.rating5 
+				span:nth-child(3)
+					// image $base + 'starWhite.png' 14px 14px
+					opacity 1
+
+			&.rating4, &.rating5 
+				span:nth-child(4)
+					// image $base + 'starWhite.png' 14px 14px
+					opacity 1
+
+			&.rating5 
+				span:nth-child(5)
+					// image $base + 'starWhite.png' 14px 14px
+					opacity 1
+
+
+		.title
+			font-weight bold
+			display block
+			color white
+			white-space nowrap
+			overflow hidden
+			text-overflow ellipsis
+			font-size 14px
+
+			// margin-left 7px
+
+			// width (280px - $ratingWidth - @margin-left)
+
+		.review
+			// overflow hidden
+			// max-height 43px
+			color white
+			font-size 13px
+
+		.readMore
+			background-color $darkGray
+			font-size 10px
+			display none
+
+			&:hover, &
+				color white
+
+	.review + .allReviews
+		margin-top 10px
+
+	.allReviews
+		font-weight bold
+		color white
+		display block
+

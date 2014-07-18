@@ -1,0 +1,28 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.sears.com/
+P 2014-07-06 Heath
+http://www.sears.com/automotive-basics-emergency-travel-general-items/b-1289783924
+
+http://www.sears.com/search=tv?catalogId=12605&storeId=10153&levels=TVs+%26+Electronics_Televisions&autoRedirect=true&viewItems=50&redirectType=CAT_REC_PRED&prop17=tv
+
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.sears.com/Kenmore-16--cu-ft-Countertop-Microwave---White/p-02073169000P
+P 2014-07-03 Heath
+http://www.sears.com/gloria-vanderbilt-women-s-amanda-colored-jeans/p-007VA68835712P
+P 2014-07-06 Heath
+
+
+==product== //Product Page - full portal test
+http://www.sears.com/cannon-micro-fleece-blanket/p-096B4051000P?prdNo=2&blockNo=2&blockType=G2
+F 2014-07-04 Heath
+P 2014-07-06 Heath
+http://www.sears.com/gloria-vanderbilt-women-s-amanda-colored-jeans/p-007VA68835712P
+P 2014-07-06 Heath
+http://www.sears.com/accu-gage-tire-gauge-with-pressure-release-valve/p-02820529000P?adCell=R11_DoD_Img_2&redirectType=SRDT
+P 2014-07-07 Heath
+http://www.sears.com/south-shore-flexible-collection-media-center-black-oak/p-00829531000P?hlSellerId=5107&redirectType=SRDT
+F 2014-07-07 Heath
+
+
+//if the main product page has other products on it, then a product page url should be in the listing section

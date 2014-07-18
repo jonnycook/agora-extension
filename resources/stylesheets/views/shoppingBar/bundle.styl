@@ -1,0 +1,45 @@
+.barItem.list.element.bundle
+	background-color transparent
+	height 56px
+	
+	> .userIndicator
+		display none
+
+	.bundle
+		z-index 1
+
+	&.dragging
+		background-color white
+
+		> .grip
+			&.hover
+				bottom 4px
+
+	> .grip
+		&.hover
+			height 18px
+			background #D9D9D9 none center no-repeat
+			image $base + 'views/SessionBarItem/sessionGrip.png' 47px 5px
+			border-radius 1px
+			left 2px
+			right 2px
+			bottom 2px
+			border-bottom-width 0
+			z-index 99999
+
+		z-index 1
+		position absolute
+		bottom 0
+		left 0
+		right 0
+		height 14px
+		border-bottom 4px solid rgba(0, 0, 0, .10)
+
+	&.empty
+		background-color white
+		image $base + 'icons/bundle.png' 30px 27px
+		background-position center
+		background-repeat no-repeat
+		height 48px
+		.grip
+			display none

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "AddItemView.js",
+  "sourceRoot": "../../..",
+  "sources": [
+    "src/lib/views/AddItemView.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,IAAA;iSAAA;;AAAA,MAAA,CAAO,CAAC,MAAD,EAAS,MAAT,EAAiB,WAAjB,EAA8B,MAA9B,EAAsC,YAAtC,CAAP,EAA4D,SAAC,IAAD,EAAO,IAAP,EAAa,SAAb,EAAwB,IAAxB,EAA8B,CAA9B,GAAA;AAC3D,MAAA,WAAA;SAAM;AAIL,kCAAA,CAAA;;;;KAAA;;AAAA,0BAAA,IAAA,GAAM,SAAA,GAAA,CAAN,CAAA;;uBAAA;;KAJyB,MADiC;AAAA,CAA5D,CAAA,CAAA"
+}

@@ -1,0 +1,85 @@
+
+.left .-agora.v-offers
+	padding-right 7px
+
+.right .-agora.v-offers
+	padding-left 7px
+
+
+.-agora.v-offers
+	width 200px	
+
+
+	.cont
+		overflow auto
+		height 100%
+
+	background-color $darkGrayColor
+	border-radius 2px
+	padding 10px
+	width 177px
+	box-sizing border-box
+	font-size 12px
+	span, a, .cont
+		color white
+
+	h2
+		margin 0 0 5px 0
+		font-size 14px
+		font-weight bold
+		color white
+
+		line-height: 17px;
+		margin: 0 0 2px 0;
+
+	.section + .section
+		margin-top 10px
+
+	.section
+		ul
+			li
+				overflow hidden
+			li + li
+				margin-top 5px
+
+		.offer
+			height 40px
+			padding 4px
+			border-radius 2px
+			.photo
+				display none
+
+			.title, .site
+				display block
+				max-width 193px
+				truncated-text()
+				color white
+
+			.price
+				display block
+				cursor pointer
+
+	&.images
+		ul
+			li + li
+				margin-top 10px
+
+		.section
+			.offer
+				&.selected
+					.price
+						font-weight bold
+
+					background-color rgba(255,255,255,0.2)
+				.photo
+					display block
+					width 40px
+					height 40px
+					background-size contain
+					background-position center
+					background-repeat no-repeat
+					float left
+					margin-right 5px
+					background-color white
+					border-radius 2px
+					overflow hidden

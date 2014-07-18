@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "OverstockProduct.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites/Overstock/OverstockProduct.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAQW"
+}

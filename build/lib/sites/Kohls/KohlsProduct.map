@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "KohlsProduct.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites/Kohls/KohlsProduct.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAQuB"
+}

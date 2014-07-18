@@ -1,0 +1,37 @@
+.-agora .v-chat
+	width 290px
+	max-height 350px
+	font-size 14px
+
+	.intro
+		font-style italic
+		font-size 14px
+		margin-bottom 9px
+		line-height 19px
+
+	.wrapper
+		max-height 200px
+		overflow auto
+		margin 18px
+		margin-bottom 18px
+
+	.messages
+		.message
+			margin-bottom 5px
+			.content, .sender
+				font-size 14px
+
+	form
+		background-color $darkGray
+		padding 13px
+		margin 2px
+		.message
+			width 100%
+
+	.sender
+		&:after
+			content ':'
+		font-weight bold
+
+		&:not(.you)
+			color $orange

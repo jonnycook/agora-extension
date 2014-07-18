@@ -1,0 +1,146 @@
+	.shoppingBarMenu
+		width 48px
+		.group
+			padding 2px 0
+
+			& + .group
+				border-top 2px solid #D8D8D8
+				width: 39px;
+				margin: 0 auto;
+
+				a
+					margin-left -3px
+
+		a
+			display block
+			width 44px
+			height 38px
+			margin-left 2px
+			background-repeat no-repeat
+			background-position center
+			position relative
+
+
+
+			&:hover
+				background-color #696969
+				white-space nowrap
+				border-top-left-radius 1px
+				border-bottom-left-radius 1px
+
+			&:not(:hover) label
+				display none
+
+			label
+				font-size 12px
+				position absolute
+				display block
+				height 100%
+				line-height 38px
+				background-color #696969
+				padding 0 10px 0 7px
+				color white
+				left 44px
+				border-top-right-radius 1px
+				border-bottom-right-radius 1px
+				cursor pointer
+
+			&.selectMode
+				image $base + 'views/ShoppingBar/selectIcon.png' 26px 26px
+				&:hover
+					image $base + 'views/ShoppingBar/selectIconHover.png' 26px 26px
+
+			&.settings
+				image $base + 'views/ShoppingBar/settingsIcon.png' 26px 26px
+				&:hover
+					image $base + 'views/ShoppingBar/settingsIconHover.png' 26px 26px
+
+			&.manual
+				image $base + 'views/ShoppingBar/manual.png' 26px 30px
+				&:hover
+					image $base + 'views/ShoppingBar/manualWhite.png' 26px 30px
+
+			&.supportedSites
+				image $base + 'views/ShoppingBar/supportedSites.png' 28px 28px
+				&:hover
+					image $base + 'views/ShoppingBar/supportedSitesWhite.png' 28px 28px
+
+			&.home
+				image $base + 'homeDarkGray.png' 28px 24px
+				&:hover
+					image $base + 'views/ShoppingBar/homeMenuHover.png' 28px 24px
+
+			&.workspace
+				image $base + 'workspaceDarkGray.png' 28px 17px
+				&:hover
+					image $base + 'workspaceWhite.png' 28px 17px
+
+			&.contact
+				image $base + 'views/ShoppingBar/contact.png' 28px 24px
+				&:hover
+					image $base + 'views/ShoppingBar/contactHover.png' 28px 24px
+
+			&.cancel
+				image $base + 'closeDarkGray.png' 18px 18px
+				&:hover
+					image $base + 'closeWhite.png' 18px 18px
+
+			&.createBundle
+				image $base + 'icons/bundle.png' 30px 27px
+				&:hover
+					image $base + 'views/ShoppingBar/createBundleHover.png' 30px 27px
+
+			&.createSession
+				image $base + 'sessionDarkGray.png' 34px 13px
+				&:hover
+					image $base + 'sessionWhite.png' 34px 13px
+
+			&.delete
+				image $base + 'views/ShoppingBar/delete.png' 22px 24px
+				&:hover
+					image $base + 'views/ShoppingBar/deleteHover.png' 22px 24px
+
+			&.split
+				image $base + 'splitDarkGray.png' 34px 18px
+				&:hover
+					image $base + 'splitWhite.png' 34px 18px
+
+			&.extract
+				image $base + 'extractDarkGray.png' 26px 21px
+				&:hover
+					image $base + 'extractWhite.png' 26px 21px
+
+			&.wrap
+				image $base + 'wrapDarkGray.png' 26px 27px
+				&:hover
+					image $base + 'wrapWhite.png' 26px 27px
+
+			&.collaborate
+				image $base + 'collaborate/collaborateDarkGray.png' 22px 26px
+				&:hover
+					image $base + 'collaborate/collaborateWhite.png' 22px 26px
+
+			&.share
+				image $base + 'shareDarkGray.png' 28px 28px
+				&:hover
+					image $base + 'shareWhite.png' 28px 28px
+
+			&.sharedWithYou
+				.count
+					&:not(.nonzero)
+						display none
+					position absolute
+					top -6px
+					right -7px
+					background-color $orange
+					width 18px
+					height 18px
+					border-radius 9px
+					color white
+					text-align center
+					line-height @height
+					z-index 1
+
+				image $base + 'collaborate/sharedWithYouDarkGray.png' 28px 21px
+				&:hover
+					image $base + 'collaborate/sharedWithYouWhite.png' 28px 21px

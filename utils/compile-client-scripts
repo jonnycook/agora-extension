@@ -1,0 +1,32 @@
+#!/bin/bash
+
+
+
+
+OUTPUT="client_all.js"
+echo "require([" > "$OUTPUT"
+
+FILES=`find build/lib/client -name "*.js"`
+for f in $FILES
+do
+	temp_var=${f#build/lib/}
+	echo "'${temp_var%.js}'," >> "$OUTPUT"
+done
+
+FILES=`find build/lib/views -name "*.js"`
+for f in $FILES
+do
+	temp_var=${f#build/lib/}
+	echo "'${temp_var%.js}'," >> "$OUTPUT"
+done
+
+FILES=`find build/lib/sites -name "*.js"`
+for f in $FILES
+do
+	temp_var=${f#build/lib/}
+	echo "'${temp_var%.js}'," >> "$OUTPUT"
+done
+
+echo "])" >> "$OUTPUT"
+
+echo Done

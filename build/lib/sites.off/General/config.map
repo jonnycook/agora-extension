@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "config.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites.off/General/config.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,CAAA;AAAA,EAAA,IAAA,EAAK,SAAL;AAAA,EACA,QAAA,EAAU,UADV;AAAA,EAEA,OAAA,EAAS,IAFT;AAAA,EAGA,OAAA,EAAS,OAHT;AAAA,EAIA,UAAA,EAAY,KAJZ;CAAA,CAAA,CAAA"
+}

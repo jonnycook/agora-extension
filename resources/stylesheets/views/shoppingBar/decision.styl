@@ -1,0 +1,150 @@
+.barItem.list.element.decision
+	height 48px
+	cursor pointer
+
+	.popupTrigger
+		position absolute
+		left 0
+		right 0
+		top 0
+		bottom 0
+		z-index 1
+
+	&.dragging .count
+		bottom 4px
+
+
+	&.placeholder
+		width 48px
+
+	.preview
+		display none
+	&.empty .preview
+		display block
+
+	/.-agoraDraggingCont .barItem.list.element.decision
+	/.-agora.v-shoppingBar.style1 .barItem.list.element.decision
+		&.empty
+			&:not(:hover) .count
+				display none
+
+			.count
+				position absolute
+				z-index 1
+
+				text-align center
+				line-height 26px
+
+				width 26px
+				height 26px
+				position absolute
+				left 50%
+				top 50%
+				margin-left -(@width/2)
+				margin-top -(@height/2)
+				// background-size contain
+				// background-position center
+				background-color white
+				border-radius 13px
+				overflow hidden
+				font-weight bold
+
+			.preview
+				background-color white
+				left 2px
+				top 2px
+				bottom 2px
+				right 2px
+				mosaic()
+				position absolute
+
+				&.empty
+					image $base + 'icons/listDarkGray.png' 38px 38px
+					background-position center
+					background-repeat no-repeat
+
+					.icon
+						display none
+
+				.icon
+					width 26px
+					height 26px
+					position absolute
+					left 50%
+					top 50%
+					margin-left -(@width/2)
+					margin-top -(@height/2)
+					background-size contain
+					background-position center
+					background-color white
+					border-radius 13px
+					overflow hidden
+
+	// /.-agora.v-shoppingBar.style2 .barItem.list.element.decision
+	// 	&.empty
+	// 		.count
+	// 			font-weight bold
+	// 			position absolute
+	// 			width 50%
+	// 			height 50%
+	// 			top 50%
+	// 			left 50%
+	// 			background-color white
+	// 			color $darkGray
+	// 			font-size 12px
+	// 			line-height 24px
+	// 			text-align center
+
+	// 		.preview
+	// 			.icon
+	// 				display none
+
+	// 			.image
+	// 				// @extend .-agora .t-item
+	// 				position absolute
+	// 				width 50%
+	// 				height 50%
+	// 				background-size contain
+	// 				background-position center
+	// 				background-repeat no-repeat
+
+	// 				&:nth-of-type(1)
+	// 					left 0
+	// 					top 0
+
+	// 				&:nth-of-type(2)
+	// 					left 50%
+	// 					top 0
+
+	// 				&:nth-of-type(3)
+	// 					top 50%
+	// 					left 0
+
+	// 				&:nth-of-type(4)
+	// 					display none
+	// 					top 50%
+	// 					left 50%
+
+	&:not(.empty)
+		.popupTrigger
+			display none
+		.count
+			font-size 12px
+			position absolute
+			// bottom 8px
+			bottom 2px
+			right 2px
+			background white
+			padding 2px 7px
+			z-index 1
+			border-radius 1px
+			// font-style italic
+			cursor pointer
+			font-weight bold
+
+			&:hover
+				color white
+				background-color $textColor
+
+	&.emptyList .count
+		display none

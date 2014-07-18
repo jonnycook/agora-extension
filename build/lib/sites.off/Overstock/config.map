@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "config.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites.off/Overstock/config.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,CAAA;AAAA,EAAA,gBAAA,EAAkB,CAAC,QAAD,EAAW,OAAX,EAAoB,SAApB,EAA+B,QAA/B,CAAlB;AAAA,EACA,eAAA,EAAgB,KADhB;AAAA,EAEA,IAAA,EAAM,WAFN;AAAA,EAGA,KAAA,EAAO,CAAC,mBAAD,CAHP;AAAA,EAIA,QAAA,EAAU,QAJV;AAAA,EAKA,OAAA,EAAQ,IALR;AAAA,EAMA,OAAA,EAAQ,KANR;AAAA,EAOA,IAAA,EAAM,sCAPN;AAAA,EAQA,UAAA,EAAY,SAAC,GAAD,GAAA;WAAS,GAAT;EAAA,CARZ;CAAA,CAAA,CAAA"
+}

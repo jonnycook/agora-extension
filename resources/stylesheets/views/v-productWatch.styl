@@ -1,0 +1,118 @@
+.-agora .v-productWatch
+	width 318px
+	margin 12px
+
+	.condition
+		font-size 0
+		margin-bottom 10px
+
+
+		&.listing
+			.listing
+				font-weight bold
+				// background-color white
+
+		&.new
+			.new
+				font-weight bold
+			.listing, .new
+				// background-color white
+
+		&.refurbished
+			.refurbished
+				font-weight bold
+
+			.listing, .new, .refurbished
+				// background-color white
+
+		&.used
+			.used
+				font-weight bold
+
+			.listing, .new, .refurbished, .used
+				// background-color white
+
+		.option
+			cursor pointer
+			display inline-block
+			font-size 11px
+			width 78px
+			text-align center
+			background-color rgba(255, 255, 255, .5)
+			height 25px
+			line-height @height
+
+			& + .option
+				margin-left 2px
+
+			&:first-child
+				border-top-left-radius 2px
+				border-bottom-left-radius 2px
+
+			&:last-child
+				border-top-right-radius 2px
+				border-bottom-right-radius 2px
+
+
+	.alertConditions
+		h2
+			font-size 18px
+			margin 0
+		.criterion
+			& + .criterion
+				margin-top 10px
+			height 29px
+			position relative
+			padding 0 0 0 35px
+
+			input[type="checkbox"]
+				position absolute
+				left 0
+				top -2px
+
+			label
+				line-height 29px
+
+			input[type="text"]
+				width 60px
+				position absolute
+				right 0 
+				text-align right
+
+	input[type="submit"], input[type="button"]
+		box-style()
+		height 29px
+		min-width 81px
+		font-size 12px
+		text-align center
+		margin-top 10px
+		width 153px
+
+	input[type="submit"]
+		background-color $darkGray
+		color white
+		margin-left 9px
+
+.-agora.dark .v-productWatch
+	label, h2
+		color white
+
+	.condition .option
+		color $darkGray
+
+	.condition
+		&.listing
+			.listing
+				background-color white
+
+		&.new
+			.listing, .new
+				background-color white
+
+		&.refurbished
+			.listing, .new, .refurbished
+				background-color white
+
+		&.used
+			.listing, .new, .refurbished, .used
+				background-color white

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "DecisionBarItem.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/views/ShoppingBarView/DecisionBarItem.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,IAAA;iSAAA;;AAAA,MAAA,CAAO,CAAC,MAAD,EAAS,MAAT,EAAiB,WAAjB,EAA8B,MAA9B,EAAsC,YAAtC,EAAoD,0BAApD,EAAgF,UAAhF,CAAP,EAAoG,SAAC,IAAD,EAAO,IAAP,EAAa,SAAb,EAAwB,IAAxB,EAA8B,CAA9B,EAAiC,YAAjC,EAA+C,QAA/C,GAAA;AACnG,MAAA,eAAA;SAAM;AACL,sCAAA,CAAA;;;;KAAA;;AAAA,8BAAA,OAAA,GAAS,SAAA,GAAA;aACP,IAAI,CAAC,WAAW,CAAC,iBAAjB,CAAmC,IAAC,CAAA,GAApC,EADO;IAAA,CAAT,CAAA;;2BAAA;;KAD6B,cADqE;AAAA,CAApG,CAAA,CAAA"
+}

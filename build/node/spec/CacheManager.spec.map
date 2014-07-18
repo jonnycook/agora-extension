@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "CacheManager.spec.js",
+  "sourceRoot": "../../..",
+  "sources": [
+    "src/node/spec/CacheManager.spec.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,IAAA,YAAA;;AAAA,YAAA,GAAe,OAAA,CAAQ,iBAAR,CAAf,CAAA;;AAAA,QAEA,CAAS,MAAT,EAAiB,SAAA,GAAA;SAChB,EAAA,CAAG,aAAH,EAAkB,SAAA,GAAA;AACjB,QAAA,YAAA;WAAA,YAAA,GAAe,GAAA,CAAA,aADE;EAAA,CAAlB,EADgB;AAAA,CAAjB,CAFA,CAAA"
+}

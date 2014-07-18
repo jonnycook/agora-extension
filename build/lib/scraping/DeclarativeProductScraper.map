@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "DeclarativeProductScraper.js",
+  "sourceRoot": "../../..",
+  "sources": [
+    "src/lib/scraping/DeclarativeProductScraper.coffee"
+  ],
+  "names": [],
+  "mappings": ";AA+gCkC"
+}

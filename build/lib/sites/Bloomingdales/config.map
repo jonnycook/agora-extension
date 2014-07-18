@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "config.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites/Bloomingdales/config.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,CAAA;AAAA,EAAA,gBAAA,EAAkB,CAAC,QAAD,EAAW,OAAX,CAAlB;AAAA,EACA,eAAA,EAAgB,IADhB;AAAA,EAEA,IAAA,EAAM,eAFN;AAAA,EAGA,KAAA,EAAO,CAAC,wBAAD,EAA2B,uBAA3B,CAHP;AAAA,EAIA,QAAA,EAAU,QAJV;AAAA,EAKA,OAAA,EAAQ,IALR;AAAA,EAMA,OAAA,EAAQ,KANR;AAAA,EAOA,IAAA,EAAM,0CAPN;AAAA,EAQA,MAAA,EAAO,IARP;CAAA,CAAA,CAAA"
+}

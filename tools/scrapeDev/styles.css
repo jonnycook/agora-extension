@@ -1,0 +1,99 @@
+#topBar {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+body {
+  padding-top: 40px;
+}
+.interface {
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  padding: 3px;
+  border-radius: 3px;
+}
+.interface:hover {
+  border-color: #aaa;
+}
+.interface .name {
+  font-weight: bold;
+  display: block;
+}
+li + li {
+  border-top: 1px solid #aaa;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.matchPreview {
+  max-height: 100px;
+  background-color: #eee;
+  overflow: auto;
+  border-radius: 2px;
+  white-space: pre-wrap;
+}
+.pattern input {
+  width: 100%;
+}
+.value {
+  display: none;
+}
+.showValues .value {
+  display: block;
+}
+li {
+  padding-top: 1px;
+  position: relative;
+}
+.delete {
+  position: absolute;
+  top: 15px;
+  left: -24px;
+  width: 20px;
+  height: 20px;
+}
+.interface {
+  position: relative;
+}
+.interface:not(:hover) .actions {
+  display: none;
+}
+.interface .actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.interface.minimized > :not(.name):not(.actions) {
+  display: none;
+}
+.add {
+  display: inline-block;
+  margin-left: 10px;
+}
+.interface.page input[type="text"] {
+  width: 100%;
+}
+.interface.page.downloaded {
+  background-color: #eee;
+}
+ul {
+  list-style-type: none;
+}
+#captures .pattern {
+  width: 100%;
+}
+#captures .captureData .match {
+  display: block;
+  white-space: pre-wrap;
+  max-height: 100px;
+  overflow: auto;
+  background-color: #eee;
+}
+#captures .captureData li + li {
+  margin-top: 5px;
+}
+#captures .captureData .selected {
+  font-weight: bold;
+}
+

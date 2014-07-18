@@ -1,0 +1,29 @@
+==listing== //Listing Page - passes if the badges show up and the main image is draggable
+http://www.bestbuy.com/site/Music-Movies/Music/cat02001.c?id=cat02001&pageType=REDIRECT&issolr=1&searchterm=music
+F 2014-07-08 Heath
+http://www.bestbuy.com/site/Digital-Cameras/Compact-System-Cameras/pcmcat214000050005.c?id=pcmcat214000050005
+F 2014-07-08 Heath
+http://www.bestbuy.com/site/mobile-cell-phones/mobile-phones-with-plans/pcmcat209400050001.c?id=pcmcat209400050001
+F 2014-07-08 Heath
+
+
+
+
+
+==page== //Product Page - passes if the badge shows up and the main image is draggable
+http://www.bestbuy.com/site/apple-3-3-lightning-to-usb-2-0-cable/6652043.p?id=1218803451837&skuId=6652043&st=electronics&cp=1&lp=2
+P 2014-07-08 Heath
+http://www.bestbuy.com/site/sandisk-ultra-8gb-sdhc-uhs-i-class-10-memory-card/5577795.p?id=1218665493050&skuId=5577795&st=electronics&cp=1&lp=3
+P 2014-07-08 Heath
+http://www.bestbuy.com/site/world-peace-is-none-of-your-business-deluxe-ed-only--best-buy/7324006.p?id=3245958&skuId=7324006&cmp=RMX&ky=1whxm51gbOgORrn6M8JOUlLjDtR0yY7Rx
+F 2014-07-08 Heath
+
+
+
+==product== //Product Page - full portal test
+http://www.bestbuy.com/site/microsoft-xbox-one-console/6483101.p?id=1219222474490&skuId=6483101
+P 2014-07-08 Heath
+http://www.bestbuy.com/site/insignia-wireless-keyboard/3674008.p?id=1219092663720&amp;skuId=3674008&amp;ep=pv-1.2.7,rc-tpv,av-1.0,rk-2
+P 2014-07-08 Heath
+
+//if the main product page has other products on it, then a product page url should be in the listing section

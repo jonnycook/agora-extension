@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "config.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/sites.off/Fab/config.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,CAAA;AAAA,EAAA,gBAAA,EAAkB,CAAC,QAAD,EAAW,OAAX,EAAoB,SAApB,CAAlB;AAAA,EACA,eAAA,EAAiB,IADjB;AAAA,EAEA,IAAA,EAAM,KAFN;AAAA,EAGA,KAAA,EAAO,CAAC,SAAD,CAHP;AAAA,EAIA,QAAA,EAAU,QAJV;AAAA,EAKA,OAAA,EAAS,IALT;AAAA,EAMA,OAAA,EAAS,IANT;AAAA,EAOA,IAAA,EAAM,4BAPN;CAAA,CAAA,CAAA"
+}

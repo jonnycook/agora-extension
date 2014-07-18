@@ -1,0 +1,210 @@
+define
+	General:
+		slug:'general'
+		currency: 'embedded'
+		scraper: true
+		enabled: 'check'
+		offersPane: false
+
+	Amazon:
+		hasProductClass: true
+		slug: 'amazon'
+		hosts: ['www.amazon.com']
+		scraper: true
+		currency: 'dollar'
+		icon: 'http://www.amazon.com/favicon.ico'
+
+		productUrl: (sid) -> "http://www.amazon.com/gp/product/#{sid}"
+		query: (product) -> sku:product.get 'productSid'
+
+	Zappos:
+		excludedFeatures: ['deals', 'offers']
+		hasProductClass: true
+		slug: 'zappos'
+		hosts: ['www.zappos.com']
+		currency: 'dollar'
+		scraper: true
+		hasMore: true
+		icon: 'http://www.zappos.com/favicon.ico'
+
+		productUrl: (sid) -> 
+			[productId, colorId] = sid.split('-')
+			if colorId
+				"http://www.zappos.com/viewProduct.do?productId=#{productId}&colorId=#{colorId}"
+			else
+				"http://www.zappos.com/viewProduct.do?productId=#{productId}"
+
+		query: (product) -> brand:product.get('more').brand.name, title:product.get('more').name
+
+	Etsy:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass: true
+		slug: 'etsy'
+		hosts: ['www.etsy.com']
+		currency: 'dollar'
+		scraper: true
+		hasMore: true
+		icon: 'http://www.etsy.com/favicon.ico'
+		productUrl: (sid) -> "http://www.etsy.com/listing/#{sid}"
+
+	BestBuy:
+		hasProductClass: true
+		slug: 'bestbuy'
+		hosts: ['www.bestbuy.com']
+		currency: 'dollar'
+		scraper: true
+		hasMore: true
+		icon: 'http://www.bestbuy.com/favicon.ico'
+		productUrl: (sid) -> 
+			[id, skuId] = sid.split '-'
+			"http://www.bestbuy.com/site/product/#{skuId}.p?id=#{id}&skuId=#{skuId}"
+
+		query: (product) ->
+			[id, skuId] = product.get('productSid').split '-'
+			sku:skuId
+
+	Newegg:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasMore: false
+		slug: 'newegg'
+		hosts: ['www.newegg.com']
+		currency: 'dollar'
+		scraper: true
+		icon: 'http://www.newegg.com/favicon.ico'
+		productUrl: (sid) ->
+		query: (product) -> 
+			more = product.get('more')
+			model = null
+
+			for section,details of more.details
+				for name,value of details
+					if name == 'Model'
+						model = value
+						break
+				break if model
+			sku:product.get('productSid')
+			brand:product.get('more').brand.name
+			model:model
+
+	Sears:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass:false
+		slug: 'sears'
+		hosts: ['www.sears.com']
+		currency: 'dollar'
+		scraper: true
+		hasMore:false
+		icon: 'http://www.sears.com/favicon.ico'
+		productUrl: (sid) -> "http://www.sears.com/-/p-#{sid}"
+
+	Target:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass:false
+		slug: 'target'
+		hosts: ['www.target.com']
+		currency: 'dollar'
+		scraper:true
+		hasMore:false
+		icon: 'http://www.target.com/favicon.ico'
+		productUrl: (sid) -> "http://www.sears.com/-/p-#{sid}"
+
+	Kohls:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass:false
+		slug: 'kohls'
+		hosts: ['www.kohls.com']
+		currency: 'dollar'
+		scraper:true
+		hasMore:false
+		icon: 'http://www.kohls.com/favicon.ico'
+		productUrl: (sid) -> "http://www.sears.com/-/p-#{sid}"
+
+	Overstock:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass:false
+		slug: 'overstock'
+		hosts: ['www.overstock.com']
+		currency: 'dollar'
+		scraper:true
+		hasMore:false
+		icon: 'http://www.overstock.com/favicon.ico'
+		productUrl: (sid) -> ""
+
+	Ebay:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass:false
+		slug: 'ebay'
+		hosts: ['www.ebay.com']
+		currency: 'dollar'
+		scraper:true
+		hasMore:false
+		icon: 'http://www.ebay.com/favicon.ico'
+		productUrl: (sid) -> ""
+
+	Gap:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass:false
+		slug: 'gap'
+		hosts: ['www.gap.com']
+		currency: 'dollar'
+		scraper:true
+		hasMore:false
+		icon: 'http://www.gap.com/favicon.ico'
+		productUrl: (sid) -> ""
+
+	HomeDepot:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass:false
+		slug: 'homedepot'
+		hosts: ['www.homedepot.com']
+		currency: 'dollar'
+		scraper:true
+		hasMore:false
+		icon: 'http://www.homedepot.com/favicon.ico'
+		productUrl: (sid) -> ""
+
+	JCPenney:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass:false
+		slug: 'jcpenney'
+		hosts: ['www.jcpenney.com']
+		currency: 'dollar'
+		scraper:true
+		hasMore:false
+		icon: 'http://www.jcpenney.com/favicon.ico'
+		productUrl: (sid) -> ""
+
+	Macys:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass:false
+		slug: 'macys'
+		hosts: ['www.macys.com', 'www1.macys.com']
+		currency: 'dollar'
+		scraper:true
+		hasMore:false
+		icon: 'http://www.macys.com/favicon.ico'
+		productUrl: (sid) -> ""
+
+	Kmart:
+		excludedFeatures: ['offers', 'deals', 'reviews']
+		hasProductClass:false
+		slug: 'macys'
+		hosts: ['www.kmart.com']
+		currency: 'dollar'
+		scraper:true
+		hasMore:false
+		icon: 'http://www.kmart.com/favicon.ico'
+		productUrl: (sid) -> ""
+
+
+	Dev:
+		hasProductClass: true
+		hosts: ['agoraext.local', 'baggg.it', 'agora.local', 'agoraext.dev']
+		productUrl: (sid) -> "##{sid}"
+
+	Webapp:
+		hosts: ['webapp.agora']
+		productUrl: (sid) -> "##{sid}"
+
+	Tutorial:
+		hosts: ['tutorial.agora']

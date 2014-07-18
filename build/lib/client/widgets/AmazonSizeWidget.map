@@ -1,0 +1,12 @@
+{
+  "sources" : [
+    "src\/lib\/client\/widgets\/AmazonSizeWidget.coffee"
+  ],
+  "mappings" : ";AAAA;AAAA,EAAA,MAAA,CAAO,SAAA,GAAA;WAAG,SAAA,GAAA;AAAG,UAAA,iBAAA;aAAM;AAClB,oCAAA,KAAA,GAAO,OAAP,CAAA;;AAAA,oCACA,OAAA,GAAQ,KADR,CAAA;;AAEa,QAAA,2BAAC,IAAD,GAAA;AACZ,UAAA,IAAC,CAAA,EAAD,GAAM,CAAA,CAAE,iBAAF,CAAN,CADY;QAAA,CAFb;;iCAAA;;WADS;IAAA,EAAH;EAAA,CAAP,CAAA,CAAA;AAAA",
+  "sourceRoot" : ".\/..\/..\/..\/..\/",
+  "names" : [
+
+  ],
+  "file" : "AmazonSizeWidget.js",
+  "version" : 3
+}

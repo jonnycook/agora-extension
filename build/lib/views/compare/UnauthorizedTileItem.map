@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "UnauthorizedTileItem.js",
+  "sourceRoot": "../../../..",
+  "sources": [
+    "src/lib/views/compare/UnauthorizedTileItem.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,IAAA;iSAAA;;AAAA,MAAA,CAAO,CAAC,MAAD,EAAS,MAAT,EAAiB,WAAjB,EAA8B,MAA9B,EAAsC,YAAtC,EAAoD,YAApD,CAAP,EAA0E,SAAC,IAAD,EAAO,IAAP,EAAa,SAAb,EAAwB,IAAxB,EAA8B,CAA9B,EAAiC,QAAjC,GAAA;AACzE,MAAA,oBAAA;SAAM;AACL,2CAAA,CAAA;;;;KAAA;;AAAA,mCAAA,IAAA,GAAM,SAAA,GAAA;aACL,IAAC,CAAA,IAAD,GACC;AAAA,QAAA,IAAA,EAAM,cAAN;AAAA,QACA,WAAA,EAAY,EADZ;QAFI;IAAA,CAAN,CAAA;;gCAAA;;KADkC,UADsC;AAAA,CAA1E,CAAA,CAAA"
+}

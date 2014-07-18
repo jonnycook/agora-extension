@@ -1,0 +1,9 @@
+if [ -e web-accessible-resources ]; then
+	rm web-accessible-resources
+fi
+IFS=$'\n'
+FILES=`find "resources/images" -type f -not -iname ".*"`
+for f in $FILES
+do
+	echo "		\"$f\"," >> web-accessible-resources
+done
