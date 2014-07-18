@@ -1,4 +1,4 @@
 .gitignore.core
 .git.core
 src/lib/sites/git
-build/scrape/env.phantom.js
+build/scraper/env.phantom.js
