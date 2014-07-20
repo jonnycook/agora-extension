@@ -124,6 +124,12 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore', 'model/ObservableValu
 						@path[@path.length - 2].dropped element, dropAction
 						if element.isA('Product') || element.isA('ProductVariant')
 							view.callMethod 'productAdded', [modelName:element.modelName, instanceId:element.get 'id']
+
+				else if onData == 'priceWatch'
+					@resolveElements elementData, (element) =>
+						if element.isA('Product') || element.isA('ProductVariant')
+							view.callMethod 'productAdded', [modelName:element.modelName, instanceId:element.get 'id']
+
 				else
 					@resolveElements elementData, onData, (element, onView) =>
 						onView.dropped element, dropAction

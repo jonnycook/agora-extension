@@ -1,6 +1,6 @@
 {
 	"name": "Agora",
-	"version": "0.3.22",
+	"version": "0.3.23",
 	"manifest_version": 2,
 	
 	"description": "Agora is a browser extension, mobile app, and web site designed to make online shopping better.",
@@ -476,6 +476,8 @@
         "resources/images/watchDarkGray@2x.png",
         "resources/images/watchDarkGraySmall.png",
         "resources/images/watchDarkGraySmall@2x.png",
+        "resources/images/watchWhiteSmall.png",
+        "resources/images/watchWhiteSmall@2x.png",
         "resources/images/workspaceDarkGray.png",
         "resources/images/workspaceDarkGray@2x.png",
         "resources/images/workspaceWhite.png",

@@ -8,16 +8,19 @@ define(['underscore', 'model/ModelInstance', 'CommandExecuter', 'model/Observabl
   var MessageStream, Updater, UpdaterTransport, WebSocketTransport, parse;
   parse = (function(_this) {
     return function(json, cb) {
-      var e;
+      var e, obj;
       if (cb == null) {
         cb = null;
       }
       if (cb) {
+        obj = null;
         try {
-          return cb(true, JSON.parse(json));
+          obj = JSON.parse(json);
         } catch (_error) {
-          return cb(false, json);
+          e = _error;
+          background.error('JsonError', e);
         }
+        return cb(obj !== null, obj != null ? obj : json);
       } else {
         try {
           return JSON.parse(json);
@@ -162,6 +165,7 @@ define(['underscore', 'model/ModelInstance', 'CommandExecuter', 'model/Observabl
                     return done(true);
                   });
                 } else {
+                  console.log(changes);
                   return done(false);
                 }
               });
@@ -184,7 +188,13 @@ define(['underscore', 'model/ModelInstance', 'CommandExecuter', 'model/Observabl
                       _this.updater.db.addMapping(response.mapping);
                     }
                     _this.updateToken = response.updateToken;
-                    return done(true);
+                    if (response.changes != null) {
+                      return _this.executeChanges(response.changes, _this.user, function() {
+                        return done(true);
+                      });
+                    } else {
+                      return done(true);
+                    }
                   } else {
                     return done(false, response);
                   }

@@ -4,7 +4,7 @@ var __hasProp = {}.hasOwnProperty,
 
 define(function() {
   return {
-    d: ['View', 'util', 'util2', 'views/ShoppingBarView/BarItemView', 'views/CompetitiveProcessView', 'views/ReviewsView', 'views/AddItemView', 'views/CouponsView', 'views/AddDescriptorView', 'views/AddDataView', 'views/compare/CompareView', 'views/ContactView', 'views/ShareView', 'views/SharedWithYouView', 'views/CollaborateView', 'views/ChatView', 'devAction', 'views/SocialShareView', 'views/BuyView', 'views/ProductWatchView'],
+    d: ['View', 'util', 'util2', 'views/ShoppingBarView/BarItemView', 'views/CompetitiveProcessView', 'views/ReviewsView', 'views/AddItemView', 'views/CouponsView', 'views/AddDescriptorView', 'views/AddDataView', 'views/compare/CompareView', 'views/ContactView', 'views/ShareView', 'views/SharedWithYouView', 'views/CollaborateView', 'views/ChatView', 'devAction', 'views/SocialShareView', 'views/BuyView', 'views/ProductWatchView', 'views/ProductWatchesView'],
     c: function() {
       var ShoppingBarView;
       return ShoppingBarView = (function(_super) {
@@ -17,7 +17,7 @@ define(function() {
           this.opts = opts != null ? opts : {};
           ShoppingBarView.__super__.constructor.apply(this, arguments);
           this.startTime = new Date().getTime();
-          this.el = this.viewEl('<div class="-agora v-shoppingBar style1"> <div class="actions"> <span class="count" /> <a href="#" class="home" /> <a href="#" class="moveUp">Up</a> </div> <div class="contentWrapper"> <div class="content"> <div class="element" /> <!--<div class="add" />--> </div> </div> <a href="http://agora.sh/connect.html" target="_blank" class="signIn">Sign In to Agora</a> <span class="message" /> <span class="errorState">!</span> <div class="right"> <span class="collaborate" /> <span class="bagsby" /> </div> <span class="devAction"><span class="reloadDevAction" /><span class="devAction" /><span class="reloadStyles" /></span> <span class="needsReload">To continue to use Agora, please reload this page. Thank you!</span> </div>');
+          this.el = this.viewEl('<div class="-agora v-shoppingBar style1"> <div class="actions"> <span class="count" /> <a href="#" class="home" /> <a href="#" class="moveUp">Up</a> </div> <div class="contentWrapper"> <div class="content"> <div class="element" /> <!--<div class="add" />--> </div> </div> <a href="http://agora.sh/connect.html" target="_blank" class="signIn">Sign In to Agora</a> <span class="message" /> <span class="errorState">!</span> <div class="right"> <span class="collaborate" /> <span class="priceWatch" /> <span class="bagsby" /> </div> <span class="devAction"><span class="reloadDevAction" /><span class="devAction" /><span class="reloadStyles" /></span> <span class="needsReload">To continue to use Agora, please reload this page. Thank you!</span> </div>');
           this.el.find(".devAction .reloadDevAction").click(function() {
             return devAction.reloadDevAction();
           });
@@ -482,6 +482,39 @@ define(function() {
               }
             };
           })(this));
+          util.initDragging(this.el.find('.right .priceWatch'), {
+            enabled: false,
+            root: true,
+            acceptsDrop: true,
+            dragArea: true,
+            onDroppedOn: (function(_this) {
+              return function(el, fromEl) {
+                return _this.onDroppedOn(el, fromEl, 'priceWatch');
+              };
+            })(this)
+          });
+          this.el.find('.right .priceWatch').click((function(_this) {
+            return function() {
+              var frameEl, productWatchesView;
+              productWatchesView = new ProductWatchesView(_this.contentScript);
+              frameEl = Frame.wrapInFrame(productWatchesView.el, {
+                type: 'fullscreen',
+                scroll: true,
+                resize: function(width, height) {
+                  return [width - 100, height - 100];
+                },
+                close: function() {
+                  return productWatchesView.destruct();
+                }
+              });
+              productWatchesView.close = function() {
+                return Frame.close(frameEl);
+              };
+              frameEl.appendTo(document.body);
+              Frame.show(frameEl);
+              return productWatchesView.represent();
+            };
+          })(this));
         }
 
         ShoppingBarView.prototype.closeMenu = function() {
@@ -885,7 +918,7 @@ define(function() {
           return util.resolveDraggingData(el, (function(_this) {
             return function(data) {
               var to;
-              to = toEl !== 'up' ? {
+              to = !(toEl === 'up' || toEl === 'priceWatch') ? {
                 view: toEl.data('view').id
               } : toEl;
               if (fromEl) {
@@ -1025,110 +1058,120 @@ define(function() {
           productAdded: function(id) {
             return setTimeout(((function(_this) {
               return function() {
-                var el;
-                el = _this.lastDroppedOn.data('view') === _this ? _this.lastDroppedOn.data('view').items().last() : _this.lastDroppedOn.data('view').elementType === 'Session' || _this.lastDroppedOn.data('view').elementType === 'Bundle' ? _this.lastDroppedOn.data('view').barItem.items().last() : _this.lastDroppedOn;
-                return _tutorial('Belt/RemoveItem', {
-                  positionEl: el,
-                  attachEl: $(document.body),
-                  position: 'top'
-                }, {
-                  close: true
-                }, function(showTutorial) {
-                  var cancelClose, closing, closingTimerId, count, editPin, enter, initiateClose, leave, popup;
-                  if (!(!window.suppressAddFeeling && (Agora.settings.autoFeelings.get() || _this.opts.context === 'tutorial'))) {
-                    return;
-                  }
-                  _this.disableProductPopups = true;
-                  editPin = false;
-                  closing = false;
-                  count = 0;
-                  initiateClose = function() {
-                    closing = true;
-                    return popup.initiateClose();
+                var el, frame, productWatchView;
+                if (_this.lastDroppedOn === 'priceWatch') {
+                  productWatchView = _this.createView('ProductWatch');
+                  productWatchView.represent(id);
+                  frame = Frame.frameAbove(_this.el.find('.right .priceWatch'), productWatchView.el, {
+                    type: 'balloon'
+                  });
+                  return productWatchView.close = function() {
+                    return frame.close();
                   };
-                  cancelClose = function() {
-                    popup.cancelClose();
-                    return closing = false;
-                  };
-                  enter = function() {
-                    ++count;
-                    return cancelClose();
-                  };
-                  leave = function() {
-                    return --count;
-                  };
-                  closingTimerId = null;
-                  _this.productAddedPopup = popup = util.showPopup(el, {
-                    close: false,
-                    createPopup: function(cb, close) {
-                      var addFeelingView;
-                      addFeelingView = _this.createView('AddFeelingView', {
-                        auto: true
-                      });
-                      _this.propOpen(addFeelingView);
-                      addFeelingView.el.find('input[name=feeling]').keyup(function(e) {
-                        if (e.keyCode === 13) {
-                          if (editPin) {
-                            return editPin = false;
-                          }
-                        } else {
-                          editPin = true;
-                          return cancelClose();
-                        }
-                      });
-                      addFeelingView.represent(id, function() {
-                        var frame;
-                        frame = Frame.frameFixedAbove(el, addFeelingView.el, {
-                          type: 'balloon',
-                          color: 'dark',
-                          onClose: function() {
-                            addFeelingView.destruct();
-                            return addFeelingView = null;
-                          }
+                } else {
+                  el = _this.lastDroppedOn === 'up' ? void 0 : _this.lastDroppedOn.data('view') === _this ? _this.lastDroppedOn.data('view').items().last() : _this.lastDroppedOn.data('view').elementType === 'Session' || _this.lastDroppedOn.data('view').elementType === 'Bundle' ? _this.lastDroppedOn.data('view').barItem.items().last() : _this.lastDroppedOn;
+                  return _tutorial('Belt/RemoveItem', {
+                    positionEl: el,
+                    attachEl: $(document.body),
+                    position: 'top'
+                  }, {
+                    close: true
+                  }, function(showTutorial) {
+                    var cancelClose, closing, closingTimerId, count, editPin, enter, initiateClose, leave, popup;
+                    if (!(!window.suppressAddFeeling && (Agora.settings.autoFeelings.get() || _this.opts.context === 'tutorial'))) {
+                      return;
+                    }
+                    _this.disableProductPopups = true;
+                    editPin = false;
+                    closing = false;
+                    count = 0;
+                    initiateClose = function() {
+                      closing = true;
+                      return popup.initiateClose();
+                    };
+                    cancelClose = function() {
+                      popup.cancelClose();
+                      return closing = false;
+                    };
+                    enter = function() {
+                      ++count;
+                      return cancelClose();
+                    };
+                    leave = function() {
+                      return --count;
+                    };
+                    closingTimerId = null;
+                    _this.productAddedPopup = popup = util.showPopup(el, {
+                      close: false,
+                      createPopup: function(cb, close) {
+                        var addFeelingView;
+                        addFeelingView = _this.createView('AddFeelingView', {
+                          auto: true
                         });
-                        frame.el.css({
-                          marginTop: -17
-                        });
-                        addFeelingView.close = function(esc) {
-                          if (esc) {
-                            return popup.close();
+                        _this.propOpen(addFeelingView);
+                        addFeelingView.el.find('input[name=feeling]').keyup(function(e) {
+                          if (e.keyCode === 13) {
+                            if (editPin) {
+                              return editPin = false;
+                            }
                           } else {
-                            return popup.initiateClose();
+                            editPin = true;
+                            return cancelClose();
                           }
-                        };
-                        addFeelingView.sizeChanged = function() {
-                          return frame.update();
-                        };
-                        frame.el.mouseenter(enter).mouseleave(leave);
-                        return cb(frame.el);
-                      });
-                      return null;
-                    },
-                    onClose: function(el) {
-                      var _ref;
-                      if ((_ref = el.data('frame')) != null) {
-                        if (typeof _ref.close === "function") {
-                          _ref.close();
+                        });
+                        addFeelingView.represent(id, function() {
+                          frame = Frame.frameFixedAbove(el, addFeelingView.el, {
+                            type: 'balloon',
+                            color: 'dark',
+                            onClose: function() {
+                              addFeelingView.destruct();
+                              return addFeelingView = null;
+                            }
+                          });
+                          frame.el.css({
+                            marginTop: -17
+                          });
+                          addFeelingView.close = function(esc) {
+                            if (esc) {
+                              return popup.close();
+                            } else {
+                              return popup.initiateClose();
+                            }
+                          };
+                          addFeelingView.sizeChanged = function() {
+                            return frame.update();
+                          };
+                          frame.el.mouseenter(enter).mouseleave(leave);
+                          return cb(frame.el);
+                        });
+                        return null;
+                      },
+                      onClose: function(el) {
+                        var _ref;
+                        if ((_ref = el.data('frame')) != null) {
+                          if (typeof _ref.close === "function") {
+                            _ref.close();
+                          }
                         }
+                        _this.lastDroppedOn.unbind('mouseleave', leave).unbind('mouseenter', enter);
+                        delete _this.disableProductPopups;
+                        delete _this.productAddedPopup;
+                        return clearTimeout(closingTimerId);
                       }
-                      _this.lastDroppedOn.unbind('mouseleave', leave).unbind('mouseenter', enter);
-                      delete _this.disableProductPopups;
-                      delete _this.productAddedPopup;
-                      return clearTimeout(closingTimerId);
+                    });
+                    if (_this.opts.context !== 'tutorial') {
+                      _this.lastDroppedOn.mouseleave(leave);
+                      _this.lastDroppedOn.mouseenter(enter);
+                      return $(window).one('mousemove', function() {
+                        return closingTimerId = setInterval((function() {
+                          if (count <= 0 && !editPin && !closing) {
+                            return initiateClose();
+                          }
+                        }), 100);
+                      });
                     }
                   });
-                  if (_this.opts.context !== 'tutorial') {
-                    _this.lastDroppedOn.mouseleave(leave);
-                    _this.lastDroppedOn.mouseenter(enter);
-                    return $(window).one('mousemove', function() {
-                      return closingTimerId = setInterval((function() {
-                        if (count <= 0 && !editPin && !closing) {
-                          return initiateClose();
-                        }
-                      }), 100);
-                    });
-                  }
-                });
+                }
               };
             })(this)), 100);
           }

@@ -3,21 +3,21 @@ var __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
 define(['View', 'Site', 'Formatter', 'util', 'underscore'], function(View, Site, Formatter, util, _) {
-  var ProductPopupView;
-  return ProductPopupView = (function(_super) {
-    __extends(ProductPopupView, _super);
+  var ProductWatchView;
+  return ProductWatchView = (function(_super) {
+    __extends(ProductWatchView, _super);
 
-    function ProductPopupView() {
-      return ProductPopupView.__super__.constructor.apply(this, arguments);
+    function ProductWatchView() {
+      return ProductWatchView.__super__.constructor.apply(this, arguments);
     }
 
-    ProductPopupView.nextId = 0;
+    ProductWatchView.nextId = 0;
 
-    ProductPopupView.id = function(args) {
+    ProductWatchView.id = function(args) {
       return ++this.nextId;
     };
 
-    ProductPopupView.prototype.initAsync = function(args, done) {
+    ProductWatchView.prototype.initAsync = function(args, done) {
       return this.resolveObject(args, (function(_this) {
         return function(product, element) {
           _this.product = product;
@@ -27,6 +27,7 @@ define(['View', 'Site', 'Formatter', 'util', 'underscore'], function(View, Site,
               product_id: _this.product.productId()
             });
             _this.data = _this.productWatch ? {
+              enabled: _this.productWatch.get('enabled'),
               conditionOption: _this.product.get('siteName') === 'Amazon',
               enableThreshold: _this.productWatch.get('enable_threshold'),
               enableIncrement: _this.productWatch.get('enable_increment'),
@@ -43,16 +44,19 @@ define(['View', 'Site', 'Formatter', 'util', 'underscore'], function(View, Site,
                     return 'used';
                 }
               }).call(_this),
-              threshold: _this.productWatch.get('watch_threshold'),
-              increment: _this.productWatch.get('watch_increment')
+              threshold: _this.productWatch.get('watch_threshold') ? _this.productWatch.get('watch_threshold') / 100 : '',
+              increment: _this.productWatch.get('watch_increment') ? _this.productWatch.get('watch_increment') / 100 : '',
+              email: _this.clientValue(_this.agora.user.field('alerts_email'))
             } : {
+              enabled: true,
               conditionOption: _this.product.get('siteName') === 'Amazon',
               enableThreshold: false,
               enableIncrement: false,
               enableStock: false,
               condition: 'listing',
               threshold: '',
-              increment: ''
+              increment: '',
+              email: _this.clientValue(_this.agora.user.field('alerts_email'))
             };
           }
           return done();
@@ -60,7 +64,7 @@ define(['View', 'Site', 'Formatter', 'util', 'underscore'], function(View, Site,
       })(this));
     };
 
-    ProductPopupView.prototype.methods = {
+    ProductWatchView.prototype.methods = {
       submit: function(view, data) {
         if (!this.productWatch) {
           this.productWatch = this.agora.modelManager.getModel('ProductWatch').create({
@@ -79,15 +83,16 @@ define(['View', 'Site', 'Formatter', 'util', 'underscore'], function(View, Site,
               return 3;
           }
         })());
+        this.productWatch.set('enabled', data.enabled);
         this.productWatch.set('enable_stock', data.enableStock);
-        this.productWatch.set('enable_threshold', data.enableThreshold);
-        this.productWatch.set('enable_increment', data.enableIncrement);
-        this.productWatch.set('watch_increment', data.increment);
-        return this.productWatch.set('watch_threshold', data.threshold);
+        this.productWatch.set('enable_threshold', data.enableThreshold && data.threshold);
+        this.productWatch.set('enable_increment', data.enableIncrement && data.increment);
+        this.productWatch.set('watch_increment', data.increment ? data.increment * 100 : null);
+        return this.productWatch.set('watch_threshold', data.threshold ? data.threshold * 100 : null);
       }
     };
 
-    return ProductPopupView;
+    return ProductWatchView;
 
   })(View);
 });

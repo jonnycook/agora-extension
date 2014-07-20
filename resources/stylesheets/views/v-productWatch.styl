@@ -1,12 +1,46 @@
 .-agora .v-productWatch
-	width 318px
-	margin 12px
+	width 344px
+	padding 10px
+	border-radius 2px
+
+	h1
+		margin-bottom 5px
+		font-size 22px
+		font-weight bold
+
+	h2
+		margin 0 0 5px 0
+		font-size 18px
+		font-weight bold
+
+	.enabled
+		height 28px
+		background-color #5B5B5B
+		font-size 0
+		width 344px
+		margin-bottom 10px
+		.option
+			cursor pointer
+			font-size 13px
+			text-align center
+			width 170px
+			height 28px
+			line-height @height
+
+			float left
+
+			& + .option
+				margin-left 4px
+
+		&.on .on, &.off .off
+			box-style()
+			background-color $darkGray
+		
 
 	.condition
-		font-size 0
 		margin-bottom 10px
-
-
+		.options
+			font-size 0
 		&.listing
 			.listing
 				font-weight bold
@@ -36,14 +70,11 @@
 			cursor pointer
 			display inline-block
 			font-size 11px
-			width 78px
+			width 86px
 			text-align center
 			background-color rgba(255, 255, 255, .5)
 			height 25px
 			line-height @height
-
-			& + .option
-				margin-left 2px
 
 			&:first-child
 				border-top-left-radius 2px
@@ -55,9 +86,7 @@
 
 
 	.alertConditions
-		h2
-			font-size 18px
-			margin 0
+		margin-bottom 10px
 		.criterion
 			& + .criterion
 				margin-top 10px
@@ -86,15 +115,25 @@
 		font-size 12px
 		text-align center
 		margin-top 10px
-		width 153px
-
-	input[type="submit"]
+		width 166px
 		background-color $darkGray
 		color white
-		margin-left 9px
 
-.-agora.dark .v-productWatch
-	label, h2
+		& + input[type="submit"]
+			margin-left 8px
+
+	.email
+		font-style italic
+
+
+
+.-agora.dark .v-productWatch, .-agora .dark.v-productWatch
+	background-color $darkGray
+
+	label, h2, h1
+		color white
+
+	.enabled .option
 		color white
 
 	.condition .option
@@ -116,3 +155,7 @@
 		&.used
 			.listing, .new, .refurbished, .used
 				background-color white
+
+	.email
+		&, .value
+			color white

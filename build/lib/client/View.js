@@ -657,6 +657,9 @@ define(function() {
       };
 
       View.prototype.attach = function(cb) {
+        if (!this.type) {
+          throw new Error('No type!');
+        }
         return this.contentScript.triggerBackgroundEvent('CreateView', {
           type: this.type
         }, (function(_this) {

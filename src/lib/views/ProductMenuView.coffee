@@ -114,6 +114,7 @@ define ['View', 'Site', 'Formatter', 'util'], (View, Site, Formatter, util) ->
 								el: (cb, funcs) =>
 									++ num
 									view = @createView viewName
+									view.el.addClass 'dark'
 									view.represent @args, =>
 										view.close = (esc) ->
 											if esc

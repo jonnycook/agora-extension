@@ -2091,6 +2091,21 @@ div.-agora.v-shoppingBar > .right .bagsby.newMessages {
     background-image: url("chrome-extension:/__MSG_@@extension_id__/resources/images/bagsbyTalking@2x.png");
   }
 }
+div.-agora.v-shoppingBar > .right .priceWatch {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-image: url("chrome-extension://__MSG_@@extension_id__/resources/images/watchDarkGray.png");
+  -webkit-background-size: 30px 30px;
+  -moz-background-size: 30px 30px;
+  background-size: 30px 30px;
+  margin-top: -2px;
+}
+@media all and (-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
+  div.-agora.v-shoppingBar > .right .priceWatch {
+    background-image: url("chrome-extension:/__MSG_@@extension_id__/resources/images/watchDarkGray@2x.png");
+  }
+}
 div.-agora.v-shoppingBar > .right .collaborate {
   cursor: pointer;
   width: 22px;
@@ -6783,6 +6798,17 @@ span.-agora-newItem {
     background-image: url("chrome-extension:/__MSG_@@extension_id__/resources/images/starWhite@2x.png");
   }
 }
+.-agora .v-productMenu.white .item.watch > a {
+  background-image: url("chrome-extension://__MSG_@@extension_id__/resources/images/watchWhiteSmall.png");
+  -webkit-background-size: 16px 16px;
+  -moz-background-size: 16px 16px;
+  background-size: 16px 16px;
+}
+@media all and (-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
+  .-agora .v-productMenu.white .item.watch > a {
+    background-image: url("chrome-extension:/__MSG_@@extension_id__/resources/images/watchWhiteSmall@2x.png");
+  }
+}
 .-agora .v-productMenu.horizontal .item.feelings.positive > a {
   background-image: url("chrome-extension://__MSG_@@extension_id__/resources/images/smileDarkGray.png");
   -webkit-background-size: 16px 12px;
@@ -8889,12 +8915,54 @@ span.-agora-newItem {
   height: 400px;
 }
 .-agora .v-productWatch {
-  width: 318px;
-  margin: 12px;
+  width: 344px;
+  padding: 10px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.-agora .v-productWatch h1 {
+  margin-bottom: 5px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.-agora .v-productWatch h2 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.-agora .v-productWatch .enabled {
+  height: 28px;
+  background-color: #5b5b5b;
+  font-size: 0;
+  width: 344px;
+  margin-bottom: 10px;
+}
+.-agora .v-productWatch .enabled .option {
+  cursor: pointer;
+  font-size: 13px;
+  text-align: center;
+  width: 170px;
+  height: 28px;
+  line-height: 28px;
+  float: left;
+}
+.-agora .v-productWatch .enabled .option + .option {
+  margin-left: 4px;
+}
+.-agora .v-productWatch .enabled.on .on,
+.-agora .v-productWatch .enabled.off .off {
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+  background-color: #696969;
 }
 .-agora .v-productWatch .condition {
-  font-size: 0;
   margin-bottom: 10px;
+}
+.-agora .v-productWatch .condition .options {
+  font-size: 0;
 }
 .-agora .v-productWatch .condition.listing .listing {
   font-weight: bold;
@@ -8912,14 +8980,11 @@ span.-agora-newItem {
   cursor: pointer;
   display: inline-block;
   font-size: 11px;
-  width: 78px;
+  width: 86px;
   text-align: center;
   background-color: rgba(255,255,255,0.5);
   height: 25px;
   line-height: 25px;
-}
-.-agora .v-productWatch .condition .option + .option {
-  margin-left: 2px;
 }
 .-agora .v-productWatch .condition .option:first-child {
   border-top-left-radius: 2px;
@@ -8929,9 +8994,8 @@ span.-agora-newItem {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-.-agora .v-productWatch .alertConditions h2 {
-  font-size: 18px;
-  margin: 0;
+.-agora .v-productWatch .alertConditions {
+  margin-bottom: 10px;
 }
 .-agora .v-productWatch .alertConditions .criterion {
   height: 29px;
@@ -8967,37 +9031,250 @@ span.-agora-newItem {
   font-size: 12px;
   text-align: center;
   margin-top: 10px;
-  width: 153px;
-}
-.-agora .v-productWatch input[type="submit"] {
+  width: 166px;
   background-color: #696969;
   color: #fff;
-  margin-left: 9px;
+}
+.-agora .v-productWatch input[type="submit"] + input[type="submit"],
+.-agora .v-productWatch input[type="button"] + input[type="submit"] {
+  margin-left: 8px;
+}
+.-agora .v-productWatch .email {
+  font-style: italic;
+}
+.-agora.dark .v-productWatch,
+.-agora .dark.v-productWatch {
+  background-color: #696969;
 }
 .-agora.dark .v-productWatch label,
-.-agora.dark .v-productWatch h2 {
+.-agora .dark.v-productWatch label,
+.-agora.dark .v-productWatch h2,
+.-agora .dark.v-productWatch h2,
+.-agora.dark .v-productWatch h1,
+.-agora .dark.v-productWatch h1 {
   color: #fff;
 }
-.-agora.dark .v-productWatch .condition .option {
+.-agora.dark .v-productWatch .enabled .option,
+.-agora .dark.v-productWatch .enabled .option {
+  color: #fff;
+}
+.-agora.dark .v-productWatch .condition .option,
+.-agora .dark.v-productWatch .condition .option {
   color: #696969;
 }
-.-agora.dark .v-productWatch .condition.listing .listing {
+.-agora.dark .v-productWatch .condition.listing .listing,
+.-agora .dark.v-productWatch .condition.listing .listing {
   background-color: #fff;
 }
 .-agora.dark .v-productWatch .condition.new .listing,
-.-agora.dark .v-productWatch .condition.new .new {
+.-agora .dark.v-productWatch .condition.new .listing,
+.-agora.dark .v-productWatch .condition.new .new,
+.-agora .dark.v-productWatch .condition.new .new {
   background-color: #fff;
 }
 .-agora.dark .v-productWatch .condition.refurbished .listing,
+.-agora .dark.v-productWatch .condition.refurbished .listing,
 .-agora.dark .v-productWatch .condition.refurbished .new,
-.-agora.dark .v-productWatch .condition.refurbished .refurbished {
+.-agora .dark.v-productWatch .condition.refurbished .new,
+.-agora.dark .v-productWatch .condition.refurbished .refurbished,
+.-agora .dark.v-productWatch .condition.refurbished .refurbished {
   background-color: #fff;
 }
 .-agora.dark .v-productWatch .condition.used .listing,
+.-agora .dark.v-productWatch .condition.used .listing,
 .-agora.dark .v-productWatch .condition.used .new,
+.-agora .dark.v-productWatch .condition.used .new,
 .-agora.dark .v-productWatch .condition.used .refurbished,
-.-agora.dark .v-productWatch .condition.used .used {
+.-agora .dark.v-productWatch .condition.used .refurbished,
+.-agora.dark .v-productWatch .condition.used .used,
+.-agora .dark.v-productWatch .condition.used .used {
   background-color: #fff;
+}
+.-agora.dark .v-productWatch .email,
+.-agora .dark.v-productWatch .email,
+.-agora.dark .v-productWatch .email .value,
+.-agora .dark.v-productWatch .email .value {
+  color: #fff;
+}
+.-agora .v-productWatches {
+  padding: 30px;
+}
+.-agora .v-productWatches .productWatch {
+  padding: 10px;
+  margin: 0 auto;
+  height: 148px;
+  max-width: 714px;
+  min-width: 500px;
+  position: relative;
+  background-color: #fff;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+}
+.-agora .v-productWatches .productWatch + .productWatch {
+  margin-top: 20px;
+}
+.-agora .v-productWatches .productWatch:not(.hasTarget) .meter .targetPrice {
+  display: none;
+}
+.-agora .v-productWatches .productWatch.targetMet .meter div.currentPrice,
+.-agora .v-productWatches .productWatch.targetMet .meter .diff {
+  background-color: #66c466;
+  border-color: #66c466;
+}
+.-agora .v-productWatches .productWatch:not(.targetMet) .meter div.currentPrice,
+.-agora .v-productWatches .productWatch:not(.targetMet) .meter .diff {
+  background-color: #c46666;
+  border-color: #c46666;
+}
+.-agora .v-productWatches .productWatch:not(.inited):before {
+  content: 'Initing...';
+}
+.-agora .v-productWatches .productWatch:not(.inited) * {
+  display: none;
+}
+.-agora .v-productWatches .productWatch.outOfStock .meter:before {
+  content: 'out of stock';
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+  background-color: #696969;
+  color: #fff;
+  padding: 10px;
+  display: block;
+  width: 100px;
+  margin: -44px auto;
+  text-align: center;
+}
+.-agora .v-productWatches .productWatch.outOfStock .meter * {
+  display: none;
+}
+.-agora .v-productWatches .productWatch .title {
+  display: block;
+  margin-bottom: 15px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.-agora .v-productWatches .productWatch .image {
+  display: block;
+  width: 104px;
+  height: 104px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.-agora .v-productWatches .productWatch .meter {
+  position: absolute;
+  left: 124px;
+  right: 10px;
+  height: 10px;
+  top: 100px;
+  background-color: #e6e6e6;
+}
+.-agora .v-productWatches .productWatch .meter label.min,
+.-agora .v-productWatches .productWatch .meter label.max,
+.-agora .v-productWatches .productWatch .meter label.currentPrice {
+  position: absolute;
+  bottom: 20px;
+  top: auto;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+  background-color: #fff;
+  padding: 10px;
+}
+.-agora .v-productWatches .productWatch .meter label.min {
+  left: 2px;
+}
+.-agora .v-productWatches .productWatch .meter label.max {
+  right: 2px;
+}
+.-agora .v-productWatches .productWatch .meter label.currentPrice {
+  background-color: #696969;
+}
+.-agora .v-productWatches .productWatch .meter label.currentPrice,
+.-agora .v-productWatches .productWatch .meter label.currentPrice .value {
+  color: #fff;
+  text-align: center;
+}
+.-agora .v-productWatches .productWatch .meter label.currentPrice .value {
+  display: block;
+}
+.-agora .v-productWatches .productWatch .meter label {
+  text-align: center;
+  position: absolute;
+  top: 18px;
+}
+.-agora .v-productWatches .productWatch .meter label .value {
+  display: block;
+}
+.-agora .v-productWatches .productWatch .meter .diff {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  width: 100px;
+  border-width: 0 6px;
+  border-style: solid;
+  margin-left: -6px;
+}
+.-agora .v-productWatches .productWatch .meter div.targetPrice {
+  margin-left: -12px;
+  position: absolute;
+  left: 0;
+  top: -6px;
+  font-size: 0;
+  width: 22px;
+  height: 22px;
+  background-image: url("chrome-extension://__MSG_@@extension_id__/resources/images/watchDarkGray.png");
+  -webkit-background-size: 22px 22px;
+  -moz-background-size: 22px 22px;
+  background-size: 22px 22px;
+}
+@media all and (-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
+  .-agora .v-productWatches .productWatch .meter div.targetPrice {
+    background-image: url("chrome-extension:/__MSG_@@extension_id__/resources/images/watchDarkGray@2x.png");
+  }
+}
+.-agora .v-productWatches .productWatch .meter div.initialPrice {
+  position: absolute;
+  font-size: 0;
+  background-color: #696969;
+  border: 4px solid #fff;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 9px;
+  border-radius: 9px;
+  left: 10px;
+  top: -4px;
+  margin-left: -9px;
+}
+.-agora .v-productWatches .productWatch .meter div.currentPrice {
+  font-size: 0;
+  position: absolute;
+  margin-left: -8px;
+  left: 100px;
+  top: -3px;
+  width: 16px;
+  height: 16px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
 }
 .-agora .scroll .scrollWrapper {
   position: absolute;

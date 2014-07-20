@@ -54,13 +54,13 @@ define ['./ModelInstance', './ObservableArray', './Event', './auxiliary/maintain
 				# 	if instance.get(@_args.orderBy.field) == null
 				# 		instance.set(@_args.orderBy.field, @_list.length())
 
-				@_list.push instance
 
 				# if @_args.orderBy
 				# 	maintainOrder @_args.orderBy, instance, @_list
 
-
 				instance.createRelationships createRelationships
+
+				@_list.push instance
 
 				@_args.onAfterAdd?.call @, instance	
 

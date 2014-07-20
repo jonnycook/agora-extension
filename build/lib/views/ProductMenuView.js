@@ -156,6 +156,7 @@ define(['View', 'Site', 'Formatter', 'util'], function(View, Site, Formatter, ut
                   var view;
                   ++num;
                   view = _this.createView(viewName);
+                  view.el.addClass('dark');
                   return view.represent(_this.args, function() {
                     var close, updatePos, _ref;
                     view.close = function(esc) {

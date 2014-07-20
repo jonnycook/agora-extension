@@ -1,10 +1,13 @@
 define ['underscore', 'model/ModelInstance', 'CommandExecuter', 'model/ObservableValue', 'model/Event'], (_, ModelInstance, CommandExecuter, ObservableValue, Event) ->
 	parse = (json, cb=null) =>
 		if cb
+			obj = null
 			try
-				cb true, JSON.parse json
-			catch
-				cb false, json
+				obj = JSON.parse json
+			catch e
+				background.error 'JsonError', e
+
+			cb obj != null, obj ? json
 		else
 			try
 				JSON.parse json
@@ -115,6 +118,7 @@ define ['underscore', 'model/ModelInstance', 'CommandExecuter', 'model/Observabl
 								@sync changes, @userId, '*', =>
 									done true
 							else
+								console.log changes
 								done false
 
 					interupted: (done, reason) ->
@@ -130,8 +134,14 @@ define ['underscore', 'model/ModelInstance', 'CommandExecuter', 'model/Observabl
 								if success
 									if response.mapping?
 										@updater.db.addMapping response.mapping
+
 									@updateToken = response.updateToken
-									done true
+
+									if response.changes?
+										@executeChanges response.changes, @user, ->
+											done true
+									else
+										done true
 								else
 									done false, response
 						else

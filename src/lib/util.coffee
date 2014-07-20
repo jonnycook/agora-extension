@@ -303,17 +303,27 @@ define ['Site', 'underscore', 'ObjectWrapper'], (Site, _, ObjectWrapper) ->
 			else
 				list.findAll predicate
 
-		filteredArray: (ctx, subject, output, test, reversed=false) ->
+		filteredArray: (ctx, subject, output, test, reversed=false, watch=null) ->
 			add = if reversed
 				(obj) -> output.unshift obj
 			else
 				(obj) -> output.push obj
+
+			t = (obj) ->
+				->
+					if test(obj) && !output.contains obj
+						add obj
+					else if !test(obj) && output.contains obj
+						output.remove obj
+
 			subject.each (record) =>
+				watch? ctx, record, t record
 				if test record
 					add record
 
 			ctx.observeObject subject, (mutation) =>
 				if mutation.type == 'insertion'
+					watch? ctx, mutation.value, t mutation.value
 					if test mutation.value
 						add mutation.value
 				else if mutation.type == 'deletion'

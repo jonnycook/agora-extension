@@ -79,8 +79,8 @@ define(['./ModelInstance', './ObservableArray', './Event', './auxiliary/maintain
         if (this._args.onBeforeAdd) {
           this._args.onBeforeAdd.call(this, instance);
         }
-        this._list.push(instance);
         instance.createRelationships(createRelationships);
+        this._list.push(instance);
         if ((_ref = this._args.onAfterAdd) != null) {
           _ref.call(this, instance);
         }

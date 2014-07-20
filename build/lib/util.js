@@ -423,18 +423,33 @@ define(['Site', 'underscore', 'ObjectWrapper'], function(Site, _, ObjectWrapper)
         return list.findAll(predicate);
       }
     },
-    filteredArray: function(ctx, subject, output, test, reversed) {
-      var add;
+    filteredArray: function(ctx, subject, output, test, reversed, watch) {
+      var add, t;
       if (reversed == null) {
         reversed = false;
+      }
+      if (watch == null) {
+        watch = null;
       }
       add = reversed ? function(obj) {
         return output.unshift(obj);
       } : function(obj) {
         return output.push(obj);
       };
+      t = function(obj) {
+        return function() {
+          if (test(obj) && !output.contains(obj)) {
+            return add(obj);
+          } else if (!test(obj) && output.contains(obj)) {
+            return output.remove(obj);
+          }
+        };
+      };
       subject.each((function(_this) {
         return function(record) {
+          if (typeof watch === "function") {
+            watch(ctx, record, t(record));
+          }
           if (test(record)) {
             return add(record);
           }
@@ -443,6 +458,9 @@ define(['Site', 'underscore', 'ObjectWrapper'], function(Site, _, ObjectWrapper)
       return ctx.observeObject(subject, (function(_this) {
         return function(mutation) {
           if (mutation.type === 'insertion') {
+            if (typeof watch === "function") {
+              watch(ctx, mutation.value, t(mutation.value));
+            }
             if (test(mutation.value)) {
               return add(mutation.value);
             }

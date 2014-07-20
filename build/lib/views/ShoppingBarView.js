@@ -161,6 +161,19 @@ define(['View', 'Site', 'Formatter', 'util', 'underscore', 'model/ObservableValu
               }
             };
           })(this));
+        } else if (onData === 'priceWatch') {
+          return this.resolveElements(elementData, (function(_this) {
+            return function(element) {
+              if (element.isA('Product') || element.isA('ProductVariant')) {
+                return view.callMethod('productAdded', [
+                  {
+                    modelName: element.modelName,
+                    instanceId: element.get('id')
+                  }
+                ]);
+              }
+            };
+          })(this));
         } else {
           return this.resolveElements(elementData, onData, (function(_this) {
             return function(element, onView) {

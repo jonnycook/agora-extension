@@ -15,7 +15,17 @@ define(function() {
       ProductWatchView.prototype.type = 'ProductWatch';
 
       ProductWatchView.prototype.init = function() {
-        this.viewEl('<div class="v-productWatch"> <form> <div class="condition listing"> <div class="option listing">Listing</div> <div class="option new">New</div> <div class="option refurbished">Refurbished</div> <div class="option used">Used</div> </div> <div class="alertConditions"> <h2>Alert Conditions</h2> <div class="criterion increment"> <input class="t-checkbox" type="checkbox"> <label>Price drops by at least:</label> <input type="text"> </div> <div class="criterion threshold"> <input class="t-checkbox" type="checkbox"> <label>Price reaches or goes below:</label> <input type="text"> </div> <div class="criterion stock"> <input class="t-checkbox" type="checkbox"> <label>Item is back in stock</label> </div> </div> <input type="button" class="cancel" value="cancel"> <input type="submit" value="save"> </form> </div>');
+        this.viewEl('<div class="v-productWatch"> <form> <h1>Tracking</h1> <div class="enabled"> <div class="option off">off</div> <div class="option on">on</div> </div> <div class="condition listing"> <h2>Filter</h2> <div class="options"> <div class="option listing">Listing</div> <div class="option new">New</div> <div class="option refurbished">Refurbished</div> <div class="option used">Used</div> </div> </div> <div class="alertConditions"> <h2>Alert conditions</h2> <div class="criterion increment"> <input class="t-checkbox" type="checkbox"> <label>Price drops by at least:</label> <input type="text"> </div> <div class="criterion threshold"> <input class="t-checkbox" type="checkbox"> <label>Price reaches or goes below:</label> <input type="text"> </div> <div class="criterion stock"> <input class="t-checkbox" type="checkbox"> <label>Item is back in stock</label> </div> </div> <div class="email"> sending alerts to <span class="value"></span> <a href="#" class="edit"></a> </div> <input type="button" class="cancel" value="cancel"> <input type="submit" value="save"> </form> </div>');
+        this.el.find('.enabled .off').click((function(_this) {
+          return function() {
+            return _this.setEnabled(false);
+          };
+        })(this));
+        this.el.find('.enabled .on').click((function(_this) {
+          return function() {
+            return _this.setEnabled(true);
+          };
+        })(this));
         this.el.find('.option.listing').click((function(_this) {
           return function() {
             return _this.setCondition('listing');
@@ -40,6 +50,7 @@ define(function() {
           return function() {
             var data;
             data = {
+              enabled: _this.currentEnabled,
               condition: _this.currentCondition,
               enableStock: _this.el.find('.criterion.stock input[type="checkbox"]').prop('checked'),
               enableThreshold: _this.el.find('.criterion.threshold input[type="checkbox"]').prop('checked'),
@@ -66,11 +77,26 @@ define(function() {
         return this.currentCondition = condition;
       };
 
+      ProductWatchView.prototype.setEnabled = function(enabled) {
+        this.currentEnabled = enabled;
+        return this.el.find('.enabled').removeClass('on off').addClass(enabled ? 'on' : 'off');
+      };
+
       ProductWatchView.prototype.onData = function(data) {
+        this.withData(data.email, (function(_this) {
+          return function(email) {
+            if (email) {
+              return _this.el.find('.email').removeClass('noEmail').html("sending alerts to <span class='value'>" + email + "</span> <a href='#' class='edit'></a>");
+            } else {
+              return _this.el.find('.email').addClass('noEmail').html("no alerts email <a href='#' class='edit'></a>");
+            }
+          };
+        })(this));
         if (!data.conditionOption) {
           this.el.find('.condition').remove();
         }
         this.setCondition(data.condition);
+        this.setEnabled(data.enabled);
         this.el.find('.criterion.threshold input[type="checkbox"]').prop('checked', data.enableThreshold);
         this.el.find('.criterion.stock input[type="checkbox"]').prop('checked', data.enableStock);
         this.el.find('.criterion.increment input[type="checkbox"]').prop('checked', data.enableIncrement);

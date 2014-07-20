@@ -1,5 +1,5 @@
 define -> d: ['View', 'util', 'util2'
-	'views/ShoppingBarView/BarItemView', 'views/CompetitiveProcessView', 'views/ReviewsView', 'views/AddItemView','views/CouponsView', 'views/AddDescriptorView', 'views/AddDataView', 'views/compare/CompareView', 'views/ContactView', 'views/ShareView', 'views/SharedWithYouView', 'views/CollaborateView', 'views/ChatView', 'devAction', 'views/SocialShareView', 'views/BuyView', 'views/ProductWatchView'], c: ->
+	'views/ShoppingBarView/BarItemView', 'views/CompetitiveProcessView', 'views/ReviewsView', 'views/AddItemView','views/CouponsView', 'views/AddDescriptorView', 'views/AddDataView', 'views/compare/CompareView', 'views/ContactView', 'views/ShareView', 'views/SharedWithYouView', 'views/CollaborateView', 'views/ChatView', 'devAction', 'views/SocialShareView', 'views/BuyView', 'views/ProductWatchView', 'views/ProductWatchesView'], c: ->
 	class ShoppingBarView extends View
 		type: 'ShoppingBar'
 		constructor: (contentScript, @opts={}) ->
@@ -24,6 +24,7 @@ define -> d: ['View', 'util', 'util2'
 
 					<div class="right">
 						<span class="collaborate" />
+						<span class="priceWatch" />
 						<span class="bagsby" />
 					</div>
 					<span class="devAction"><span class="reloadDevAction" /><span class="devAction" /><span class="reloadStyles" /></span>
@@ -98,6 +99,9 @@ define -> d: ['View', 'util', 'util2'
 				@updateLayout()
 
 			@contents.onMove = => @updateLayout()
+
+
+
 
 			menu = (anchorEl) =>
 				=>
@@ -447,6 +451,34 @@ define -> d: ['View', 'util', 'util2'
 					collaborateView.sizeChanged = ->
 						frame.update()
 
+
+			util.initDragging @el.find('.right .priceWatch'),
+				enabled:false
+				root:true
+				acceptsDrop:true
+				dragArea:true
+				onDroppedOn: (el, fromEl) =>
+					@onDroppedOn el, fromEl, 'priceWatch'
+
+
+			@el.find('.right .priceWatch').click =>
+				productWatchesView = new ProductWatchesView @contentScript
+				frameEl = Frame.wrapInFrame productWatchesView.el,
+					type:'fullscreen'
+					scroll:true
+					resize: (width, height) -> [width - 100, height - 100]
+					close: -> productWatchesView.destruct()
+				productWatchesView.close = -> Frame.close frameEl
+
+				frameEl.appendTo document.body
+				Frame.show frameEl
+
+				# productWatchesView.setContEl frameEl.data('client')
+				# productWatchesView.backEl = productWatchesView.contEl
+				# productWatchesView.el.css margin:'20px auto 0'
+
+				productWatchesView.represent()
+
 		closeMenu: ->
 			close() for {close:close} in @menus
 
@@ -696,7 +728,7 @@ define -> d: ['View', 'util', 'util2'
 		onDroppedOn: (el, fromEl, toEl, dropAction) ->
 			@lastDroppedOn = toEl
 			util.resolveDraggingData el, (data) =>
-				to = if toEl != 'up'
+				to = if !(toEl in ['up', 'priceWatch'])
 					{view:toEl.data('view').id}
 				else
 					toEl
@@ -824,86 +856,95 @@ define -> d: ['View', 'util', 'util2'
 		methods:
 			productAdded: (id) ->
 				setTimeout (=>
-					el = if @lastDroppedOn.data('view') == @
-						@lastDroppedOn.data('view').items().last()
-					else if @lastDroppedOn.data('view').elementType == 'Session' || @lastDroppedOn.data('view').elementType == 'Bundle'
-						@lastDroppedOn.data('view').barItem.items().last()
+					if @lastDroppedOn == 'priceWatch'
+						productWatchView = @createView 'ProductWatch'
+						productWatchView.represent id
+						frame = Frame.frameAbove @el.find('.right .priceWatch'), productWatchView.el, type:'balloon'
+						productWatchView.close = -> frame.close()
+
 					else
-						@lastDroppedOn
+						el = if @lastDroppedOn == 'up'
 
-					_tutorial 'Belt/RemoveItem', {positionEl:el, attachEl:$(document.body), position:'top'}, close:true, (showTutorial) =>
-						return unless !window.suppressAddFeeling && (Agora.settings.autoFeelings.get() || @opts.context == 'tutorial')
+						else if @lastDroppedOn.data('view') == @
+							@lastDroppedOn.data('view').items().last()
+						else if @lastDroppedOn.data('view').elementType == 'Session' || @lastDroppedOn.data('view').elementType == 'Bundle'
+							@lastDroppedOn.data('view').barItem.items().last()
+						else
+							@lastDroppedOn
 
-						@disableProductPopups = true
+						_tutorial 'Belt/RemoveItem', {positionEl:el, attachEl:$(document.body), position:'top'}, close:true, (showTutorial) =>
+							return unless !window.suppressAddFeeling && (Agora.settings.autoFeelings.get() || @opts.context == 'tutorial')
+
+							@disableProductPopups = true
 
 
-						editPin = false
+							editPin = false
 
-						closing = false
-						count = 0
-
-						initiateClose = ->
-							closing = true
-							popup.initiateClose()
-
-						cancelClose = ->
-							popup.cancelClose()
 							closing = false
+							count = 0
+
+							initiateClose = ->
+								closing = true
+								popup.initiateClose()
+
+							cancelClose = ->
+								popup.cancelClose()
+								closing = false
 
 
-						enter = ->
-							++ count
-							cancelClose()
+							enter = ->
+								++ count
+								cancelClose()
 
-						leave = ->
-							-- count
+							leave = ->
+								-- count
 
-						closingTimerId = null
+							closingTimerId = null
 
-						@productAddedPopup = popup = util.showPopup el, 
-							close:false
-							createPopup: (cb, close) =>
-								addFeelingView = @createView 'AddFeelingView', auto:true
-								@propOpen addFeelingView
+							@productAddedPopup = popup = util.showPopup el, 
+								close:false
+								createPopup: (cb, close) =>
+									addFeelingView = @createView 'AddFeelingView', auto:true
+									@propOpen addFeelingView
 
-								addFeelingView.el.find('input[name=feeling]').keyup (e) ->
-									if e.keyCode == 13
-										if editPin
-											editPin = false
-									else
-										editPin = true
-										cancelClose()
-
-								addFeelingView.represent id, =>
-									frame = Frame.frameFixedAbove el, addFeelingView.el, type:'balloon', color:'dark', onClose: ->
-										addFeelingView.destruct()
-										addFeelingView = null
-									frame.el.css marginTop:-17
-									addFeelingView.close = (esc) ->
-										if esc
-											popup.close()
+									addFeelingView.el.find('input[name=feeling]').keyup (e) ->
+										if e.keyCode == 13
+											if editPin
+												editPin = false
 										else
-											popup.initiateClose()
-									addFeelingView.sizeChanged = ->
-										frame.update()
+											editPin = true
+											cancelClose()
 
-									frame.el.mouseenter(enter).mouseleave(leave)
+									addFeelingView.represent id, =>
+										frame = Frame.frameFixedAbove el, addFeelingView.el, type:'balloon', color:'dark', onClose: ->
+											addFeelingView.destruct()
+											addFeelingView = null
+										frame.el.css marginTop:-17
+										addFeelingView.close = (esc) ->
+											if esc
+												popup.close()
+											else
+												popup.initiateClose()
+										addFeelingView.sizeChanged = ->
+											frame.update()
 
-									cb frame.el
-								null
-							onClose: (el) =>
-								el.data('frame')?.close?()
-								@lastDroppedOn.unbind('mouseleave', leave).unbind('mouseenter', enter)
-								delete @disableProductPopups
-								delete @productAddedPopup
-								clearTimeout closingTimerId
+										frame.el.mouseenter(enter).mouseleave(leave)
 
-						if @opts.context != 'tutorial'
-							@lastDroppedOn.mouseleave leave
-							@lastDroppedOn.mouseenter enter
-							$(window).one 'mousemove', ->
-								closingTimerId = setInterval (->
-									if count <= 0 && !editPin && !closing
-										initiateClose()
-								), 100
+										cb frame.el
+									null
+								onClose: (el) =>
+									el.data('frame')?.close?()
+									@lastDroppedOn.unbind('mouseleave', leave).unbind('mouseenter', enter)
+									delete @disableProductPopups
+									delete @productAddedPopup
+									clearTimeout closingTimerId
+
+							if @opts.context != 'tutorial'
+								@lastDroppedOn.mouseleave leave
+								@lastDroppedOn.mouseenter enter
+								$(window).one 'mousemove', ->
+									closingTimerId = setInterval (->
+										if count <= 0 && !editPin && !closing
+											initiateClose()
+									), 100
 				), 100

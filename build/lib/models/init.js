@@ -139,7 +139,9 @@ define(['models/Product', 'models/ProductVariant', 'models/Composite', 'model/Ta
         types: {
           tutorial_step: 'int',
           user_colors: 'string',
-          tutorials: 'string'
+          tutorials: 'string',
+          email: 'string',
+          alerts_email: 'string'
         },
         defaultValues: {
           tutorial_step: 0
@@ -208,22 +210,34 @@ define(['models/Product', 'models/ProductVariant', 'models/Composite', 'model/Ta
     });
     db.addTable('product_watches', {
       schema: {
+        local: ['listing', 'stock', 'used', 'new', 'refurbished', 'state'],
         types: {
           watch_threshold: 'int',
           watch_increment: 'int',
           watch_condition: 'int',
-          reported_stock: 'int',
-          reported_listing: 'int',
-          reported_new: 'int',
-          reported_used: 'int',
-          reported_refurbished: 'int',
-          stock: 'int',
           enable_threshold: 'bool',
           enable_stock: 'bool',
           enable_increment: 'bool',
           index: 'int',
           seen: 'bool',
-          enabled: 'bool'
+          enabled: 'bool',
+          state: 'int',
+          reported_stock: 'int',
+          reported_listing: 'int',
+          reported_new: 'int',
+          reported_used: 'int',
+          reported_refurbished: 'int',
+          initial_stock: 'int',
+          initial_listing: 'int',
+          initial_new: 'int',
+          initial_used: 'int',
+          initial_refurbished: 'int',
+          stock: 'int',
+          listing: 'int',
+          "new": 'int',
+          used: 'int',
+          refurbished: 'int',
+          stock: 'int'
         },
         defaultValues: {
           enable_threshold: false,
@@ -1259,6 +1273,13 @@ define(['models/Product', 'models/ProductVariant', 'models/Composite', 'model/Ta
         orderBy: {
           field: 'index',
           direction: 'asc'
+        },
+        relationships: {
+          product: {
+            type: 'hasOne',
+            relKey: 'product_id',
+            model: 'Product'
+          }
         }
       },
       Datum: {

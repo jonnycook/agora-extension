@@ -110,6 +110,10 @@ define(['./ObservableObject', 'underscore'], function(ObservableObject, _) {
       return this._array.indexOf(el, start);
     };
 
+    ObservableArray.prototype.contains = function(obj) {
+      return this._array.indexOf(obj) !== -1;
+    };
+
     ObservableArray.prototype.find = function(predicate) {
       var value, _i, _len, _ref;
       _ref = this._array;

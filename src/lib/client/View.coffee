@@ -433,6 +433,9 @@ define -> ->
 		isAttached: -> typeof @id != 'undefined'
 		
 		attach: (cb) ->
+			if !@type
+				throw new Error 'No type!'
+
 			@contentScript.triggerBackgroundEvent 'CreateView', type:@type, (response) =>
 				# Debug.log @type, 'attached'
 				@id = response.id

@@ -1,5 +1,5 @@
 define ['View', 'Site', 'Formatter', 'util', 'underscore'], (View, Site, Formatter, util, _) ->
-	class ProductPopupView extends View
+	class ProductWatchView extends View
 		@nextId: 0
 		@id: (args) -> ++ @nextId
 
@@ -9,6 +9,7 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore'], (View, Site, Formatt
 					@productWatch = @agora.modelManager.getModel('ProductWatch').find product_id:@product.productId()
 					
 					@data = if @productWatch
+						enabled:@productWatch.get('enabled')
 						conditionOption:@product.get('siteName') == 'Amazon'
 						enableThreshold:@productWatch.get('enable_threshold')
 						enableIncrement:@productWatch.get('enable_increment')
@@ -18,9 +19,11 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore'], (View, Site, Formatt
 								when 1 then 'new'
 								when 2 then 'refurbished'
 								when 3 then 'used'
-						threshold:@productWatch.get('watch_threshold')
-						increment:@productWatch.get('watch_increment')
+						threshold:if @productWatch.get('watch_threshold') then @productWatch.get('watch_threshold')/100 else ''
+						increment:if @productWatch.get('watch_increment') then @productWatch.get('watch_increment')/100 else ''
+						email:@clientValue @agora.user.field('alerts_email')
 					else
+						enabled:true
 						conditionOption:@product.get('siteName') == 'Amazon'
 						enableThreshold:false
 						enableIncrement:false
@@ -28,6 +31,7 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore'], (View, Site, Formatt
 						condition:'listing'
 						threshold:''
 						increment:''
+						email:@clientValue @agora.user.field('alerts_email')
 
 				done()
 					
@@ -41,31 +45,9 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore'], (View, Site, Formatt
 					when 'new' then 1
 					when 'refurbished' then 2
 					when 'used' then 3
+				@productWatch.set 'enabled', data.enabled
 				@productWatch.set 'enable_stock', data.enableStock
-				@productWatch.set 'enable_threshold', data.enableThreshold
-				@productWatch.set 'enable_increment', data.enableIncrement
-				@productWatch.set 'watch_increment', data.increment
-				@productWatch.set 'watch_threshold', data.threshold
-
-		# 	remove: ->
-		# 		Bag = @agora.modelManager.getModel 'Bag'
-		# 		Product = @agora.modelManager.getModel 'Product'
-				
-		# 		bag = Bag.withId @args.bagId
-		# 		product = Product.getBySid @args.siteName, @args.productSid
-				
-		# 		@agora.removeFromBag product, bag
-
-		# 	setSelected: (view, selected) ->
-		# 		if @decision
-		# 			if selected
-		# 				_activity 'decision.select', @decision, @element.get('element')
-		# 				@decision.get('selection').add @element
-		# 			else
-		# 				@decision.get('selection').remove @element
-		# 				_activity 'decision.deselect', @decision, @element.get('element')
-
-
-		# 	dismiss: ->
-		# 		if @decision
-		# 			util.dismissDecisionElement @decision, @element
+				@productWatch.set 'enable_threshold', data.enableThreshold && data.threshold
+				@productWatch.set 'enable_increment', data.enableIncrement && data.increment
+				@productWatch.set 'watch_increment', if data.increment then data.increment*100 else null
+				@productWatch.set 'watch_threshold', if data.threshold then data.threshold*100 else null

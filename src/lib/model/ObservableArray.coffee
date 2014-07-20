@@ -58,6 +58,8 @@ define ['./ObservableObject', 'underscore'], (ObservableObject, _) ->
 			_.each @_array, iterator
 		
 		indexOf: (el, start) -> @_array.indexOf el, start
+
+		contains: (obj) -> @_array.indexOf(obj) != -1
 			
 		find: (predicate) ->
 			for value in @_array
