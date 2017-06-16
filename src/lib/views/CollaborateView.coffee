@@ -230,8 +230,8 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore', 'model/ObservableArra
 				@doInit obj
 				done()
 
-			if args
-				if args == 'ShoppingBar'
+			if @args
+				if @args == 'ShoppingBar'
 					if @agora.View.views.ShoppingBar.null.shareObject.get()
 						init @agora.View.views.ShoppingBar.null.shareObject.get().object
 
@@ -239,7 +239,7 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore', 'model/ObservableArra
 						if @obj != mutation.value.object
 							init mutation.value.object
 				else
-					@resolveObject args, (obj) =>
+					@resolveObject @args, (obj) =>
 						init obj
 			else
 				init @agora.View.views.ShoppingBar.null.currentState().shareObject()

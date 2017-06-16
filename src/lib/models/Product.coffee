@@ -22,9 +22,9 @@ define ['model/Model', 'Site', 'model/ModelInstance', 'util'], (Model, Site, Mod
 			@subscribers = []
 
 			if @input.productSid
-				@product = Product.find siteName:@input.siteName, productSid:@input.productSid
+				@product = @Product.find siteName:@input.siteName, productSid:@input.productSid
 			else if @input.retrievalId
-				@product = Product.find retrievalId:@input.retrievalId
+				@product = @Product.find retrievalId:@input.retrievalId
 
 		_retrieve: (method) ->
 			@retrieving = true

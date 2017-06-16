@@ -5,7 +5,7 @@ define ['View', 'Site', 'Formatter', 'util'], (View, Site, Formatter, util) ->
 
 		initAsync: (args, done) ->
 			@resolveObject args, (@product) =>
-				site = Site.site product._get 'siteName'
+				site = Site.site @product._get 'siteName'
 
 				offerData = {}
 				offerData.alternative = @ctx.clientValue()
@@ -16,26 +16,26 @@ define ['View', 'Site', 'Formatter', 'util'], (View, Site, Formatter, util) ->
 				update = null
 
 				if 'offers' in site.features
-					product.retrieve 'offers'
-					update = ->
-						if product.get('offer')
-							currentPrice = product.get('offer').price
+					@product.retrieve 'offers'
+					update = =>
+						if @product.get('offer')
+							currentPrice = @product.get('offer').price
 							offerData.current.set
-								price:product.get('displayUserPrice')
-								siteName:product.get('offer').site
-								siteIcon:product.get('offer').url.match('(^https?://[^/]*)')[0] + '/favicon.ico'
-								url:util.url product.get('offer').url
+								price:@product.get('displayUserPrice')
+								siteName:@product.get('offer').site
+								siteIcon:@product.get('offer').url.match('(^https?://[^/]*)')[0] + '/favicon.ico'
+								url:util.url @product.get('offer').url
 								clear:true
 						else
-							currentPrice = product.get 'price'
+							currentPrice = @product.get 'price'
 							offerData.current.set
-								price:product.get('displayPrice')
+								price:@product.get('displayPrice')
 								siteName:site.name
 								siteIcon:site.icon
-								url:product.get('url')
+								url:@product.get('url')
 
 
-						product.field('offers').with (offers) =>
+						@product.field('offers').with (offers) =>
 							if offers?.new && parseFloat(offers.new[0].price) != parseFloat currentPrice
 								match = offers.new[0].url.match('(^https?://[^/]*)')
 								if !match
@@ -54,18 +54,18 @@ define ['View', 'Site', 'Formatter', 'util'], (View, Site, Formatter, util) ->
 								offerData.current.trigger()
 								offerData.alternative.set null
 				else
-					update = ->
-						currentPrice = product.get 'price'
+					update = =>
+						currentPrice = @product.get 'price'
 						offerData.current.set
-							price:product.get('displayPrice')
+							price:@product.get('displayPrice')
 							siteName:site.name
 							siteIcon:site.icon
-							url:product.get('url')
+							url:@product.get('url')
 							cheaper:true
 
 				update()
-				@ctx.observe product.field('offer'), update if 'offers' in site.features
-				@ctx.observe product.field('price'), update
+				@ctx.observe @product.field('offer'), update if 'offers' in site.features
+				@ctx.observe @product.field('price'), update
 
 				@data = offerData
 				done()

@@ -44,7 +44,7 @@ define -> d: ['View', 'Frame', 'views/OffersView', 'views/DataView', 'views/AddF
 
 
 		onData: (@data) ->
-			@withData data.online, (online) =>
+			@withData @data.online, (online) =>
 				if online
 					@el.addClass 'online'
 					@bagsbyEl.addClass 'online'
@@ -60,7 +60,7 @@ define -> d: ['View', 'Frame', 'views/OffersView', 'views/DataView', 'views/AddF
 				if @isReadingMessages()
 					@callBackgroundMethod 'readNewMessages'
 
-			@withData data.newUnreadMessages, (newUnreadMessages) =>
+			@withData @data.newUnreadMessages, (newUnreadMessages) =>
 				if newUnreadMessages
 					@bagsbyEl.addClass 'newMessages'
 				else
@@ -75,7 +75,7 @@ define -> d: ['View', 'Frame', 'views/OffersView', 'views/DataView', 'views/AddF
 				del()
 				@sizeChanged?()
 
-			iface.setDataSource data.messages
+			iface.setDataSource @data.messages
 
 		onDisplay: ->
 			@lockedAtBottom = true

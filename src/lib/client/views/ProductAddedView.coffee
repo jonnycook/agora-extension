@@ -22,7 +22,6 @@ define -> d: ['View', 'Frame'], c: ->
 				
 			@el.find('.n-remove').click =>
 				@callBackgroundMethod 'remove', null, (returnVal) ->
-					console.log returnVal
 
 
 			@editingCount = 0

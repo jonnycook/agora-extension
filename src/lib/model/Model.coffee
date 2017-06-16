@@ -91,7 +91,6 @@ define ['./ModelInstance', './ObservableArray', './Event', './auxiliary/maintain
 					for i in [Math.min(record.get(@_args.orderBy),@_list.length()-1)...@_list.length()]
 						@_list.get(i).set @_args.orderBy, i
 
-			
 		withId: (id, throwError=true) ->
 			unless @_byId[id]
 				if @_fault
@@ -144,7 +143,7 @@ define ['./ModelInstance', './ObservableArray', './Event', './auxiliary/maintain
 		all: -> @_list
 
 		# TODO: remove records from relationship tables as well
-		delete: (instance) ->
+		delete: (instance, failSilently=false) ->
 			if instance.model == @
 				@_table.delete (record) => `record.id == instance.get('id')`
 				for relName, rel of instance._relationships

@@ -39,7 +39,7 @@ define -> d: [], c: ->
 			Q(baseEl).data 'draggingListenerId', draggingListenerId
 
 		Q(baseEl).bind 'mousedown.dragging', (e) ->
-			return if args.cancel?()
+			return if args.cancel?(@)
 			selector = '[dragarea]'
 			dragging =
 				startDrag: (e) ->
@@ -1063,26 +1063,27 @@ define -> d: [], c: ->
 		# 	el.mousedown close
 
 
-
-
 	clearTooltip: (el) ->
 		if el.data 'hasTooltip'
 			el.removeData 'hasTooltip'
 			el.unbind '.tooltip'
 
-
 	resolveDraggingData: (el, cb) ->
-		elData = if el.data('dragging').data 
-			el.data('dragging').data
-		else 
-			view: el.data('view').id
-			
+		elData = null
+		if el.data('dragging').data
+			elData = el.data('dragging').data
+		else if el.data('view').id
+			elData = view: el.data('view').id
+		else
+			el.data('view').events.onRepresent.subscribe ->
+				cb view: el.data('view').id
+			return
+
 		if typeof elData == 'function'
 			elData (data) =>
 				cb data
 		else
 			cb elData
-
 
 	emotionClass: (positive, negative) ->
 		if positive && negative

@@ -94,7 +94,7 @@ define -> d: ['View', 'util', 'icons'], c: ->
 				util.tooltip el.find('.delete'), 'delete', position:'below'
 				el
 
-			if data.length()
+			if @data.length()
 				@el.removeClass 'empty'
 			else
 				@el.addClass 'empty'
@@ -113,7 +113,7 @@ define -> d: ['View', 'util', 'icons'], c: ->
 				@el.find('.cont').css height:height
 				@sizeChanged?()
 
-			dataIface.setDataSource data
+			dataIface.setDataSource @data
 			dataIface.onLengthChanged = updateSize
 
 			setTimeout updateSize, 0

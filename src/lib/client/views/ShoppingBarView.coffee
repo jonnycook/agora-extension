@@ -24,7 +24,7 @@ define -> d: ['View', 'util', 'util2'
 
 					<div class="right">
 						<span class="collaborate" />
-						<span class="priceWatch" />
+						<!--<span class="priceWatch" />-->
 						<span class="bagsby" />
 					</div>
 					<span class="devAction"><span class="reloadDevAction" /><span class="devAction" /><span class="reloadStyles" /></span>

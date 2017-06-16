@@ -129,12 +129,10 @@ define -> d: ['View', 'util', 'icons'], c: ->
 
 			setTimeout (=> descriptorEl.get(0).focus()), 50
 
-
 		onData: (@data) ->
 			_tutorial 'EditDescriptor', {positionEl:@el.find('[name="descriptor"]'), attachEl:@el}
-
 			update = =>
-				descriptor = @descriptor = data.get() ? {}
+				descriptor = @descriptor = @data.get() ? {}
 				@version = descriptor.version
 
 				@el.find('[name="descriptor"]').val descriptor.descriptor if descriptor.descriptor
@@ -167,7 +165,7 @@ define -> d: ['View', 'util', 'icons'], c: ->
 					@el.find('[name="gift"]').prop 'checked', false
 					@el.find('[name="gift.occasion"]').val ''
 			update()
-			data.observe =>
+			@data.observe =>
 				--@parsing
 				update()
 

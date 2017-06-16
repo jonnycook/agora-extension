@@ -7,7 +7,7 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore', 'views/items/Decision
 		onClick: ->
 			@view.compareView.pushState
 				dropped: (element) => @obj.get('list').get('contents').add util.resolveObject element
-				ripped: (view) => view.element.delete()
+				ripped: (view) => view.element.delete true
 				contents: => @obj.get('considering')
 				contentMap: (el) => elementType:'ListElement', elementId:el.get('id'), decisionId:@obj.get 'id'
 				state: 'Decision'

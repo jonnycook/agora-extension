@@ -2,3 +2,6 @@
 .git.core
 src/lib/sites/git
 build/scraper/env.phantom.js
+/node_modules/
+/build/
+/npm-debug.log

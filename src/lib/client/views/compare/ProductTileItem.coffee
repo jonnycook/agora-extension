@@ -37,14 +37,14 @@ define -> d: ['views/compare/TileItem', 'views/ProductPopupView', 'util', 'Frame
 		onData: (@data) ->
 			updateForImage = switch @view.compareView.layout 
 				when 'tiles'
-					=> @el.find('.image').css backgroundImage:"url('#{data.image.get()}')" if data.image.get()
+					=> @el.find('.image').css backgroundImage:"url('#{@data.image.get()}')" if @data.image.get()
 				when 'masonry'
 					=>
 						updateMenuPos = =>
 							@el.find('.productMenu').css bottom:6#top:@el.find('.image').height() - @el.find('.productMenu').height() + 6
 
 						@el.find('.image')
-							.attr('src', data.image.get())
+							.attr('src', @data.image.get())
 							.load =>
 								@widthChanged()
 								updateMenuPos()
@@ -56,7 +56,7 @@ define -> d: ['views/compare/TileItem', 'views/ProductPopupView', 'util', 'Frame
 						updateMenuPos()
 
 			updateForImage()
-			data.image.observe updateForImage
+			@data.image.observe updateForImage
 			
 			if @view.compareView.layout == 'masonry'
 				iface = @view.listInterface @el.find('.properties'), 'li', (el, data, pos, onRemove) =>
@@ -178,7 +178,7 @@ define -> d: ['views/compare/TileItem', 'views/ProductPopupView', 'util', 'Frame
 
 				iface.onMutation = => @widthChanged?()
 
-				iface.setDataSource data.properties
+				iface.setDataSource @data.properties
 				@view.createView('ProductMenu', @el.find('.productMenu'),
 					orientation:'horizontal'
 					pinSidebar: =>
@@ -194,17 +194,17 @@ define -> d: ['views/compare/TileItem', 'views/ProductPopupView', 'util', 'Frame
 				if lastEmotion
 					@el.find('.feelingBadge').removeClass lastEmotion
 
-				if data.lastFeeling.get()
+				if @data.lastFeeling.get()
 					@el.find('.feelingBadge').show()
 
-					@el.find('.feelingBadge .text').html data.lastFeeling.get().thought
-					emotionClass = util.emotionClass data.lastFeeling.get().positive, data.lastFeeling.get().negative
+					@el.find('.feelingBadge .text').html @data.lastFeeling.get().thought
+					emotionClass = util.emotionClass @data.lastFeeling.get().positive, @data.lastFeeling.get().negative
 					@el.find('.feelingBadge').addClass emotionClass
 					lastEmotion = emotionClass
 				else
 					@el.find('.feelingBadge').hide()
 
-			data.lastFeeling.observe updateForLastFeeling
+			@data.lastFeeling.observe updateForLastFeeling
 			updateForLastFeeling()
 
 			@widthChanged()

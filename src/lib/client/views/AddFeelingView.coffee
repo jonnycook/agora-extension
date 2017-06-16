@@ -150,7 +150,7 @@ define -> d: ['View', 'util', 'icons'], c: ->
 
 
 
-			iface.setDataSource data
+			iface.setDataSource @data
 			setTimeout (=> @el.find('[name=feeling]').get(0).focus()), 50
 
 		shown: ->

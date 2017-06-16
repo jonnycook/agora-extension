@@ -53,10 +53,10 @@ define ['underscore', 'siteConfig'], (_, siteConfig) ->
 		@id: 0
 		constructor: (@name, @config, @host) ->
 			@nid = Site.id++
-			{hosts:@hosts, icon:@icon} = config
+			{hosts:@hosts, icon:@icon} = @config
 			@url = "http://agora.sh/site.php?name=#{@name}"
 			allFeatures = ['offers', 'reviews', 'rating', 'priceWatch']
-			@features = if config.excludedFeatures then _.difference allFeatures, config.excludedFeatures else allFeatures
+			@features = if @config.excludedFeatures then _.difference allFeatures, @config.excludedFeatures else allFeatures
 
 			@_productScraper = {}
 

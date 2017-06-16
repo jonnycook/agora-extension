@@ -1,8 +1,8 @@
 define -> d: ['util'], c: ->
 	class BarItem
 		constructor: (@view, @args={}) ->
-			@el = view.el
-			@elementType = view.elementType
+			@el = @view.el
+			@elementType = @view.elementType
 
 		supportsCreateBundle: -> true
 

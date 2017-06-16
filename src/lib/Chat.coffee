@@ -58,7 +58,7 @@ define ['model/ObservableArray', 'model/ObservableValue'], (ObservableArray, Obs
 			@messageQueue = []
 
 		init: ->
-			@update()
+			# @update()
 
 
 

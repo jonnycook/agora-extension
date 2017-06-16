@@ -20,7 +20,7 @@ define ['./ObservableObject', './ObservableValue', 'underscore'], (ObservableObj
 
 			@_sources = {}
 
-			for name, value of _values
+			for name, value of @_values
 				@_values[name] = if @_mappings[name] && value != null then @_mappings[name] value else value
 				@_createField name
 

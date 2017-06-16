@@ -5,10 +5,10 @@ define ['View', 'Site', 'Formatter'], (View, Site, Formatter) ->
 		
 		initAsync: (args, done) ->
 			@resolveObject args, (@product) =>
-				product.retrieve 'offers'
+				@product.retrieve 'offers'
 				updateOffers = =>
-					if product.get('offers')
-						productOffers = product.get('offers')
+					if @product.get('offers')
+						productOffers = @product.get('offers')
 						viewOffers = []
 						for condition in ['new', 'used', 'refurbished']
 							if productOffers[condition]
@@ -38,14 +38,14 @@ define ['View', 'Site', 'Formatter'], (View, Site, Formatter) ->
 						updateSelectedOffer()
 
 				updateSelectedOffer = =>
-					if product.get('offers') && product.get('offer')
-						productOffers = product.get('offers')
+					if @product.get('offers') && @product.get('offer')
+						productOffers = @product.get('offers')
 
 						for condition in ['new', 'used', 'refurbished']
 							if productOffers[condition]
 								theseOffers = productOffers[condition]
 								for offer,i in theseOffers
-									if offer.url == product.get('offer').url && offer.price == product.get('offer').price
+									if offer.url == @product.get('offer').url && offer.price == @product.get('offer').price
 										selectedOffer.set "#{condition}.#{i}"
 										return
 					selectedOffer.set null
@@ -53,10 +53,10 @@ define ['View', 'Site', 'Formatter'], (View, Site, Formatter) ->
 				offers = @clientValue()
 				selectedOffer = @clientValue()
 
-				product.field('offers').observe updateOffers
+				@product.field('offers').observe updateOffers
 				updateOffers()
 
-				product.field('offer').observe updateSelectedOffer
+				@product.field('offer').observe updateSelectedOffer
 
 				
 				@data = 

@@ -205,6 +205,7 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore', 'taxonomy', 'model/Ob
 				@popState()
 
 			move: (view, elementData, toData, dropAction) ->
+				console.log elementData, _.clone @agora.View.clientViews[elementData.view]
 				toView = @agora.View.clientViews[toData.view].view
 				elementView = @agora.View.clientViews[elementData.view].view				
 				elementView.delete()

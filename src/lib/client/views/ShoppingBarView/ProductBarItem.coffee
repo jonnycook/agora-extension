@@ -33,7 +33,7 @@ define -> d: ['views/ShoppingBarView/BarItem', 'views/ProductPopupView', 'util',
 			@el.mousedown -> popup.close()
 
 		onData: (@data, @barItemViewData) ->
-			@view.withData data.image, (image) =>
+			@view.withData @data.image, (image) =>
 				if image
 					@el.find('.image').removeClass('loading').css backgroundImage: "url('#{image}')" 
 				else
@@ -47,8 +47,10 @@ define -> d: ['views/ShoppingBarView/BarItem', 'views/ProductPopupView', 'util',
 
 			if 1
 				@el.css 'cursor', 'pointer'
+
+				data = @data
 				@el.find('a').mousedown ->
-					$(@).attr 'href', data.url
+					$(@).attr 'href', data
 
 				@el.find('a').mouseup ->
 					setTimeout (=>
@@ -58,9 +60,9 @@ define -> d: ['views/ShoppingBarView/BarItem', 'views/ProductPopupView', 'util',
 				@el.find('a').mouseout ->
 					$(@).removeAttr 'href'
 			else
-				@el.find('a').attr 'href', data.url
+				@el.find('a').attr 'href', @data.url
 			
-			@el.html data.productSid
+			@el.html @data.productSid
 
 			@el.click =>
 				@callBackgroundMethod 'click'
@@ -72,20 +74,20 @@ define -> d: ['views/ShoppingBarView/BarItem', 'views/ProductPopupView', 'util',
 				if lastEmotion
 					@el.find('.feelingBadge').removeClass lastEmotion
 
-				if data.lastFeeling.get()
+				if @data.lastFeeling.get()
 					@el.find('.feelingBadge').show()
 
-					@el.find('.feelingBadge .text').html data.lastFeeling.get().thought
-					emotionClass = util.emotionClass data.lastFeeling.get().positive, data.lastFeeling.get().negative
+					@el.find('.feelingBadge .text').html @data.lastFeeling.get().thought
+					emotionClass = util.emotionClass @data.lastFeeling.get().positive, @data.lastFeeling.get().negative
 					@el.find('.feelingBadge').addClass emotionClass
 					lastEmotion = emotionClass
 				else
 					@el.find('.feelingBadge').hide()
 
-			data.lastFeeling.observe updateForLastFeeling
+			@data.lastFeeling.observe updateForLastFeeling
 			updateForLastFeeling()
 
-			@view.withData data.status, (status) =>
+			@view.withData @data.status, (status) =>
 				if status == 2
 					@el.addClass 'error'
 				else

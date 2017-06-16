@@ -21,7 +21,7 @@ define -> d: ['View', 'Frame', 'views/OffersView', 'views/DataView', 'views/AddF
 					<div class="productSidebar" />
 				</div>'
 
-			if opts.unconstrainedPictureHeight
+			if @opts.unconstrainedPictureHeight
 				@el.addClass 'unconstrainedPictureHeight'
 				@el.find('.p-picture').append('<img>')
 
@@ -42,8 +42,8 @@ define -> d: ['View', 'Frame', 'views/OffersView', 'views/DataView', 'views/AddF
 				removeEl: (el) =>
 					@removeEl? el
 
-			if opts.pictureClickHandler
-				@el.find('.p-picture').mouseup opts.pictureClickHandler
+			if @opts.pictureClickHandler
+				@el.find('.p-picture').mouseup @opts.pictureClickHandler
 			else
 				@el.find('.p-picture').mouseup =>
 					@close? false

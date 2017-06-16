@@ -53,8 +53,8 @@ define ['./HasManyRelationship', './HasOneRelationship', './ObservableObject'], 
 			
 		field: (name) -> @record.field name
 			
-		delete: ->
-			@model.delete @
+		delete: (failSilently=false) ->
+			@model.delete @, failSilently
 
 		tableName: -> @record.tableName()
 

@@ -1,7 +1,7 @@
 define -> ->
 	class ClientObject
 		constructor: (@args) ->
-			{_id:@_id, contentScript:@contentScript, _name:@_name, view:@view} = args
+			{_id:@_id, contentScript:@contentScript, _name:@_name, view:@view} = @args
 			# @view = args.view
 			@listener = (data) =>
 				data = _.clone data
@@ -175,17 +175,17 @@ define -> ->
 		constructor: (@view, @el, @attr=null) ->
 		setMapping: (@mapping) -> @
 		set: (@value) -> 
-			value = @mapping value if @mapping
+			v = if @mapping then @mapping @value else @value
 			if @attr
-				@el.attr @attr, value
+				@el.attr @attr, v
 			else
-				@el.html value
+				@el.html v
 		get: -> @value
 		setDataSource: (@dataSource, @trigger) ->
-			dataSource.stopObserving @_observer if @_observer
-			@set dataSource.get()
-			@trigger? dataSource.get(), @el
-			dataSource.observe @_observer = (mutation) =>
+			@dataSource.stopObserving @_observer if @_observer
+			@set @dataSource.get()
+			@trigger? @dataSource.get(), @el
+			@dataSource.observe @_observer = (mutation) =>
 				@set mutation.value
 				@trigger? mutation.value, @el
 		destruct: ->
@@ -214,7 +214,7 @@ define -> ->
 
 		constructor: (@view, @el, @selector, @mapping) ->
 			@id = ListInterface.id++
-			@template = $ el.find(@selector).get 0
+			@template = $ @el.find(@selector).get 0
 			# @template = $ @template.get 0
 
 			if @template.length == 0
@@ -379,10 +379,10 @@ define -> ->
 				View.inited = true
 				$(window).resize -> View.windowResized()
 
-
 			@events =
 				onDestruct: new Event
-
+				onAttached: new Event
+				onRepresent: new Event
 
 		alsoRepresent: (view) ->
 			@representList ?= []
@@ -397,14 +397,12 @@ define -> ->
 
 			el.mouseleave =>
 				@_mouseleave true
- 
 			el
 
 		viewEl: (html) ->
 			el = $ html
 			# el.attr 'agora:clientid', @clientId
 			@useEl el
- 
 			el
 			
 		createView: (className, args...) ->
@@ -439,12 +437,13 @@ define -> ->
 			@contentScript.triggerBackgroundEvent 'CreateView', type:@type, (response) =>
 				# Debug.log @type, 'attached'
 				@id = response.id
+				@el.data 'view', @
 				@el.attr 'agora:id', @id if @el
 				View_views[@id] = @
 				@contentScript.listen "ViewMethod:#{@id}", (args) =>
 					@callMethod args.name, args.params
-				
 				cb() if cb
+				@events.onAttached.fire()
 				
 		# should this detach child views as well?
 		detach: ->
@@ -456,7 +455,7 @@ define -> ->
 			if @isAttached()
 				@onRepresent? @args
 				view.represent @args for view in @representList if @representList
-				@contentScript.triggerBackgroundEvent 'ConnectView', id:@id, args:args, (response) =>
+				@contentScript.triggerBackgroundEvent 'ConnectView', id:@id, args:@args, (response) =>
 					if response == false
 						
 					else
@@ -475,9 +474,10 @@ define -> ->
 
 							@onData? @data
 							cb?()
+							@events.onRepresent.fire()
 
 			else
-				@attach => @represent args, cb
+				@attach => @represent @args, cb
 
 		deserialize: (data, objs) ->
 			deserialize data,

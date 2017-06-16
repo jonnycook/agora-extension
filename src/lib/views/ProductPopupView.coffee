@@ -20,22 +20,22 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore'], (View, Site, Formatt
 					# @element = @agora.modelManager.getInstance args.elementType, args.elementId
 					# product = @product = @element.get 'element'
 
-					site = Site.site product._get 'siteName'
+					site = Site.site @product._get 'siteName'
 					
 					@data = 
-						title:@clientValue product.field('title'), product.displayValue 'title'
-						site:{name:product.get('siteName'), url:product.get('siteUrl'), icon:site.icon}
-						price:@clientValue product.field('price'), product.displayValue 'price'
-						image:@clientValue product.field('image'), product.displayValue 'image'
-						url:product.get 'url'
+						title:@clientValue @product.field('title'), @product.displayValue 'title'
+						site:{name:@product.get('siteName'), url:@product.get('siteUrl'), icon:site.icon}
+						price:@clientValue @product.field('price'), @product.displayValue 'price'
+						image:@clientValue @product.field('image'), @product.displayValue 'image'
+						url:@product.get 'url'
 						# offersPane: site.config.offersPane
-						lastFeeling:util.lastFeeling @ctx, product
-						lastArgument:util.lastArgument @ctx, product
+						lastFeeling:util.lastFeeling @ctx, @product
+						lastArgument:util.lastArgument @ctx, @product
 
 					if site.hasFeature 'rating'
 						_.extend @data,
-							rating:@clientValue product.field('rating'), product.displayValue 'rating'
-							ratingCount:@clientValue product.field('ratingCount'), product.displayValue 'ratingCount'
+							rating:@clientValue @product.field('rating'), @product.displayValue 'rating'
+							ratingCount:@clientValue @product.field('ratingCount'), @product.displayValue 'ratingCount'
 
 					if args.decisionId
 						selected = @clientValueNamed 'selected'

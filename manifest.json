@@ -38,7 +38,7 @@
 		"matches": ["http://agora.sh/*", "http://agora.dev/*"]
 	},
 
-	"content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+	"content_security_policy": "script-src 'self' https://www.google-analytics.com https://cdn.ravenjs.com; object-src 'self'",
 
 	"browser_action": {
 		"default_icon": {

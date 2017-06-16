@@ -58,101 +58,104 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore', 'taxonomy'], (View, S
 		initAsync: (args, done) ->
 			@data = @clientValue()
 			@itemCtx = @context()
-			@element = @agora.modelManager.getModel(@args.elementType).withId @args.elementId
-			@additionalData = {}
-			@element.observe (mutation) =>
-				if mutation.type == 'deleted'
-					@destruct()
+			@element = @agora.modelManager.getModel(@args.elementType).withId @args.elementId, false
+			if @element
+				@additionalData = {}
+				@element.observe (mutation) =>
+					if mutation.type == 'deleted'
+						@destruct()
 
-			update = (cb) =>
-				if @descriptor
-					@stopObservingObject @descriptor.get('element')
+				update = (cb) =>
+					if @descriptor
+						@stopObservingObject @descriptor.get('element')
 
-				delete @objectReference
-				delete @getObj
-				delete @descriptor
-				delete @itemType
+					delete @objectReference
+					delete @getObj
+					delete @descriptor
+					delete @itemType
 
-				@obj = @element.get('element')
-				if @obj.modelName == 'Descriptor'
-					@descriptor = @obj
-					@obj = @obj.get 'element'
-					@observeObject @descriptor.get('element'), update
-				else if @obj.modelName == 'ObjectReference'
-					@objectReference = @obj
-					@obj = null
-					@getObj = -> @objectReference
-					object = @objectReference.get 'object'
-					@additionalData.user = color:util.colorForUser @agora.user, @objectReference.get('object_user_id')
+					@obj = @element.get('element')
+					if @obj.modelName == 'Descriptor'
+						@descriptor = @obj
+						@obj = @obj.get 'element'
+						@observeObject @descriptor.get('element'), update
+					else if @obj.modelName == 'ObjectReference'
+						@objectReference = @obj
+						@obj = null
+						@getObj = -> @objectReference
+						object = @objectReference.get 'object'
+						@additionalData.user = color:util.colorForUser @agora.user, @objectReference.get('object_user_id')
 
-					if @public
-						@itemType = 'Unauthorized'
-						if object == '/'
-							@additionalData.objectType = 'Belt'
-						else
-							[table, id] = object.split '.'
-							if table == 'decisions'
-								@additionalData.objectType = 'Decision'
-							else if table == 'belts'
+						if @public
+							@itemType = 'Unauthorized'
+							if object == '/'
 								@additionalData.objectType = 'Belt'
-					else
-						@agora.updater.transport.whenObject @objectReference.get('object_user_id'), ['@', object],
-							=>
-								delete @itemType
-								if object == '/'
-									@itemType = 'SharedBelt'
-									# @obj = @sharedObject
-									setTimeout (=>@updateItem()), 200
-								else
-									[table, id] = object.split '.'
-									if table == 'decisions'
-										@obj = @agora.modelManager.getInstance('Decision', "G#{id}")
-										setTimeout (=>@updateItem()), 200
-									else if table == 'belts'
-										@obj = @agora.modelManager.getInstance('Belt', "G#{id}")
-										setTimeout (=>@updateItem()), 200
-							=>
-								@obj = null
-								@itemType = 'Unauthorized'
-								if object == '/'
+							else
+								[table, id] = object.split '.'
+								if table == 'decisions'
+									@additionalData.objectType = 'Decision'
+								else if table == 'belts'
 									@additionalData.objectType = 'Belt'
-								else
-									[table, id] = object.split '.'
-									if table == 'decisions'
-										@additionalData.objectType = 'Decision'
-									else if table == 'belts'
+						else
+							@agora.updater.transport.whenObject @objectReference.get('object_user_id'), ['@', object],
+								=>
+									delete @itemType
+									if object == '/'
+										@itemType = 'SharedBelt'
+										# @obj = @sharedObject
+										setTimeout (=>@updateItem()), 200
+									else
+										[table, id] = object.split '.'
+										if table == 'decisions'
+											@obj = @agora.modelManager.getInstance('Decision', "G#{id}")
+											setTimeout (=>@updateItem()), 200
+										else if table == 'belts'
+											@obj = @agora.modelManager.getInstance('Belt', "G#{id}")
+											setTimeout (=>@updateItem()), 200
+								=>
+									@obj = null
+									@itemType = 'Unauthorized'
+									if object == '/'
 										@additionalData.objectType = 'Belt'
+									else
+										[table, id] = object.split '.'
+										if table == 'decisions'
+											@additionalData.objectType = 'Decision'
+										else if table == 'belts'
+											@additionalData.objectType = 'Belt'
 
-								# delete @itemType
-								setTimeout (=>@updateItem()), 200
-	
-				@updateItem cb
-
-
-			if !@public
-				if @element.get('creator_id') && @element.get('creator_id') != @agora.user.get('id')
-					creatorId = @element.get('creator_id').substr 1
-					userWrapper = util.userWrapper creatorId
-					@additionalData.creator =
-						color:util.colorForUser @agora.user, creatorId
-						name:@clientValue userWrapper.field 'name'
-
-			# handles the checkboxes if the bar item happens to be in a decision
-			if @element.modelName == 'ListElement' && args.decisionId
-				selected = @clientValueNamed 'selected'
-				_.merge @additionalData, selected:selected, decisionId:args.decisionId
-				@decision = @agora.modelManager.getInstance('Decision', args.decisionId)
-
-				updateSelected = =>
-					selected.set @decision.get('selection').contains @element
-
-				updateSelected()
-				@decision.get('selection').observe updateSelected
-
-
-			@observeObject @element.get('element'), update
-			update done
+									# delete @itemType
+									setTimeout (=>@updateItem()), 200
 		
+					@updateItem cb
+
+
+				if !@public
+					if @element.get('creator_id') && @element.get('creator_id') != @agora.user.get('id')
+						creatorId = @element.get('creator_id').substr 1
+						userWrapper = util.userWrapper creatorId
+						@additionalData.creator =
+							color:util.colorForUser @agora.user, creatorId
+							name:@clientValue userWrapper.field 'name'
+
+				# handles the checkboxes if the bar item happens to be in a decision
+				if @element.modelName == 'ListElement' && args.decisionId
+					selected = @clientValueNamed 'selected'
+					_.merge @additionalData, selected:selected, decisionId:args.decisionId
+					@decision = @agora.modelManager.getInstance('Decision', args.decisionId)
+
+					updateSelected = =>
+						selected.set @decision.get('selection').contains @element
+
+					updateSelected()
+					@decision.get('selection').observe updateSelected
+
+
+				@observeObject @element.get('element'), update
+				update done
+			else
+				done()
+			
 		updateItem: (cb=null) ->
 			@initItem =>
 				if @obj

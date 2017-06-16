@@ -112,9 +112,9 @@ define -> d: ['View', 'util'
 				super
 
 		onData: (@data) ->
-			@update data.get()
-			data.observe =>
-				@update data.get()
+			@update @data.get()
+			@data.observe =>
+				@update @data.get()
 			@shoppingBarView.barItemLoaded @
 
 		path: ->

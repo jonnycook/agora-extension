@@ -5,7 +5,7 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore'], (View, Site, Formatt
 
 		initAsync: (args, done) ->
 			@resolveObject args, (@obj) =>
-				@data = util.feelings @ctx, obj
+				@data = util.feelings @ctx, @obj
 				done()
 
 		methods:
@@ -35,7 +35,6 @@ define ['View', 'Site', 'Formatter', 'util', 'underscore'], (View, Site, Formatt
 
 				# thought = feeling.substring(i, j+1).trim()
 				@agora.modelManager.getModel('Feeling').create element_type:@obj.modelName, element_id:@obj.get('id'), thought:thought, positive:positive, negative:negative, timestamp:new Date()
-
 
 			delete: (view, id) ->
 				@agora.modelManager.getInstance('Feeling', id).delete()

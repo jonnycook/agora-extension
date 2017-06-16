@@ -1,8 +1,8 @@
 define -> d: ['util'], c: ->
 	class TileItem
 		constructor: (@view, @args={}) ->
-			@el = view.el
-			@elementType = view.elementType
+			@el = @view.el
+			@elementType = @view.elementType
 
 		supportsCreateBundle: -> true
 
@@ -48,9 +48,7 @@ define -> d: ['util'], c: ->
 				++ state.rows
 				state.y += params.rowHeight + params.margin
 
-
 		updateMasonryLayout: ->
-			
 
 		# width: ->
 		# 	width = 0
@@ -82,7 +80,6 @@ define -> d: ['util'], c: ->
 				orgDraggingData = _.clone draggingData
 
 				_.extend draggingData,
-					# context: 'shoppingBar'
 					type: @elementType
 					helper: (event, el, offset) => 
 						barItemView = new BarItemView @view.contentScript,
@@ -104,10 +101,14 @@ define -> d: ['util'], c: ->
 						barItemView.parent = childWidthChanged: ->
 						barItemView.represent @view.args
 						barItemView.el.addClass 'dragging'
+						barItemView.el.data 'dragging', data:{view:@view.id}
+						barItemView.el
+
+					cancel: =>
+						!@view.id
 
 					start: (event, ui) =>
 						@el.remove()
-						# @el.addClass 'dragging'
 						orgDraggingData.start.apply(@, arguments) if orgDraggingData.start
 
 					stop: =>

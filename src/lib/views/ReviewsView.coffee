@@ -6,7 +6,7 @@ define ['View', 'Site', 'Formatter', 'util'], (View, Site, Formatter, util) ->
 		initAsync: (args, done) ->
 			@resolveObject args, (@product) =>
 				@data = @clientValue()
-				product.interface (productIface) =>
+				@product.interface (productIface) =>
 					updateData = =>
 						productIface.reviews (data) =>
 							reviews = []
@@ -18,14 +18,13 @@ define ['View', 'Site', 'Formatter', 'util'], (View, Site, Formatter, util) ->
 											reviewContent = reviewContent.substr(0, 200) + '...'
 
 										reviews.push
-											url:if review.url then util.url(review.url) else product.get('url')
+											url:if review.url then util.url(review.url) else @product.get('url')
 											rating:parseInt review.rating
 											title:review.title ? ''
 											review:reviewContent
+								@data.set reviews:reviews, url:(if data.url then util.url(data.url) else @product.get('url')), count:data.count
 
-							@data.set reviews:reviews, url:(if data.url then util.url(data.url) else product.get('url')), count:data.count
-
-					product.field('reviews').observe updateData
+					@product.field('reviews').observe updateData
 					updateData()
 
 					done()

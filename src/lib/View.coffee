@@ -155,6 +155,7 @@ define ['underscore', 'clientInterface/ClientObject', 'clientInterface/ClientArr
 				if @clientViews[clientViewId]
 					@clientViews[clientViewId].id = view.id
 					@clientViews[clientViewId].view = view
+					console.log "#{view.id} connected"
 					view.addClientView clientViewId
 					view.getData (data) => cb true, @serializeObject data
 				else
@@ -171,7 +172,7 @@ define ['underscore', 'clientInterface/ClientObject', 'clientInterface/ClientArr
 
 		@remove: (clientViewId) ->
 			if @clientViews[clientViewId]
-				#Debug.log "Deleting view #{clientViewId} #{@clientViews[clientViewId].viewName}"
+				console.log "Deleting view #{clientViewId} #{@clientViews[clientViewId].viewName}"
 				if @clientViews[clientViewId].view
 					@clientViews[clientViewId].view.removeClientView clientViewId
 					@clientViews[clientViewId].view.onClientDisconnect? clientViewId
@@ -240,10 +241,10 @@ define ['underscore', 'clientInterface/ClientObject', 'clientInterface/ClientArr
 
 			@ctx = @context()
 			if @init
-				@init args
+				@init @args
 			else if @initAsync
 				@waiting = true
-				@initAsync args, =>
+				@initAsync @args, =>
 					@waiting = false
 					cb() for cb in @readyCbs if @readyCbs
 

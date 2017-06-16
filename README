@@ -1,0 +1,4 @@
+Compile
+=======
+1. npm run compile-scripts
+2. npm run compile-styles

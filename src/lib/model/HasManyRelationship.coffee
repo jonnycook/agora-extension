@@ -99,8 +99,8 @@ define ['./ObservableArray', './auxiliary/maintainOrder2', './Relationship', 'ut
 
 			@id = Relationship.nextId++
 
-			{foreignKey:foreignKey, relKey:relKey, through:through} = _args
-			@_model = _args.model
+			{foreignKey:foreignKey, relKey:relKey, through:through} = @_args
+			@_model = @_args.model
 
 			getModel = (record) =>
 				if typeof @_model == 'function'
@@ -130,7 +130,7 @@ define ['./ObservableArray', './auxiliary/maintainOrder2', './Relationship', 'ut
 			if @_args.orderBy
 				maintainOrder @_list, @_args.orderBy
 
-			@_list.name = "HasManyRelationship::#{@_model.name}.#{_relName}"
+			@_list.name = "HasManyRelationship::#{@_model.name}.#{@_relName}"
 
 			@_list.observe (mutation) => @_callObservers mutation
 			
@@ -220,15 +220,15 @@ define ['./ObservableArray', './auxiliary/maintainOrder2', './Relationship', 'ut
 				else if mutation.type == 'deletion'
 					remove mutation.value if @_getRecordData mutation.value
 
-			if _args.for
+			if @_args.for
 				@init = =>
-					path = _args.for.path.split '.'
+					path = @_args.for.path.split '.'
 					rel = @_instance.get(path[0]).get(path[1])
 					@for = onRelInst = (relInst) =>
-						inst = @find (inst) => inst.get(_args.for.key) == relInst.get('id')
+						inst = @find (inst) => inst.get(@_args.for.key) == relInst.get('id')
 						unless inst
 							args = {}
-							args[_args.for.key] = relInst.get 'id'
+							args[@_args.for.key] = relInst.get 'id'
 							inst = @_model.create args
 							@_add inst
 						inst
@@ -238,7 +238,7 @@ define ['./ObservableArray', './auxiliary/maintainOrder2', './Relationship', 'ut
 						if mutation.type == 'insertion'
 							onRelInst mutation.value
 						else if mutation.type == 'deletion'
-							inst = @find (inst) => inst.get(_args.for.key) == mutation.value.get('id')
+							inst = @find (inst) => inst.get(@_args.for.key) == mutation.value.get('id')
 							@remove inst if inst
 		
 		get: (position) -> @_list.get position

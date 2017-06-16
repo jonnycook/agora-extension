@@ -71,7 +71,6 @@ define -> d: ['View', 'util'
 				else
 					@elementType = 'Placeholder'
 
-
 				if !__classes["#{@elementType}TileItem"]
 					throw new Error "No class #{@elementType}TileItem"
 
@@ -82,7 +81,6 @@ define -> d: ['View', 'util'
 					el = $('<span class="userIndicator" />').css 'background-color', data.creator.color
 					util.tooltip el, -> data.creator.name.get()
 					@el.append el
-
 
 				if data.selected
 					@el.append '<div class="actions"><a href="#" class="dismiss" /><input type="checkbox" class="chosen"></div>'
@@ -132,9 +130,9 @@ define -> d: ['View', 'util'
 				super
 
 		onData: (@data) ->
-			@update data.get()
-			data.observe =>
-				@update data.get()
+			@update @data.get()
+			@data.observe =>
+				@update @data.get()
 
 			@compareView.barItemLoaded @
 

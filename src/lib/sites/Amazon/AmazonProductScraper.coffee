@@ -41,7 +41,6 @@ define ['scraping/ProductScraper',
 				scraper: ScriptedResourceScraper ->
 					@try
 						1: ->
-							console.log @resource
 							matches = @resource.match /<span id="btAsinTitle">([^<]*)<\/span>/
 							if matches
 								@value matches[1]

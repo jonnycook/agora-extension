@@ -11,8 +11,8 @@ define -> d: ['View', 'util', 'views/compare/TileItemView', 'views/ProductPrevie
 					<div class="client" />
 				</div>'
 
-			if contEl
-				@setContEl contEl
+			if @contEl
+				@setContEl @contEl
 
 
 			if @public
@@ -36,7 +36,7 @@ define -> d: ['View', 'util', 'views/compare/TileItemView', 'views/ProductPrevie
 		items: -> @el.find('.items > .tileItem')
 
 		setContEl: (@contEl) ->
-			contEl.resize => @updateLayout()
+			@contEl.resize => @updateLayout()
 			@contEl.append @menuEl = $ '
 				<div class="agoraMenu">
 					<div class="group">
@@ -347,7 +347,7 @@ define -> d: ['View', 'util', 'views/compare/TileItemView', 'views/ProductPrevie
 						# # 	@callBackgroundMethod 'remove', [{view:el.data('view').id}, {view:@id}]
 						onDroppedOn: (el, fromEl) =>
 							@onDroppedOn el, fromEl, @el.find('.items')
-							el.remove();
+							el.remove()
 							false
 
 					util.initDragging @contEl,
@@ -357,7 +357,7 @@ define -> d: ['View', 'util', 'views/compare/TileItemView', 'views/ProductPrevie
 						acceptsDrop:true
 						onDroppedOn: (el, fromEl) =>
 							@onDroppedOn el, fromEl, @el.find('.items')
-							el.remove();
+							el.remove()
 							false
 
 				@clientEl.children('.items').addClass @layout

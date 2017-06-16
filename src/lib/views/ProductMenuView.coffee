@@ -5,12 +5,12 @@ define ['View', 'Site', 'Formatter', 'util'], (View, Site, Formatter, util) ->
 
 		initAsync: (args, done) ->
 			@resolveObject args, (@product) =>
-				site = Site.site product._get 'siteName'
+				site = Site.site @product._get 'siteName'
 
 				@data =
 					features: site.features
-					lastFeeling:util.lastFeeling @ctx, product
-					lastArgument:util.lastArgument @ctx, product
+					lastFeeling:util.lastFeeling @ctx, @product
+					lastArgument:util.lastArgument @ctx, @product
 
 				done()
 
@@ -21,10 +21,10 @@ define ['View', 'Site', 'Formatter', 'util'], (View, Site, Formatter, util) ->
 					@public = opts.public
 					@el = el
 					html = '
-						<div class="item priceComparison"><a href="#">See more prices</a></div>
-						<div class="item coupons"><a href="#">See coupons and deals</a></div>
+						<!--<div class="item priceComparison"><a href="#">See more prices</a></div>-->
+						<!--<div class="item coupons"><a href="#">See coupons and deals</a></div>-->
 						<div class="item reviews"><a href="#">Reviews</a></div>
-						<div class="item watch"><a href="#">Watch</a></div>
+						<!--<div class="item watch"><a href="#">Watch</a></div>-->
 							'
 
 					if !@public
@@ -130,10 +130,10 @@ define ['View', 'Site', 'Formatter', 'util'], (View, Site, Formatter, util) ->
 										[updatePos, close] = cb view.el, -> view.destruct()
 										view.sizeChanged = updatePos
 
-					makePopup @el.find('.priceComparison'), 'OffersView', anchor:'top'
-					makePopup @el.find('.coupons'), 'CouponsView', anchor:'top'
+					# makePopup @el.find('.priceComparison'), 'OffersView', anchor:'top'
+					# makePopup @el.find('.coupons'), 'CouponsView', anchor:'top'
 					makePopup @el.find('.reviews'), 'ReviewsView', anchor:'top'
-					makePopup @el.find('.watch'), 'ProductWatchView', anchor:'top'
+					# makePopup @el.find('.watch'), 'ProductWatchView', anchor:'top'
 
 					makePopup @el.find('.feelings'), 'AddFeelingView'
 					makePopup @el.find('.arguments'), 'AddArgumentView'

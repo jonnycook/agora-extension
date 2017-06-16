@@ -1,0 +1,23 @@
+{
+  "name": "agora-chrome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "agora-built.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "nib": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "compile-scripts": "coffee -b -m -o build/ -w src/",
+    "compile-styles": "cd resources/stylesheets/ && stylus -u ../../node_modules/nib/lib/nib.js --watch chrome.styl --out chrome.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "root@66.228.54.96:~/Agora-chrome.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

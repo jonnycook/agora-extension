@@ -16,6 +16,12 @@ define ['underscore', 'model/ModelInstance', 'CommandExecuter', 'model/Observabl
 			# if !env.dev
 				# @updater.reset()
 
+	leftPad = (str, length, char) ->
+			str += ''
+			while str.length < length
+				str = char + str
+			str
+
 
 	class UpdaterTransport
 		constructor: (@updater) ->
@@ -852,7 +858,12 @@ define ['underscore', 'model/ModelInstance', 'CommandExecuter', 'model/Observabl
 					value = @convertId referentTable, value
 
 				if value instanceof Date
-					value = '0000-00-00 00:00:00'
+					value = value.getUTCFullYear() + '-' +
+						leftPad(value.getUTCMonth(), 2, '0') + '-' +
+						leftPad(value.getUTCDate(), 2, '0') + ' ' +
+						leftPad(value.getUTCHours(), 2, '0') + ':' +
+						leftPad(value.getUTCMinutes(), 2, '0') + ':' +
+						leftPad(value.getUTCSeconds(), 2, '0')
 
 				else if _.isPlainObject(value) || _.isArray value
 					value = JSON.stringify value

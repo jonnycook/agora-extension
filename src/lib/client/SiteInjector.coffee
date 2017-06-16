@@ -131,7 +131,7 @@ define -> d: ['View', 'views/ProductOverlayView', 'Frame', 'util'], c: ->
 								tipEl.css
 									top:pos.top - tipEl.outerHeight() - distance
 									left:Math.min $(window).width() - tipEl.outerWidth() - margin, Math.max margin, pos.left + positionEl.outerWidth()/2 - tipEl.outerWidth()/2
-								console.log tipEl.offset()
+
 								tipEl.offset().top >= 0
 
 							else if position == 'bottom'
